@@ -4,6 +4,8 @@ In summary, this book has no content whatsoever.
 
 Until now!
 
+A new change here.
+
 ```{r}
 1 + 1
 ```
