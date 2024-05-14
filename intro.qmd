@@ -1,9 +1,66 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+This workshop will not teach you everything you need to know to be able to effectively fit statistical models to criminological data. This is for good reason - criminology as a discipline is extremely varied (a rendes-vous subject, as some have said). So you might be a criminologist working on self-reported survey data about perceptions of fear and shame amongst young people, or you might be working with spatial data on coordinates of offences reported to the police, or analysing decades worth of convictions data for whole countries.
 
-See @knuth84 for additional discussion of literate programming.
+I assume that you are familiar with the general linear model (although we will have a refresher) - my aim is not to cover things that you will find in a general undergraduate or postgrad methods course on statistical modelling, but focus on a set of illustratons of some specific problems that can arise in some criminological contexts. I've tried to pick examples that are both specific enough to be illuminating, but general enough that the techniques I'll desribe (of say simulating quantities of interest from your fitted model) are generally relevant. No guarantees though. They should hopefully act as inspiration when grappling with your own analytical problems.
 
-```{r}
-1 + 1
-```
+I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five. 
+
+
+
+## Types of criminological data
+
+- Surveys
+- Police
+- Courts
+// I'm sure there's more
+
+- What is the data provenance? What does this mean for my analysis?
+
+- Do I need survey weights? Do I need to account for interactions with officers that aren't recorded? Do I interpret convictions as a measure of offending?
+
+
+## The general linear model
+
+- Big picture: two tribes of modellers?
+
+    - Economists versus epidemiologists
+
+
+- Won't include: mixed/multilevel/hierarchical/etc
+- But these might be relevant!
+- Focus on general linear model to think about binary and count outcomes
+    - Over-dispersion what to do?
+    
+- inferential uncertainty versus outcome variability
+
+## Measurement error and selection bias
+
+- Jose Pina Sanchez and measurement error
+
+- measurement error in general - from McElreath (can attenuate, but no guarantees)
+- measurement error in controls - uh oh
+
+
+- selection bias
+
+    - I guess I was thinking about the McElreath paper here/the Knox paper about conditioning on stop
+    - also Sander Greenland about everything is conditional on selection into the study (e.g. mortality in prison)
+    
+    
+- Using models to describe quantities of interest
+
+- Gary King and general principle
+
+- secondary motivation of what is your estimand?
+
+ - general principle of adjusted predictive comparisons (and also g-estimation)
+
+- specific example of victimization divides as a DQI
+
+
+## Ethics of working with criminological data
+
+- Jessica Simes and community loss
+
+- 
