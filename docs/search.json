@@ -11,7 +11,10 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "1.1 Types of criminological data",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   },
   {
     "objectID": "references.html",
@@ -26,5 +29,135 @@
     "title": "statistical_methods_criminology",
     "section": "",
     "text": "Preface\ntest\nanother another test"
+  },
+  {
+    "objectID": "types-of-data.html",
+    "href": "types-of-data.html",
+    "title": "Types of criminological data",
+    "section": "",
+    "text": "Scope\nMostly scope is national, but not always​\nSome local surveys​\nCan get data on trends for individual police forces, or Local Authorities etc",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "intro.html#types-of-criminological-data",
+    "href": "intro.html#types-of-criminological-data",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Surveys\nPolice\nCourts // I’m sure there’s more\nWhat is the data provenance? What does this mean for my analysis?\nDo I need survey weights? Do I need to account for interactions with officers that aren’t recorded? Do I interpret convictions as a measure of offending?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#the-general-linear-model",
+    "href": "intro.html#the-general-linear-model",
+    "title": "1  Introduction",
+    "section": "1.2 The general linear model",
+    "text": "1.2 The general linear model\n\nBig picture: two tribes of modellers?\n\nEconomists versus epidemiologists\n\nWon’t include: mixed/multilevel/hierarchical/etc\nBut these might be relevant!\nFocus on general linear model to think about binary and count outcomes\n\nOver-dispersion what to do?\n\ninferential uncertainty versus outcome variability",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#measurement-error-and-selection-bias",
+    "href": "intro.html#measurement-error-and-selection-bias",
+    "title": "1  Introduction",
+    "section": "1.3 Measurement error and selection bias",
+    "text": "1.3 Measurement error and selection bias\n\nJose Pina Sanchez and measurement error\nmeasurement error in general - from McElreath (can attenuate, but no guarantees)\nmeasurement error in controls - uh oh\nselection bias\n\nI guess I was thinking about the McElreath paper here/the Knox paper about conditioning on stop\nalso Sander Greenland about everything is conditional on selection into the study (e.g. mortality in prison)\n\nUsing models to describe quantities of interest\nGary King and general principle\nsecondary motivation of what is your estimand?\ngeneral principle of adjusted predictive comparisons (and also g-estimation)\nspecific example of victimization divides as a DQI",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#ethics-of-working-with-criminological-data",
+    "href": "intro.html#ethics-of-working-with-criminological-data",
+    "title": "1  Introduction",
+    "section": "1.4 Ethics of working with criminological data",
+    "text": "1.4 Ethics of working with criminological data\n\nJessica Simes and community loss",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#how-does-an-event-become-a-crime-statistic",
+    "href": "types-of-data.html#how-does-an-event-become-a-crime-statistic",
+    "title": "Types of criminological data",
+    "section": "How does an event become a crime statistic?",
+    "text": "How does an event become a crime statistic?\n[add link to SG flow diagram]",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#how-does-an-incident-end-up-as-a-court-record",
+    "href": "types-of-data.html#how-does-an-incident-end-up-as-a-court-record",
+    "title": "Types of criminological data",
+    "section": "How does an incident end up as a court record?",
+    "text": "How does an incident end up as a court record?\nCrime​\nArrest and charge​\nCourt​\nSentencing​",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#how-does-an-incident-get-logged-as-a-police-stop",
+    "href": "types-of-data.html#how-does-an-incident-get-logged-as-a-police-stop",
+    "title": "Types of criminological data",
+    "section": "How does an incident get logged as a police stop?",
+    "text": "How does an incident get logged as a police stop?\n(Knox and Mummolo)\n\nObservation\nEncouter\nStop",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#key-dilemma",
+    "href": "types-of-data.html#key-dilemma",
+    "title": "Types of criminological data",
+    "section": "Key dilemma",
+    "text": "Key dilemma\nDo official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)\nSometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime, but is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#survey-data",
+    "href": "types-of-data.html#survey-data",
+    "title": "Types of criminological data",
+    "section": "Survey data",
+    "text": "Survey data\nMostly specialist secondary survey​\nScottish Crime and Justice Survey​\nCrime Survey for England and Wales​\nEquivalents in other countries, primarily in Western Europe, North America and Australasia ​\nSmaller geographical scale surveys such as The Mayor’s Office for Policing And Crime (MOPAC) Survey in London",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#victimization-surveys",
+    "href": "types-of-data.html#victimization-surveys",
+    "title": "Types of criminological data",
+    "section": "Victimization surveys",
+    "text": "Victimization surveys\nTypically ask people about their experiences of victimization in the last year​\nCan measure crime that isn’t reported to the police​\nUsually don’t ask about people’s offending behaviour​\nGood for measuring common crimes, bad for measuring rare crimes",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#how-does-a-person-get-selected-for-the-scjs",
+    "href": "types-of-data.html#how-does-a-person-get-selected-for-the-scjs",
+    "title": "Types of criminological data",
+    "section": "How does a person get selected for the SCJS?",
+    "text": "How does a person get selected for the SCJS?\nRandom sample of 10,000 postcodes in Scotland are contacted to take part​\nFor those who agree, one adult (age 16 or over) in each household is randomly selected for interview​\nTherefore, by design no:​\nChildren​\nHomeless people​\nPeople living in communal establishments\n“Moreover, in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” Carr-Hill, R. (2013). Missing Millions and Measuring Development Progress. World Development, 46, 30–44. https://doi.org/10.1016/j.worlddev.2012.12.017​\n(Not going to talk about things like measurment equivalence in internaitonal surveys although that is a thing!)\nStandardization of surveys means it’s hard to reflect new forms of crime in established surveys – see cyber/enabled crime in CSEW​\nRegular changes to question wording means that time series analysis is compromised which is why only a small number of fraud and cyber questions were added to the CSEW​\nThis means that the new questions are only a limited measure of ‘cybercrime’",
+    "crumbs": [
+      "Types of criminological data"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#who-is-excluded",
+    "href": "types-of-data.html#who-is-excluded",
+    "title": "Types of criminological data",
+    "section": "Who is excluded?",
+    "text": "Who is excluded?\nFor SCJS to be a measure of crime for all adults, not just all adults in private households, we need to make a key assumption that “the subset of the adult population not captured in the SCJS experience the same level of victimisation as adults in the household resident population”​\nBut this excludes people, students, people in prison, and those living in refuges​\n“Domestic abuse is the main cause of women’s homelessness in Scotland… All women living in Women’s Aid refuges have experienced domestic abuse and many will have experienced other forms of crime”\n\nFrom Handbook chapter - falling sample size, falling response rate and falling victimization all mean less ‘power’ in more recent SCJS sweeps\n\n“The reduction in survey response rates is a phenomenon that has been observed internationally (de Leeuw, Hox and Luiten, 2018), and there are particular concerns that it is the most marginalized in society (often the most prone to victimization) who are no longer responding to surveys (Savage and Burrows, 2009). Again, taking Scotland as an example, valid response rates to the SCJS fell from 71% in 2008/09 to 63% in 2019/20 (Saunders et al, 2021), with a\nfurther reduction (following the Coronavirus pandemic) to just 47.3% in 2021/22 - the lowest response rate for any SCJS sweep since 2008/09 (Scottish Government 2023a). This issue has been compounded by reductions in the valid sample size for successive sweeps of the SCJS, which has reduced from 16,000 in 2008/09 to just 5,500 in the sweeps conducted since 2016/1714, largely in an effort to cut costs. Factoring in the large reduction in the prevalence of victimization (mentioned above), the stark reality is that the number of victims interviewed as part of the Scottish survey reduced from 2,786 in 2008/09 to just 639 in 2021/22. So, whilst the prevalence of crime fell by just over 50% (or in absolute terms, a fall of 10.4 percentage points), the number of survey respondents who had experienced at least one incident of crime has fallen by an astonishing 77%.”",
+    "crumbs": [
+      "Types of criminological data"
+    ]
   }
 ]

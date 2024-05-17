@@ -1,0 +1,105 @@
+# Types of criminological data {.unnumbered}
+
+Criminological data - as with criminology itself - is extremely varied. The main types we will focus on in this workshop are self-reported victimization data, and police recorded crime data. Other forms of crime data include other administrative data, such convictions data, arrest data, data on police disposals (such as stop and search), and survey data which may cover things like self-reported offending, or confidence in police. Criminologists may also want to analyse social media data or data scraped from the web. Each of these data sources needs thinking about carefully, and may need different types of analysis depending on things like potential sources of bias or measurement error.
+
+## Scope
+
+Mostly scope is national, but not always​
+
+Some local surveys​
+
+Can get data on trends for individual police forces, or Local Authorities etc
+
+## How does an event become a crime statistic?
+
+[add link to SG flow diagram]
+
+## How does an incident end up as a court record?
+
+Crime​
+
+Arrest and charge​
+
+Court​
+
+Sentencing​
+
+
+## How does an incident get logged as a police stop?
+
+(Knox and Mummolo)
+
+- Observation
+- Encouter
+- Stop
+
+## Key dilemma
+
+Do official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)
+
+Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime, but is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )
+
+## Survey data
+
+Mostly specialist secondary survey​
+
+Scottish Crime and Justice Survey​
+
+Crime Survey for England and Wales​
+
+Equivalents in other countries, primarily in Western Europe, North America and Australasia ​
+
+Smaller geographical scale surveys such as The Mayor's Office for Policing And Crime (MOPAC) Survey in London
+
+
+## Victimization surveys
+
+Typically ask people about their experiences of victimization in the last year​
+
+Can measure crime that isn’t reported to the police​
+
+Usually don’t ask about people’s offending behaviour​
+
+Good for measuring common crimes, bad for measuring rare crimes
+
+## How does a person get selected for the SCJS?
+
+Random sample of 10,000 postcodes in Scotland are contacted to take part​
+
+For those who agree, one adult (age 16 or over) in each household is randomly selected for interview​
+
+Therefore, *by design* no:​
+
+Children​
+
+Homeless people​
+
+People living in communal establishments
+
+“Moreover, in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” Carr-Hill, R. (2013). Missing Millions and Measuring Development Progress. World Development, 46, 30–44. https://doi.org/10.1016/j.worlddev.2012.12.017​
+
+(Not going to talk about things like measurment equivalence in internaitonal surveys although that is a thing!)
+
+
+Standardization of surveys means it’s hard to reflect new forms of crime in established surveys – see cyber/enabled crime in CSEW​
+
+Regular changes to question wording means that time series analysis is compromised which is why only a small number of fraud and cyber questions were added to the CSEW​
+
+This means that the new questions are only a limited measure of ‘cybercrime’
+
+## Who is excluded?
+
+For SCJS to be a measure of crime for all adults, not just all adults in private households, we need to make a key assumption that “the subset of the adult population not captured in the SCJS experience the same level of victimisation as adults in the household resident population”​
+
+But this excludes people, students, people in prison, and those living in refuges​
+
+“Domestic abuse is the main cause of women’s homelessness in Scotland… All women living in Women’s Aid refuges have experienced domestic abuse and many will have experienced other forms of crime”
+
+
+- From Handbook chapter - falling sample size, falling response rate and falling victimization all mean less 'power' in more recent SCJS sweeps
+
+"The reduction in survey response rates is a phenomenon that has been observed internationally (de Leeuw, Hox and Luiten, 2018), and there are particular concerns that it is the most marginalized in society (often the most prone to victimization) who are no longer responding to surveys (Savage and Burrows, 2009). Again, taking Scotland as an example, valid response rates to the SCJS fell from 71% in 2008/09 to 63% in 2019/20 (Saunders et al, 2021), with a urther reduction (following the Coronavirus pandemic) to just 47.3% in 2021/22 - the lowest response rate for any SCJS sweep since 2008/09 (Scottish Government 2023a). This issue has been compounded by reductions in the valid sample size for successive sweeps of the SCJS, which has reduced from 16,000 in 2008/09 to just 5,500 in the sweeps conducted since 2016/1714, largely in an effort to cut costs. Factoring in the large reduction in the prevalence of victimization (mentioned above), the stark reality is that the number of victims interviewed as part of the Scottish survey reduced from 2,786 in 2008/09 to just 639 in 2021/22. So, whilst the prevalence of crime fell by just over 50% (or in absolute terms, a fall of 10.4 percentage points), the number of survey respondents who had experienced at least one incident of crime has fallen by an astonishing 77%."
+
+
+::: {#refs}
+:::

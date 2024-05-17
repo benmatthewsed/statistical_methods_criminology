@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>statistical_methods_criminology - 1&nbsp; Introduction</title>
+<title>statistical_methods_criminology - Types of criminological data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./summary.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./types-of-data.html">Types of criminological data</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -114,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -126,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./types-of-data.html" class="sidebar-item-text sidebar-link">
+  <a href="./types-of-data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Types of criminological data</span></a>
   </div>
 </li>
@@ -146,10 +165,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#types-of-criminological-data" id="toc-types-of-criminological-data" class="nav-link active" data-scroll-target="#types-of-criminological-data"><span class="header-section-number">1.1</span> Types of criminological data</a></li>
-  <li><a href="#the-general-linear-model" id="toc-the-general-linear-model" class="nav-link" data-scroll-target="#the-general-linear-model"><span class="header-section-number">1.2</span> The general linear model</a></li>
-  <li><a href="#measurement-error-and-selection-bias" id="toc-measurement-error-and-selection-bias" class="nav-link" data-scroll-target="#measurement-error-and-selection-bias"><span class="header-section-number">1.3</span> Measurement error and selection bias</a></li>
-  <li><a href="#ethics-of-working-with-criminological-data" id="toc-ethics-of-working-with-criminological-data" class="nav-link" data-scroll-target="#ethics-of-working-with-criminological-data"><span class="header-section-number">1.4</span> Ethics of working with criminological data</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link active" data-scroll-target="#scope">Scope</a></li>
+  <li><a href="#how-does-an-event-become-a-crime-statistic" id="toc-how-does-an-event-become-a-crime-statistic" class="nav-link" data-scroll-target="#how-does-an-event-become-a-crime-statistic">How does an event become a crime statistic?</a></li>
+  <li><a href="#how-does-an-incident-end-up-as-a-court-record" id="toc-how-does-an-incident-end-up-as-a-court-record" class="nav-link" data-scroll-target="#how-does-an-incident-end-up-as-a-court-record">How does an incident end up as a court record?</a></li>
+  <li><a href="#how-does-an-incident-get-logged-as-a-police-stop" id="toc-how-does-an-incident-get-logged-as-a-police-stop" class="nav-link" data-scroll-target="#how-does-an-incident-get-logged-as-a-police-stop">How does an incident get logged as a police stop?</a></li>
+  <li><a href="#key-dilemma" id="toc-key-dilemma" class="nav-link" data-scroll-target="#key-dilemma">Key dilemma</a></li>
+  <li><a href="#survey-data" id="toc-survey-data" class="nav-link" data-scroll-target="#survey-data">Survey data</a></li>
+  <li><a href="#victimization-surveys" id="toc-victimization-surveys" class="nav-link" data-scroll-target="#victimization-surveys">Victimization surveys</a></li>
+  <li><a href="#how-does-a-person-get-selected-for-the-scjs" id="toc-how-does-a-person-get-selected-for-the-scjs" class="nav-link" data-scroll-target="#how-does-a-person-get-selected-for-the-scjs">How does a person get selected for the SCJS?</a></li>
+  <li><a href="#who-is-excluded" id="toc-who-is-excluded" class="nav-link" data-scroll-target="#who-is-excluded">Who is excluded?</a></li>
   </ul>
 </nav>
     </div>
@@ -158,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title">Types of criminological data</h1>
 </div>
 
 
@@ -175,59 +199,80 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This workshop will not teach you everything you need to know to be able to effectively fit statistical models to criminological data. This is for good reason - criminology as a discipline is extremely varied (a rendes-vous subject, as some have said). So you might be a criminologist working on self-reported survey data about perceptions of fear and shame amongst young people, or you might be working with spatial data on coordinates of offences reported to the police, or analysing decades worth of convictions data for whole countries.</p>
-<p>I assume that you are familiar with the general linear model (although we will have a refresher) - my aim is not to cover things that you will find in a general undergraduate or postgrad methods course on statistical modelling, but focus on a set of illustratons of some specific problems that can arise in some criminological contexts. I’ve tried to pick examples that are both specific enough to be illuminating, but general enough that the techniques I’ll desribe (of say simulating quantities of interest from your fitted model) are generally relevant. No guarantees though. They should hopefully act as inspiration when grappling with your own analytical problems.</p>
-<p>I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.</p>
-<section id="types-of-criminological-data" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="types-of-criminological-data"><span class="header-section-number">1.1</span> Types of criminological data</h2>
+<p>Criminological data - as with criminology itself - is extremely varied. The main types we will focus on in this workshop are self-reported victimization data, and police recorded crime data. Other forms of crime data include other administrative data, such convictions data, arrest data, data on police disposals (such as stop and search), and survey data which may cover things like self-reported offending, or confidence in police. Criminologists may also want to analyse social media data or data scraped from the web. Each of these data sources needs thinking about carefully, and may need different types of analysis depending on things like potential sources of bias or measurement error.</p>
+<section id="scope" class="level2">
+<h2 class="anchored" data-anchor-id="scope">Scope</h2>
+<p>Mostly scope is national, but not always​</p>
+<p>Some local surveys​</p>
+<p>Can get data on trends for individual police forces, or Local Authorities etc</p>
+</section>
+<section id="how-does-an-event-become-a-crime-statistic" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-an-event-become-a-crime-statistic">How does an event become a crime statistic?</h2>
+<p>[add link to SG flow diagram]</p>
+</section>
+<section id="how-does-an-incident-end-up-as-a-court-record" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-an-incident-end-up-as-a-court-record">How does an incident end up as a court record?</h2>
+<p>Crime​</p>
+<p>Arrest and charge​</p>
+<p>Court​</p>
+<p>Sentencing​</p>
+</section>
+<section id="how-does-an-incident-get-logged-as-a-police-stop" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-an-incident-get-logged-as-a-police-stop">How does an incident get logged as a police stop?</h2>
+<p>(Knox and Mummolo)</p>
 <ul>
-<li><p>Surveys</p></li>
-<li><p>Police</p></li>
-<li><p>Courts // I’m sure there’s more</p></li>
-<li><p>What is the data provenance? What does this mean for my analysis?</p></li>
-<li><p>Do I need survey weights? Do I need to account for interactions with officers that aren’t recorded? Do I interpret convictions as a measure of offending?</p></li>
+<li>Observation</li>
+<li>Encouter</li>
+<li>Stop</li>
 </ul>
 </section>
-<section id="the-general-linear-model" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="the-general-linear-model"><span class="header-section-number">1.2</span> The general linear model</h2>
-<ul>
-<li><p>Big picture: two tribes of modellers?</p>
-<ul>
-<li>Economists versus epidemiologists</li>
-</ul></li>
-<li><p>Won’t include: mixed/multilevel/hierarchical/etc</p></li>
-<li><p>But these might be relevant!</p></li>
-<li><p>Focus on general linear model to think about binary and count outcomes</p>
-<ul>
-<li>Over-dispersion what to do?</li>
-</ul></li>
-<li><p>inferential uncertainty versus outcome variability</p></li>
-</ul>
+<section id="key-dilemma" class="level2">
+<h2 class="anchored" data-anchor-id="key-dilemma">Key dilemma</h2>
+<p>Do official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)</p>
+<p>Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime, but is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )</p>
 </section>
-<section id="measurement-error-and-selection-bias" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="measurement-error-and-selection-bias"><span class="header-section-number">1.3</span> Measurement error and selection bias</h2>
-<ul>
-<li><p>Jose Pina Sanchez and measurement error</p></li>
-<li><p>measurement error in general - from McElreath (can attenuate, but no guarantees)</p></li>
-<li><p>measurement error in controls - uh oh</p></li>
-<li><p>selection bias</p>
-<ul>
-<li>I guess I was thinking about the McElreath paper here/the Knox paper about conditioning on stop</li>
-<li>also Sander Greenland about everything is conditional on selection into the study (e.g.&nbsp;mortality in prison)</li>
-</ul></li>
-<li><p>Using models to describe quantities of interest</p></li>
-<li><p>Gary King and general principle</p></li>
-<li><p>secondary motivation of what is your estimand?</p></li>
-<li><p>general principle of adjusted predictive comparisons (and also g-estimation)</p></li>
-<li><p>specific example of victimization divides as a DQI</p></li>
-</ul>
+<section id="survey-data" class="level2">
+<h2 class="anchored" data-anchor-id="survey-data">Survey data</h2>
+<p>Mostly specialist secondary survey​</p>
+<p>Scottish Crime and Justice Survey​</p>
+<p>Crime Survey for England and Wales​</p>
+<p>Equivalents in other countries, primarily in Western Europe, North America and Australasia ​</p>
+<p>Smaller geographical scale surveys such as The Mayor’s Office for Policing And Crime (MOPAC) Survey in London</p>
 </section>
-<section id="ethics-of-working-with-criminological-data" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="ethics-of-working-with-criminological-data"><span class="header-section-number">1.4</span> Ethics of working with criminological data</h2>
+<section id="victimization-surveys" class="level2">
+<h2 class="anchored" data-anchor-id="victimization-surveys">Victimization surveys</h2>
+<p>Typically ask people about their experiences of victimization in the last year​</p>
+<p>Can measure crime that isn’t reported to the police​</p>
+<p>Usually don’t ask about people’s offending behaviour​</p>
+<p>Good for measuring common crimes, bad for measuring rare crimes</p>
+</section>
+<section id="how-does-a-person-get-selected-for-the-scjs" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-a-person-get-selected-for-the-scjs">How does a person get selected for the SCJS?</h2>
+<p>Random sample of 10,000 postcodes in Scotland are contacted to take part​</p>
+<p>For those who agree, one adult (age 16 or over) in each household is randomly selected for interview​</p>
+<p>Therefore, <em>by design</em> no:​</p>
+<p>Children​</p>
+<p>Homeless people​</p>
+<p>People living in communal establishments</p>
+<p>“Moreover, in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” Carr-Hill, R. (2013). Missing Millions and Measuring Development Progress. World Development, 46, 30–44. https://doi.org/10.1016/j.worlddev.2012.12.017​</p>
+<p>(Not going to talk about things like measurment equivalence in internaitonal surveys although that is a thing!)</p>
+<p>Standardization of surveys means it’s hard to reflect new forms of crime in established surveys – see cyber/enabled crime in CSEW​</p>
+<p>Regular changes to question wording means that time series analysis is compromised which is why only a small number of fraud and cyber questions were added to the CSEW​</p>
+<p>This means that the new questions are only a limited measure of ‘cybercrime’</p>
+</section>
+<section id="who-is-excluded" class="level2">
+<h2 class="anchored" data-anchor-id="who-is-excluded">Who is excluded?</h2>
+<p>For SCJS to be a measure of crime for all adults, not just all adults in private households, we need to make a key assumption that “the subset of the adult population not captured in the SCJS experience the same level of victimisation as adults in the household resident population”​</p>
+<p>But this excludes people, students, people in prison, and those living in refuges​</p>
+<p>“Domestic abuse is the main cause of women’s homelessness in Scotland… All women living in Women’s Aid refuges have experienced domestic abuse and many will have experienced other forms of crime”</p>
 <ul>
-<li><p>Jessica Simes and community loss</p></li>
-<li></li>
+<li>From Handbook chapter - falling sample size, falling response rate and falling victimization all mean less ‘power’ in more recent SCJS sweeps</li>
 </ul>
+<p>“The reduction in survey response rates is a phenomenon that has been observed internationally (de Leeuw, Hox and Luiten, 2018), and there are particular concerns that it is the most marginalized in society (often the most prone to victimization) who are no longer responding to surveys (Savage and Burrows, 2009). Again, taking Scotland as an example, valid response rates to the SCJS fell from 71% in 2008/09 to 63% in 2019/20 (Saunders et al, 2021), with a</p>
+<p>further reduction (following the Coronavirus pandemic) to just 47.3% in 2021/22 - the lowest response rate for any SCJS sweep since 2008/09 (Scottish Government 2023a). This issue has been compounded by reductions in the valid sample size for successive sweeps of the SCJS, which has reduced from 16,000 in 2008/09 to just 5,500 in the sweeps conducted since 2016/1714, largely in an effort to cut costs. Factoring in the large reduction in the prevalence of victimization (mentioned above), the stark reality is that the number of victims interviewed as part of the Scottish survey reduced from 2,786 in 2008/09 to just 639 in 2021/22. So, whilst the prevalence of crime fell by just over 50% (or in absolute terms, a fall of 10.4 percentage points), the number of survey respondents who had experienced at least one incident of crime has fallen by an astonishing 77%.”</p>
+<div id="refs" role="list" style="display: none">
+
+</div>
 
 
 </section>
@@ -644,13 +689,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
