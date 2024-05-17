@@ -2,6 +2,9 @@
 
 Criminological data - as with criminology itself - is extremely varied. The main types we will focus on in this workshop are self-reported victimization data, and police recorded crime data. Other forms of crime data include other administrative data, such convictions data, arrest data, data on police disposals (such as stop and search), and survey data which may cover things like self-reported offending, or confidence in police. Criminologists may also want to analyse social media data or data scraped from the web. Each of these data sources needs thinking about carefully, and may need different types of analysis depending on things like potential sources of bias or measurement error.
 
+_I guess key point is that you need to know how your data came about to be able to analyse it properly?_
+
+
 ## Scope
 
 Mostly scope is national, but not always​
