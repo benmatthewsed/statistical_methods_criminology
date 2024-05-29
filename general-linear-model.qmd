@@ -1,0 +1,35 @@
+# general linear model{.unnumbered}
+
+# Intro to GLM
+
+# Binary data
+
+- victim or not? offender or not? confident or not?
+
+- [take from gary king]
+
+# Count data
+
+- integers only! stricly positive!
+
+- why not just lm?
+
+- two tribes
+  - if all you care about is the average difference then you can just use 'Simple Mean Difference'
+  - you might be an economist
+  - there are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)
+  
+- classic problem - over-dispersion
+
+- poisson assumes mean and variance are the same (only one term in the model)
+- so what? mostly under-estimates the standard error
+- p-values are too optimistic
+
+- you need to think about why your data are over-dispersed
+
+- take from Hilbe (distinct zeros? ZIP; generic solution; NB?)
+- ZIP can have different predictors for zeros than count part
+- you can also have different predictors for dispersion and rate parameter in NB if you want
+
+
+- if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)

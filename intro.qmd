@@ -4,63 +4,65 @@ This workshop will not teach you everything you need to know to be able to effec
 
 I assume that you are familiar with the general linear model (although we will have a refresher) - my aim is not to cover things that you will find in a general undergraduate or postgrad methods course on statistical modelling, but focus on a set of illustratons of some specific problems that can arise in some criminological contexts. I've tried to pick examples that are both specific enough to be illuminating, but general enough that the techniques I'll desribe (of say simulating quantities of interest from your fitted model) are generally relevant. No guarantees though. They should hopefully act as inspiration when grappling with your own analytical problems.
 
-I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five. 
-
-
+I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.
 
 ## Types of criminological data
 
-- Surveys
-- Police
-- Courts
-// I'm sure there's more
+-   Surveys
 
-- What is the data provenance? What does this mean for my analysis?
+-   Police
 
-- Do I need survey weights? Do I need to account for interactions with officers that aren't recorded? Do I interpret convictions as a measure of offending?
+-   Courts // I'm sure there's more
 
+-   What is the data provenance? What does this mean for my analysis?
+
+-   Do I need survey weights? Do I need to account for interactions with officers that aren't recorded? Do I interpret convictions as a measure of offending?
 
 ## The general linear model
 
-- Big picture: two tribes of modellers?
+-   Big picture: two tribes of modellers?
 
-    - Economists versus epidemiologists
+    -   Economists versus epidemiologists
 
+-   Won't include: mixed/multilevel/hierarchical/etc
 
-- Won't include: mixed/multilevel/hierarchical/etc
-- But these might be relevant!
-- Focus on general linear model to think about binary and count outcomes
-    - Over-dispersion what to do?
-    
-- inferential uncertainty versus outcome variability
+-   But these might be relevant!
+
+-   Focus on general linear model to think about binary and count outcomes
+
+    -   Over-dispersion what to do?
+
+-   inferential uncertainty versus outcome variability
 
 ## Measurement error and selection bias
 
-- Jose Pina Sanchez and measurement error
+-   Jose Pina Sanchez and measurement error
 
-- measurement error in general - from McElreath (can attenuate, but no guarantees)
-- measurement error in controls - uh oh
+- Walby and volatility over time
 
 
-- selection bias
+-   measurement error in general - from McElreath (can attenuate, but no guarantees)
 
-    - I guess I was thinking about the McElreath paper here/the Knox paper about conditioning on stop
-    - also Sander Greenland about everything is conditional on selection into the study (e.g. mortality in prison)
-    
-    
-- Using models to describe quantities of interest
+-   measurement error in controls - uh oh
 
-- Gary King and general principle
+-   selection bias
 
-- secondary motivation of what is your estimand?
+    -   I guess I was thinking about the McElreath paper here/the Knox paper about conditioning on stop
+    -   also Sander Greenland about everything is conditional on selection into the study (e.g. mortality in prison)
+    - And also can do the Sander Greenland stuff on probabilistic bias analysis
 
- - general principle of adjusted predictive comparisons (and also g-estimation)
+-   Using models to describe quantities of interest
 
-- specific example of victimization divides as a DQI
+-   Gary King and general principle
 
+-   secondary motivation of what is your estimand?
+
+-   general principle of adjusted predictive comparisons (and also g-estimation)
+
+-   specific example of victimization divides as a DQI
 
 ## Ethics of working with criminological data
 
-- Jessica Simes and community loss
+-   Jessica Simes and community loss
 
-- 
+-   

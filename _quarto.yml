@@ -11,6 +11,7 @@ book:
     - intro.qmd
     - summary.qmd
     - types-of-data.qmd
+    - general-linear-model.qmd
     - references.qmd
 
 bibliography: references.bib
