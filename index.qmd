@@ -1,5 +1,3 @@
 # Preface {.unnumbered}
 
-test
-
-another another test
+This website contains the notes and R code for the NCRM workshop 'Statistical Methods for Criminology' run in September 2024.

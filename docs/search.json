@@ -31,7 +31,10 @@
     "href": "index.html",
     "title": "statistical_methods_criminology",
     "section": "",
-    "text": "Preface\ntest\nanother another test"
+    "text": "Preface\nThis website contains the notes and R code for the NCRM workshop ‘Statistical Methods for Criminology’ run in September 2024.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "types-of-data.html",
@@ -181,6 +184,46 @@
     "text": "Intro to GLM\n\n\nBinary data\n\nvictim or not? offender or not? confident or not?\n[take from gary king]\n\n\n\nCount data\n\nintegers only! stricly positive!\nwhy not just lm?\ntwo tribes\n\nif all you care about is the average difference then you can just use ‘Simple Mean Difference’\nyou might be an economist\nthere are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)\n\nclassic problem - over-dispersion\npoisson assumes mean and variance are the same (only one term in the model)\nso what? mostly under-estimates the standard error\np-values are too optimistic\nyou need to think about why your data are over-dispersed\ntake from Hilbe (distinct zeros? ZIP; generic solution; NB?)\nZIP can have different predictors for zeros than count part\nyou can also have different predictors for dispersion and rate parameter in NB if you want\nif all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)",
     "crumbs": [
       "general linear model"
+    ]
+  },
+  {
+    "objectID": "selection-measurement.html",
+    "href": "selection-measurement.html",
+    "title": "Selection effects, bias and so on",
+    "section": "",
+    "text": "An example\nImagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.\nFor example, we might want to know if people from minority ethnic backgrounds more likely to be arrested after a stop than people from white backgrounds (Knox et al)\nPolice collect data on stops - why not just run a regression on these data to see if people from minority ethnic backgrounds are more likely to be stopped?\nThe problem is we can’t just rely on data about police stops - “if police racially discriminate when choosing whom to investigate, analyses using administrative records to estimate racial discrimination in police behavior are statistically biased, and many quantities of interest are unidentified—even among investigated individuals—absent strong and untestable assumptions.”\nWe’re going to hear a lot about ‘strong and untestable assumptions’.\n“when there is any racial discrimination in the decision to detain civilians—a decision that determines which encounters appear in police administrative data at all—then estimates of the effect of civilian race on subsequent police behavior are biased absent additional data and/or strong and untestable assumptions.”\n[INSERT FIGURE 2 FROM KNOX]\nIf you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.\nOthers (Gaebler et al.) suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g. court sentencing and not policing?).",
+    "crumbs": [
+      "Selection effects, bias and so on"
+    ]
+  },
+  {
+    "objectID": "selection-measurement.html#solutions",
+    "href": "selection-measurement.html#solutions",
+    "title": "Selection effects, bias and so on",
+    "section": "Solutions?",
+    "text": "Solutions?\nKnox et al. (2020) suggest some technical fixes. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.",
+    "crumbs": [
+      "Selection effects, bias and so on"
+    ]
+  },
+  {
+    "objectID": "selection-measurement.html#probabilistic-bias-analysis",
+    "href": "selection-measurement.html#probabilistic-bias-analysis",
+    "title": "Selection effects, bias and so on",
+    "section": "Probabilistic Bias Analysis",
+    "text": "Probabilistic Bias Analysis\nWhat Knox et al. suggest is part of a set of approaches called Probabilistic Bias Analysis. This includes things like understanding selection bias, unmeasured confounding and misclassification.\nThere are whole books written on this topic! So no general solutions here.\n\nSelection bias\nWe only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e. people for whom S = 0)\n“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).” - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60\nBiasS D 1 might be estimated as the ratio of estimates without and with information from initial non-responders on whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al. 2000). Even with such information, however, concerns about generalization across studies must be addressed by considering how differences between the study populations may have affected response and selection.\n\n\nConfounding\nThere’s something that we know affects the outcome we’re interested in and/or our independent variables, but we don’t have a measure for this. In criminology, we might have measures of police stops but not offending (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.\n\nbecause we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).",
+    "crumbs": [
+      "Selection effects, bias and so on"
+    ]
+  },
+  {
+    "objectID": "selection-measurement.html#in-general",
+    "href": "selection-measurement.html#in-general",
+    "title": "Selection effects, bias and so on",
+    "section": "In general",
+    "text": "In general\nNeed to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?\n“he preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al. (1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding”\n\nso this is based on the idea tat we can identify an “implausibly strong” confounder, which is reasonable.",
+    "crumbs": [
+      "Selection effects, bias and so on"
     ]
   }
 ]
