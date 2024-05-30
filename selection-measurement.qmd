@@ -1,0 +1,79 @@
+# Selection effects, bias and so on {.unnumbered}
+
+# An example
+
+Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.
+
+For example, we might want to know if people from minority ethnic backgrounds more likely to be arrested after a stop than people from white backgrounds (Knox et al)
+
+Police collect data on stops - why not just run a regression on these data to see if people from minority ethnic backgrounds are more likely to be stopped?
+
+The problem is we can’t just rely on data about police stops - “if police racially discriminate when choosing whom to investigate, analyses using administrative records to estimate racial discrimination in police behavior are statistically biased, and many quantities of interest are unidentified—even among investigated individuals—absent strong and untestable assumptions.”
+
+We're going to hear a lot about 'strong and untestable assumptions'.
+
+“when there is any racial discrimination in the decision to detain civilians—a decision that determines which encounters appear in police administrative data at all—then estimates of the effect of civilian race on subsequent police behavior are biased absent additional data and/or strong and untestable assumptions.”
+
+\[INSERT FIGURE 2 FROM KNOX\]
+
+![Knox et al (2020) FIGURE 2. Principal Strata and Observed Police–Civilian Encounters. Notes: The figure displays the four principal strata that comprise police–civilian encounters based on how the mediator M (whether a civilian is stopped by police) responds to treatment D (whether the civilian is a racial minority). Minorities in the “always stop” and anti-minority racial stop strata, highlighted in red, are stopped by police and, thus, appear in police administrative data. Likewise, white civilians in the “always-stop” and anti-white racial stop strata, highlighted in blue, appear in police data. “Never stop” encounters are unobserved. Because white and nonwhite encounters are drawn from different principal strata, the two groups are incomparable and estimates of causal quantities using observed encounters will be statistically biased absent additional assumptions.](https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20200730201026963-0363:S0003055420000039:S0003055420000039_fig2.png)
+
+If you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.
+
+
+Others (Gaebler et al.) suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g. court sentencing and not policing?).
+
+
+## Solutions?
+
+Knox et al. (2020) suggest some technical fixes. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.
+
+## Probabilistic Bias Analysis
+
+What Knox et al. suggest is part of a set of approaches called Probabilistic Bias Analysis. This includes things like understanding selection bias, unmeasured confounding and misclassification.
+
+There are whole books written on this topic! So no general solutions here.
+
+### Selection bias
+
+We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e. people for whom S = 0)
+
+"But because
+we see only the relation of X to Y conditional on selection (S D 1), we must
+impute the unconditional relation of X to Y using probabilities of selection
+given what we do see (X and Y given S D 1)." - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60
+
+BiasS D 1 might be estimated as
+the ratio of estimates without and with information from initial non-responders on
+whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al. 2000). Even with such information, however,
+concerns about generalization across studies must be addressed by considering how
+differences between the study populations may have affected response and selection.
+
+
+### Confounding
+
+There's something that we know affects the outcome we're interested in and/or our independent variables, but we don't have a measure for this. In criminology, we might have measures of police stops but not _offending_ (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.
+
+
+-  because we do not see U, we must impute its
+values using probabilities (bets) about the values of U given what we do see
+(again, X and Y ).
+
+
+## In general
+
+Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?
+
+
+"he preceding approach assumes that U is a known confounder (e.g., a smoking
+indicator) that was unmeasured in the study in question but has been previously
+identified and subject to study in relation to disease if not exposure. If instead U
+represents an unspecified, unknown confounder, then the entire sensitivity exercise
+will remain far more speculative. Nonetheless, decomposition of the bias factor
+can still be successful in demonstrating that only implausibly strong confounder
+or selection effects can account for a strong observed association. Cornfield et al.
+(1959) is considered a landmark study in which such an approach was used to
+examine claims that the smoking-lung cancer relation might be attributable to
+confounding"
+
+- so this is based on the idea tat we can identify an "implausibly strong" confounder, which is reasonable.

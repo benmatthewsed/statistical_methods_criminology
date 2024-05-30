@@ -12,6 +12,7 @@ book:
     - summary.qmd
     - types-of-data.qmd
     - general-linear-model.qmd
+    - selection-measurement.qmd
     - references.qmd
 
 bibliography: references.bib

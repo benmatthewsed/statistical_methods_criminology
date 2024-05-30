@@ -4,7 +4,10 @@
     "href": "summary.html",
     "title": "2  Summary",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\nUntil now!\n\n1 + 1\n\n[1] 2"
+    "text": "In summary, this book has no content whatsoever.\nUntil now!\nA new change here.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
   },
   {
     "objectID": "intro.html",
@@ -173,11 +176,11 @@
   {
     "objectID": "general-linear-model.html",
     "href": "general-linear-model.html",
-    "title": "3  general linear model{.unnumbered}",
+    "title": "general linear model",
     "section": "",
-    "text": "4 Intro to GLM\n\n\n5 Binary data\n\nvictim or not? offender or not? confident or not?\n[take from gary king]\n\n\n\n6 Count data\n\nintegers only! stricly positive!\nwhy not just lm?\ntwo tribes\n\nif all you care about is the average difference then you can just use ‘Simple Mean Difference’\nyou might be an economist\nthere are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)\n\nclassic problem - over-dispersion\npoisson assumes mean and variance are the same (only one term in the model)\nso what? mostly under-estimates the standard error\np-values are too optimistic\nyou need to think about why your data are over-dispersed\ntake from Hilbe (distinct zeros? ZIP; generic solution; NB?)\nZIP can have different predictors for zeros than count part\nyou can also have different predictors for dispersion and rate parameter in NB if you want\nif all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)",
+    "text": "Intro to GLM\n\n\nBinary data\n\nvictim or not? offender or not? confident or not?\n[take from gary king]\n\n\n\nCount data\n\nintegers only! stricly positive!\nwhy not just lm?\ntwo tribes\n\nif all you care about is the average difference then you can just use ‘Simple Mean Difference’\nyou might be an economist\nthere are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)\n\nclassic problem - over-dispersion\npoisson assumes mean and variance are the same (only one term in the model)\nso what? mostly under-estimates the standard error\np-values are too optimistic\nyou need to think about why your data are over-dispersed\ntake from Hilbe (distinct zeros? ZIP; generic solution; NB?)\nZIP can have different predictors for zeros than count part\nyou can also have different predictors for dispersion and rate parameter in NB if you want\nif all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>general linear model{.unnumbered}</span>"
+      "general linear model"
     ]
   }
 ]

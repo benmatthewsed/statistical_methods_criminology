@@ -1,4 +1,4 @@
-# general linear model{.unnumbered}
+# general linear model {.unnumbered}
 
 # Intro to GLM
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>statistical_methods_criminology - general linear model</title>
+<title>selection-measurement</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,199 +23,83 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./types-of-data.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<script src="selection-measurement_files/libs/clipboard/clipboard.min.js"></script>
+<script src="selection-measurement_files/libs/quarto-html/quarto.js"></script>
+<script src="selection-measurement_files/libs/quarto-html/popper.min.js"></script>
+<script src="selection-measurement_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="selection-measurement_files/libs/quarto-html/anchor.min.js"></script>
+<link href="selection-measurement_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="selection-measurement_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="selection-measurement_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="selection-measurement_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="selection-measurement_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="fullcontent">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./general-linear-model.html">general linear model</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">statistical_methods_criminology</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./types-of-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Types of criminological data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">general linear model</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link active" data-scroll-target="#intro-to-glm">Intro to GLM</a></li>
-  <li><a href="#binary-data" id="toc-binary-data" class="nav-link" data-scroll-target="#binary-data">Binary data</a></li>
-  <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data">Count data</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">general linear model</h1>
+
+
+
+<section id="selection-effects-bias-and-so-on" class="level1 unnumbered">
+<h1 class="unnumbered">Selection effects, bias and so on</h1>
+</section>
+<section id="an-example" class="level1">
+<h1>An example</h1>
+<p>Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.</p>
+<p>For example, we might want to know if people from minority ethnic backgrounds more likely to be arrested after a stop than people from white backgrounds (Knox et al)</p>
+<p>Police collect data on stops - why not just run a regression on these data to see if people from minority ethnic backgrounds are more likely to be stopped?</p>
+<p>The problem is we can’t just rely on data about police stops - “if police racially discriminate when choosing whom to investigate, analyses using administrative records to estimate racial discrimination in police behavior are statistically biased, and many quantities of interest are unidentified—even among investigated individuals—absent strong and untestable assumptions.”</p>
+<p>We’re going to hear a lot about ‘strong and untestable assumptions’.</p>
+<p>“when there is any racial discrimination in the decision to detain civilians—a decision that determines which encounters appear in police administrative data at all—then estimates of the effect of civilian race on subsequent police behavior are biased absent additional data and/or strong and untestable assumptions.”</p>
+<p>[INSERT FIGURE 2 FROM KNOX]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20200730201026963-0363:S0003055420000039:S0003055420000039_fig2.png" class="img-fluid figure-img"></p>
+<figcaption>Knox et al (2020) FIGURE 2. Principal Strata and Observed Police–Civilian Encounters. Notes: The figure displays the four principal strata that comprise police–civilian encounters based on how the mediator M (whether a civilian is stopped by police) responds to treatment D (whether the civilian is a racial minority). Minorities in the “always stop” and anti-minority racial stop strata, highlighted in red, are stopped by police and, thus, appear in police administrative data. Likewise, white civilians in the “always-stop” and anti-white racial stop strata, highlighted in blue, appear in police data. “Never stop” encounters are unobserved. Because white and nonwhite encounters are drawn from different principal strata, the two groups are incomparable and estimates of causal quantities using observed encounters will be statistically biased absent additional assumptions.</figcaption>
+</figure>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="intro-to-glm" class="level1">
-<h1>Intro to GLM</h1>
+<p>If you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.</p>
+<p>Others (Gaebler et al.) suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g.&nbsp;court sentencing and not policing?).</p>
+<section id="solutions" class="level2">
+<h2 class="anchored" data-anchor-id="solutions">Solutions?</h2>
+<p>Knox et al.&nbsp;(2020) suggest some technical fixes. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.</p>
 </section>
-<section id="binary-data" class="level1">
-<h1>Binary data</h1>
+<section id="probabilistic-bias-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="probabilistic-bias-analysis">Probabilistic Bias Analysis</h2>
+<p>What Knox et al.&nbsp;suggest is part of a set of approaches called Probabilistic Bias Analysis. This includes things like understanding selection bias, unmeasured confounding and misclassification.</p>
+<p>There are whole books written on this topic! So no general solutions here.</p>
+<section id="selection-bias" class="level3">
+<h3 class="anchored" data-anchor-id="selection-bias">Selection bias</h3>
+<p>We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e.&nbsp;people for whom S = 0)</p>
+<p>“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).” - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60</p>
+<p>BiasS D 1 might be estimated as the ratio of estimates without and with information from initial non-responders on whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al.&nbsp;2000). Even with such information, however, concerns about generalization across studies must be addressed by considering how differences between the study populations may have affected response and selection.</p>
+</section>
+<section id="confounding" class="level3">
+<h3 class="anchored" data-anchor-id="confounding">Confounding</h3>
+<p>There’s something that we know affects the outcome we’re interested in and/or our independent variables, but we don’t have a measure for this. In criminology, we might have measures of police stops but not <em>offending</em> (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.</p>
 <ul>
-<li><p>victim or not? offender or not? confident or not?</p></li>
-<li><p>[take from gary king]</p></li>
+<li>because we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).</li>
 </ul>
 </section>
-<section id="count-data" class="level1">
-<h1>Count data</h1>
+</section>
+<section id="in-general" class="level2">
+<h2 class="anchored" data-anchor-id="in-general">In general</h2>
+<p>Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?</p>
+<p>“he preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al. (1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding”</p>
 <ul>
-<li><p>integers only! stricly positive!</p></li>
-<li><p>why not just lm?</p></li>
-<li><p>two tribes</p>
-<ul>
-<li>if all you care about is the average difference then you can just use ‘Simple Mean Difference’</li>
-<li>you might be an economist</li>
-<li>there are lots of other interesting quesitons we might care about (e.g.&nbsp;modelling dispersion?)</li>
-</ul></li>
-<li><p>classic problem - over-dispersion</p></li>
-<li><p>poisson assumes mean and variance are the same (only one term in the model)</p></li>
-<li><p>so what? mostly under-estimates the standard error</p></li>
-<li><p>p-values are too optimistic</p></li>
-<li><p>you need to think about why your data are over-dispersed</p></li>
-<li><p>take from Hilbe (distinct zeros? ZIP; generic solution; NB?)</p></li>
-<li><p>ZIP can have different predictors for zeros than count part</p></li>
-<li><p>you can also have different predictors for dispersion and rate parameter in NB if you want</p></li>
-<li><p>if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)</p></li>
+<li>so this is based on the idea tat we can identify an “implausibly strong” confounder, which is reasonable.</li>
 </ul>
-
-
+</section>
 </section>
 
-</main> <!-- /main -->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -625,18 +509,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./types-of-data.html" class="pagination-link" aria-label="Types of criminological data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Types of criminological data</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
