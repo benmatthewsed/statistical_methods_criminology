@@ -2,34 +2,60 @@
 
 # Intro to GLM
 
+Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&t=1215s
+
+Introduction to LM
+
+$$
+\begin{equation}
+y = \alpha + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p + \epsilon
+\end{equation}
+$$
+
+where:
+
+$$
+\begin{align*}
+y & : \text{Dependent variable (response)} \\
+x_i & : \text{Independent variable (predictor)} \quad \text{for } i = 1, 2, \ldots, p \\
+\alpha & : \text{Intercept term} \\
+\beta_i & : \text{Coefficient for the } i\text{-th predictor} \quad \text{for } i = 1, 2, \ldots, p \\
+\epsilon & : \text{Error term}
+\end{align*}
+$$
+
 # Binary data
 
-- victim or not? offender or not? confident or not?
+-   victim or not? offender or not? confident or not?
 
-- [take from gary king]
+-   \[take from gary king\]
 
 # Count data
 
-- integers only! stricly positive!
+-   integers only! stricly positive!
 
-- why not just lm?
+-   why not just lm?
 
-- two tribes
-  - if all you care about is the average difference then you can just use 'Simple Mean Difference'
-  - you might be an economist
-  - there are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)
-  
-- classic problem - over-dispersion
+-   two tribes
 
-- poisson assumes mean and variance are the same (only one term in the model)
-- so what? mostly under-estimates the standard error
-- p-values are too optimistic
+    -   if all you care about is the average difference then you can just use 'Simple Mean Difference'
+    -   you might be an economist
+    -   there are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)
 
-- you need to think about why your data are over-dispersed
+-   classic problem - over-dispersion
 
-- take from Hilbe (distinct zeros? ZIP; generic solution; NB?)
-- ZIP can have different predictors for zeros than count part
-- you can also have different predictors for dispersion and rate parameter in NB if you want
+-   poisson assumes mean and variance are the same (only one term in the model)
 
+-   so what? mostly under-estimates the standard error
 
-- if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)
+-   p-values are too optimistic
+
+-   you need to think about why your data are over-dispersed
+
+-   take from Hilbe (distinct zeros? ZIP; generic solution; NB?)
+
+-   ZIP can have different predictors for zeros than count part
+
+-   you can also have different predictors for dispersion and rate parameter in NB if you want
+
+-   if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)

@@ -71,7 +71,7 @@
     "href": "intro.html#measurement-error-and-selection-bias",
     "title": "1  Introduction",
     "section": "1.3 Measurement error and selection bias",
-    "text": "1.3 Measurement error and selection bias\n\nJose Pina Sanchez and measurement error\nWalby and volatility over time\nmeasurement error in general - from McElreath (can attenuate, but no guarantees)\nmeasurement error in controls - uh oh\nselection bias\n\nI guess I was thinking about the McElreath paper here/the Knox paper about conditioning on stop\nalso Sander Greenland about everything is conditional on selection into the study (e.g. mortality in prison)\nAnd also can do the Sander Greenland stuff on probabilistic bias analysis\n\nUsing models to describe quantities of interest\nGary King and general principle\nsecondary motivation of what is your estimand?\ngeneral principle of adjusted predictive comparisons (and also g-estimation)\nspecific example of victimization divides as a DQI",
+    "text": "1.3 Measurement error and selection bias\n\nJose Pina Sanchez and measurement error\nWalby and volatility over time\nmeasurement error in general - from McElreath (can attenuate, but no guarantees)\nmeasurement error in controls - uh oh\nselection bias\n\nI guess I was thinking about the McElreath paper here/the Knox paper about conditioning on stop\nalso Sander Greenland about everything is conditional on selection into the study (e.g. mortality in prison)\nAnd also can do the Sander Greenland stuff on probabilistic bias analysis",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -80,8 +80,8 @@
     "objectID": "intro.html#ethics-of-working-with-criminological-data",
     "href": "intro.html#ethics-of-working-with-criminological-data",
     "title": "1  Introduction",
-    "section": "1.4 Ethics of working with criminological data",
-    "text": "1.4 Ethics of working with criminological data\n\nJessica Simes and community loss",
+    "section": "1.5 Ethics of working with criminological data",
+    "text": "1.5 Ethics of working with criminological data\n\nJessica Simes and community loss",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -181,7 +181,7 @@
     "href": "general-linear-model.html",
     "title": "general linear model",
     "section": "",
-    "text": "Intro to GLM\n\n\nBinary data\n\nvictim or not? offender or not? confident or not?\n[take from gary king]\n\n\n\nCount data\n\nintegers only! stricly positive!\nwhy not just lm?\ntwo tribes\n\nif all you care about is the average difference then you can just use ‘Simple Mean Difference’\nyou might be an economist\nthere are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)\n\nclassic problem - over-dispersion\npoisson assumes mean and variance are the same (only one term in the model)\nso what? mostly under-estimates the standard error\np-values are too optimistic\nyou need to think about why your data are over-dispersed\ntake from Hilbe (distinct zeros? ZIP; generic solution; NB?)\nZIP can have different predictors for zeros than count part\nyou can also have different predictors for dispersion and rate parameter in NB if you want\nif all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)",
+    "text": "Intro to GLM\nRecommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&t=1215s\nIntroduction to LM\n\\[\n\\begin{equation}\ny = \\alpha + \\beta_1 x_1 + \\beta_2 x_2 + \\cdots + \\beta_p x_p + \\epsilon\n\\end{equation}\n\\]\nwhere:\n\\[\n\\begin{align*}\ny & : \\text{Dependent variable (response)} \\\\\nx_i & : \\text{Independent variable (predictor)} \\quad \\text{for } i = 1, 2, \\ldots, p \\\\\n\\alpha & : \\text{Intercept term} \\\\\n\\beta_i & : \\text{Coefficient for the } i\\text{-th predictor} \\quad \\text{for } i = 1, 2, \\ldots, p \\\\\n\\epsilon & : \\text{Error term}\n\\end{align*}\n\\]\n\n\nBinary data\n\nvictim or not? offender or not? confident or not?\n[take from gary king]\n\n\n\nCount data\n\nintegers only! stricly positive!\nwhy not just lm?\ntwo tribes\n\nif all you care about is the average difference then you can just use ‘Simple Mean Difference’\nyou might be an economist\nthere are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)\n\nclassic problem - over-dispersion\npoisson assumes mean and variance are the same (only one term in the model)\nso what? mostly under-estimates the standard error\np-values are too optimistic\nyou need to think about why your data are over-dispersed\ntake from Hilbe (distinct zeros? ZIP; generic solution; NB?)\nZIP can have different predictors for zeros than count part\nyou can also have different predictors for dispersion and rate parameter in NB if you want\nif all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)",
     "crumbs": [
       "general linear model"
     ]
@@ -224,6 +224,16 @@
     "text": "In general\nNeed to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?\n“he preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al. (1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding”\n\nso this is based on the idea tat we can identify an “implausibly strong” confounder, which is reasonable.",
     "crumbs": [
       "Selection effects, bias and so on"
+    ]
+  },
+  {
+    "objectID": "intro.html#using-models-to-describe-quantities-of-interest",
+    "href": "intro.html#using-models-to-describe-quantities-of-interest",
+    "title": "1  Introduction",
+    "section": "1.4 Using models to describe quantities of interest",
+    "text": "1.4 Using models to describe quantities of interest\n\nGary King and general principle\nsecondary motivation of what is your estimand?\ngeneral principle of adjusted predictive comparisons (and also g-estimation)\nspecific example of victimization divides as a DQI",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   }
 ]

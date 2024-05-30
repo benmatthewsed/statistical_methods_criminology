@@ -51,7 +51,7 @@ I am extremely partial to bespoke models. If you have the time I would recommend
     -   also Sander Greenland about everything is conditional on selection into the study (e.g. mortality in prison)
     - And also can do the Sander Greenland stuff on probabilistic bias analysis
 
--   Using models to describe quantities of interest
+##   Using models to describe quantities of interest
 
 -   Gary King and general principle
 
