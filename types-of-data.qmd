@@ -56,7 +56,7 @@ Do official crime statistics reflect ‘behavioural’ trends in crime, or just 
 
 How you see this may depend on your theoretical persuasion [@simesPolicingPunishmentPlace2023]
 
-Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime. Buil-GIl 2022 https://www.tandfonline.com/doi/full/10.1080/15614263.2022.2047047. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” [@atakWesternCrimeDrop2020]
+Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime [@buil-gilComparingMeasurementsViolent2022]. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” [@atakWesternCrimeDrop2020]
 
 ## Survey data
 

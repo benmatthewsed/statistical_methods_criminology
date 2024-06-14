@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -215,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="what-to-do-about-it"><span class="header-section-number">4.1.1</span> What to do about it?</h3>
 <p>What’s more is that it’s not entirely clear what to do about it. Pina-Sanchez has written about measurement error in crime.</p>
 <p>One approach is to use Bayesian methods. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.</p>
-<p>Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here[https://josepinasanchez.uk/short-courses/].</p>
+<p>Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here: <a href="https://josepinasanchez.uk/short-courses/">https://josepinasanchez.uk/short-courses/</a></p>
 <p>https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf</p>
 <p>from https://josepinasanchez.uk/short-courses/</p>
 </section>
@@ -254,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>If you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.</p>
-<p>Others (Gaebler et al.) suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g.&nbsp;court sentencing and not policing?).</p>
+<p>Others <span class="citation" data-cites="gaeblerCausalFrameworkObservational2022">(<a href="references.html#ref-gaeblerCausalFrameworkObservational2022" role="doc-biblioref">Gaebler et al. 2022</a>)</span>suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g.&nbsp;court sentencing and not policing?).</p>
 <section id="solutions" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="solutions"><span class="header-section-number">5.1</span> Solutions?</h2>
 <p>Knox et al.&nbsp;(2020) suggest some technical fixes. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.</p>
@@ -265,6 +285,7 @@ ul.task-list li input[type="checkbox"] {
 <p>There are whole books written on this topic! So no general solutions here.</p>
 <section id="selection-bias" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="selection-bias"><span class="header-section-number">5.2.1</span> Selection bias</h3>
+<p><span class="citation" data-cites="greenlandSensitivityAnalysisBias2014">(<a href="references.html#ref-greenlandSensitivityAnalysisBias2014" role="doc-biblioref">Greenland 2014</a>)</span></p>
 <p>We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e.&nbsp;people for whom S = 0)</p>
 <p>“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).” - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60</p>
 <p>BiasS D 1 might be estimated as the ratio of estimates without and with information from initial non-responders on whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al.&nbsp;2000). Even with such information, however, concerns about generalization across studies must be addressed by considering how differences between the study populations may have affected response and selection.</p>
@@ -286,6 +307,14 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-gaeblerCausalFrameworkObservational2022" class="csl-entry" role="listitem">
+Gaebler, Johann, William Cai, Guillaume Basse, Ravi Shroff, Sharad Goel, and Jennifer Hill. 2022. <span>“A <span>Causal Framework</span> for <span>Observational Studies</span> of <span>Discrimination</span>.”</span> <em>Statistics and Public Policy</em> 9 (1): 26–48. <a href="https://doi.org/10.1080/2330443X.2021.2024778">https://doi.org/10.1080/2330443X.2021.2024778</a>.
+</div>
+<div id="ref-greenlandSensitivityAnalysisBias2014" class="csl-entry" role="listitem">
+Greenland, Sander. 2014. <span>“Sensitivity <span>Analysis</span> and <span>Bias Analysis</span>.”</span> In <em>Handbook of <span>Epidemiology</span></em>, edited by Wolfgang Ahrens and Iris Pigeot, 685–706. <span>New York, NY</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-0-387-09834-0_60">https://doi.org/10.1007/978-0-387-09834-0_60</a>.
+</div>
+</div>
 </section>
 </section>
 

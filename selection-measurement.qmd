@@ -14,7 +14,7 @@ What's more is that it's not entirely clear what to do about it. Pina-Sanchez ha
 
 One approach is to use Bayesian methods. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.
 
-Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here\[https://josepinasanchez.uk/short-courses/\].
+Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here: [https://josepinasanchez.uk/short-courses/](https://josepinasanchez.uk/short-courses/)
 
 https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf
 
@@ -56,7 +56,7 @@ We're going to hear a lot about 'strong and untestable assumptions'.
 
 If you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.
 
-Others (Gaebler et al.) suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g. court sentencing and not policing?).
+Others [@gaeblerCausalFrameworkObservational2022]suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g. court sentencing and not policing?).
 
 ## Solutions?
 
@@ -69,6 +69,8 @@ What Knox et al. suggest is part of a set of approaches called Probabilistic Bia
 There are whole books written on this topic! So no general solutions here.
 
 ### Selection bias
+
+[@greenlandSensitivityAnalysisBias2014]
 
 We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e. people for whom S = 0)
 
