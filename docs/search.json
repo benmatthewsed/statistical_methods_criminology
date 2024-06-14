@@ -299,21 +299,21 @@
   {
     "objectID": "ethics.html",
     "href": "ethics.html",
-    "title": "5  Ethics",
+    "title": "6  Ethics",
     "section": "",
-    "text": "5.1 Reproducible research practices?\nMake sure the data is right!!\nhttps://github.com/jkangbrown/when_police_replication",
+    "text": "6.1 Reproducible research practices?\nMake sure the data is right!!\nhttps://github.com/jkangbrown/when_police_replication",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethics</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ethics</span>"
     ]
   },
   {
     "objectID": "ethics.html#framing",
     "href": "ethics.html#framing",
-    "title": "5  Ethics",
-    "section": "5.2 Framing",
-    "text": "5.2 Framing\nMore conceptually, it’s important to think about how we frame the results of any analysis.\nThree visualizations from Data Feminism\n\nlanguage use\nproviding necessary context?\ndeficit narrative\nthe description of your charts is theoretically informed\n\n\n5.2.1 community loss\nJessica Simes (Jessica T. Simes 2021) gives a good example of how we may want to come up with theoretically informed measures, or theoretically re-frame measures. Simes analysed imprisonment data from the state of Massachusets in the USA, including spatial regression of prison admission rates and how these relate to “racial demographics, social and economic disadvantage, arrest rates, and violent crime” (Jessica T. Simes 2018).\nAs part of this analysis Simes suggests that the cumulative years sentenced to residents of a particular neighbourhood be thought of as ‘community loss’. This is not (just?) an indicator of individual punishment histories, but reflects the chronic and long-term exposure to loss due to imprisonment in different neighbourhoods. This highlights the effects of imprisonment on the communities in which people who end up in prison lived prior to their imprisonment, rather than just focusing on the people who are currently in prison.\n\n\n\n\nSimes, Jessica T. 2021. Punishing Places: The Geography of Mass Imprisonment. Univ of California Press.\n\n\nSimes, Jessica T. 2018. “Place and Punishment: The Spatial Context of Mass Incarceration.” Journal of Quantitative Criminology 34 (2): 513–33. https://doi.org/10.1007/s10940-017-9344-y.",
+    "title": "6  Ethics",
+    "section": "6.2 Framing",
+    "text": "6.2 Framing\nMore conceptually, it’s important to think about how we frame the results of any analysis.\nThree visualizations from Data Feminism\n\nlanguage use\nproviding necessary context?\ndeficit narrative\nthe description of your charts is theoretically informed\n\n\n6.2.1 community loss\nJessica Simes (Jessica T. Simes 2021) gives a good example of how we may want to come up with theoretically informed measures, or theoretically re-frame measures. Simes analysed imprisonment data from the state of Massachusets in the USA, including spatial regression of prison admission rates and how these relate to “racial demographics, social and economic disadvantage, arrest rates, and violent crime” (Jessica T. Simes 2018).\nAs part of this analysis Simes suggests that the cumulative years sentenced to residents of a particular neighbourhood be thought of as ‘community loss’. This is not (just?) an indicator of individual punishment histories, but reflects the chronic and long-term exposure to loss due to imprisonment in different neighbourhoods. This highlights the effects of imprisonment on the communities in which people who end up in prison lived prior to their imprisonment, rather than just focusing on the people who are currently in prison.\n\n\n\n\nSimes, Jessica T. 2021. Punishing Places: The Geography of Mass Imprisonment. Univ of California Press.\n\n\nSimes, Jessica T. 2018. “Place and Punishment: The Spatial Context of Mass Incarceration.” Journal of Quantitative Criminology 34 (2): 513–33. https://doi.org/10.1007/s10940-017-9344-y.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethics</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Ethics</span>"
     ]
   },
   {

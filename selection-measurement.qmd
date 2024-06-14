@@ -1,4 +1,4 @@
-# Selection effects, bias and so on {.unnumbered}
+# Selection effects, bias and so on
 
 ## Measurement error
 
@@ -6,17 +6,15 @@ The standard linear model assumes that all variables are measured perfectly (or 
 
 In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime 'out there' in society. Not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.
 
-Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios _we may not know what impact it is having_.
+Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios *we may not know what impact it is having*.
 
 ### What to do about it?
 
-What's more is that it's not entirely clear what to do about it. Pina-Sanchez has written about measurement error in crime. 
+What's more is that it's not entirely clear what to do about it. Pina-Sanchez has written about measurement error in crime.
 
 One approach is to use Bayesian methods. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.
 
-Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here[https://josepinasanchez.uk/short-courses/].
-
-
+Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here\[https://josepinasanchez.uk/short-courses/\].
 
 https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf
 
@@ -24,8 +22,7 @@ from https://josepinasanchez.uk/short-courses/
 
 ### SIMEX
 
-A less involved option involves assessment measurement error through simulation. The `simex` R package lets you simulate new versions of your dataset with _more_ and more measurement error. By looking to see how your coefficients change with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!
-
+A less involved option involves assessment measurement error through simulation. The `simex` R package lets you simulate new versions of your dataset with *more* and more measurement error. By looking to see how your coefficients change with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!
 
 ### `rcme`
 
@@ -33,16 +30,11 @@ Pina-Sanchez and colleagues have written an R package that can conduct sensitivi
 
 > Work through their example here? https://osf.io/preprints/socarxiv/sbc8w
 
-
 Open questions - what about survey data? Models other than linear models?
-
 
 ### Key takeaway
 
-- Think hard, be honest.
-
-
-
+-   Think hard, be honest.
 
 # Selection effects
 
@@ -64,9 +56,7 @@ We're going to hear a lot about 'strong and untestable assumptions'.
 
 If you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.
 
-
 Others (Gaebler et al.) suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g. court sentencing and not policing?).
-
 
 ## Solutions?
 
@@ -82,44 +72,20 @@ There are whole books written on this topic! So no general solutions here.
 
 We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e. people for whom S = 0)
 
-"But because
-we see only the relation of X to Y conditional on selection (S D 1), we must
-impute the unconditional relation of X to Y using probabilities of selection
-given what we do see (X and Y given S D 1)." - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60
+"But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1)." - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60
 
-BiasS D 1 might be estimated as
-the ratio of estimates without and with information from initial non-responders on
-whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al. 2000). Even with such information, however,
-concerns about generalization across studies must be addressed by considering how
-differences between the study populations may have affected response and selection.
-
+BiasS D 1 might be estimated as the ratio of estimates without and with information from initial non-responders on whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al. 2000). Even with such information, however, concerns about generalization across studies must be addressed by considering how differences between the study populations may have affected response and selection.
 
 ### Confounding
 
-There's something that we know affects the outcome we're interested in and/or our independent variables, but we don't have a measure for this. In criminology, we might have measures of police stops but not _offending_ (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.
+There's something that we know affects the outcome we're interested in and/or our independent variables, but we don't have a measure for this. In criminology, we might have measures of police stops but not *offending* (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.
 
-
--  because we do not see U, we must impute its
-values using probabilities (bets) about the values of U given what we do see
-(again, X and Y ).
-
+-   because we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).
 
 ## In general
 
 Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?
 
+"he preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al. (1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding"
 
-"he preceding approach assumes that U is a known confounder (e.g., a smoking
-indicator) that was unmeasured in the study in question but has been previously
-identified and subject to study in relation to disease if not exposure. If instead U
-represents an unspecified, unknown confounder, then the entire sensitivity exercise
-will remain far more speculative. Nonetheless, decomposition of the bias factor
-can still be successful in demonstrating that only implausibly strong confounder
-or selection effects can account for a strong observed association. Cornfield et al.
-(1959) is considered a landmark study in which such an approach was used to
-examine claims that the smoking-lung cancer relation might be attributable to
-confounding"
-
-- so this is based on the idea tat we can identify an "implausibly strong" confounder, which is reasonable.
-
-
+-   so this is based on the idea tat we can identify an "implausibly strong" confounder, which is reasonable.
