@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: "statistical_methods_criminology"
-  author: "Norah Jones"
-  date: "05/09/2023"
+  title: "Statistical Methods for Criminology"
+  author: "Ben Matthews"
+  date: "05/09/2024"
   chapters:
     - index.qmd
     - intro.qmd
