@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Methods for Criminology - Selection effects, bias and so on</title>
+<title>Statistical Methods for Criminology - 4&nbsp; Selection effects, bias and so on</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./selection-measurement.html">Selection effects, bias and so on</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./selection-measurement.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,19 +133,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Selection effects, bias and so on</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,22 +164,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link active" data-scroll-target="#measurement-error">Measurement error</a>
+  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link active" data-scroll-target="#measurement-error"><span class="header-section-number">4.1</span> Measurement error</a>
   <ul class="collapse">
-  <li><a href="#what-to-do-about-it" id="toc-what-to-do-about-it" class="nav-link" data-scroll-target="#what-to-do-about-it">What to do about it?</a></li>
-  <li><a href="#simex" id="toc-simex" class="nav-link" data-scroll-target="#simex">SIMEX</a></li>
-  <li><a href="#rcme" id="toc-rcme" class="nav-link" data-scroll-target="#rcme"><code>rcme</code></a></li>
-  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key takeaway</a></li>
+  <li><a href="#what-to-do-about-it" id="toc-what-to-do-about-it" class="nav-link" data-scroll-target="#what-to-do-about-it"><span class="header-section-number">4.1.1</span> What to do about it?</a></li>
+  <li><a href="#simex" id="toc-simex" class="nav-link" data-scroll-target="#simex"><span class="header-section-number">4.1.2</span> SIMEX</a></li>
+  <li><a href="#rcme" id="toc-rcme" class="nav-link" data-scroll-target="#rcme"><span class="header-section-number">4.1.3</span> <code>rcme</code></a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway"><span class="header-section-number">4.1.4</span> Key takeaway</a></li>
   </ul></li>
-  <li><a href="#selection-effects" id="toc-selection-effects" class="nav-link" data-scroll-target="#selection-effects">Selection effects</a>
+  <li><a href="#selection-effects" id="toc-selection-effects" class="nav-link" data-scroll-target="#selection-effects"><span class="header-section-number">5</span> Selection effects</a>
   <ul class="collapse">
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions?</a></li>
-  <li><a href="#probabilistic-bias-analysis" id="toc-probabilistic-bias-analysis" class="nav-link" data-scroll-target="#probabilistic-bias-analysis">Probabilistic Bias Analysis</a>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">5.1</span> Solutions?</a></li>
+  <li><a href="#probabilistic-bias-analysis" id="toc-probabilistic-bias-analysis" class="nav-link" data-scroll-target="#probabilistic-bias-analysis"><span class="header-section-number">5.2</span> Probabilistic Bias Analysis</a>
   <ul class="collapse">
-  <li><a href="#selection-bias" id="toc-selection-bias" class="nav-link" data-scroll-target="#selection-bias">Selection bias</a></li>
-  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding">Confounding</a></li>
+  <li><a href="#selection-bias" id="toc-selection-bias" class="nav-link" data-scroll-target="#selection-bias"><span class="header-section-number">5.2.1</span> Selection bias</a></li>
+  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"><span class="header-section-number">5.2.2</span> Confounding</a></li>
   </ul></li>
-  <li><a href="#in-general" id="toc-in-general" class="nav-link" data-scroll-target="#in-general">In general</a></li>
+  <li><a href="#in-general" id="toc-in-general" class="nav-link" data-scroll-target="#in-general"><span class="header-section-number">5.3</span> In general</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Selection effects, bias and so on</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></h1>
 </div>
 
 
@@ -206,40 +206,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="measurement-error" class="level2">
-<h2 class="anchored" data-anchor-id="measurement-error">Measurement error</h2>
+<section id="measurement-error" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">4.1</span> Measurement error</h2>
 <p>The standard linear model assumes that all variables are measured perfectly (or in other words, with no error).</p>
 <p>In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime ‘out there’ in society. Not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.</p>
 <p>Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios <em>we may not know what impact it is having</em>.</p>
-<section id="what-to-do-about-it" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-do-about-it">What to do about it?</h3>
+<section id="what-to-do-about-it" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="what-to-do-about-it"><span class="header-section-number">4.1.1</span> What to do about it?</h3>
 <p>What’s more is that it’s not entirely clear what to do about it. Pina-Sanchez has written about measurement error in crime.</p>
 <p>One approach is to use Bayesian methods. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.</p>
 <p>Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here[https://josepinasanchez.uk/short-courses/].</p>
 <p>https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf</p>
 <p>from https://josepinasanchez.uk/short-courses/</p>
 </section>
-<section id="simex" class="level3">
-<h3 class="anchored" data-anchor-id="simex">SIMEX</h3>
+<section id="simex" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="simex"><span class="header-section-number">4.1.2</span> SIMEX</h3>
 <p>A less involved option involves assessment measurement error through simulation. The <code>simex</code> R package lets you simulate new versions of your dataset with <em>more</em> and more measurement error. By looking to see how your coefficients change with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!</p>
 </section>
-<section id="rcme" class="level3">
-<h3 class="anchored" data-anchor-id="rcme"><code>rcme</code></h3>
+<section id="rcme" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="rcme"><span class="header-section-number">4.1.3</span> <code>rcme</code></h3>
 <p>Pina-Sanchez and colleagues have written an R package that can conduct sensitivity analysis for some types of measurement error common to working with police recorded crime.</p>
 <blockquote class="blockquote">
 <p>Work through their example here? https://osf.io/preprints/socarxiv/sbc8w</p>
 </blockquote>
 <p>Open questions - what about survey data? Models other than linear models?</p>
 </section>
-<section id="key-takeaway" class="level3">
-<h3 class="anchored" data-anchor-id="key-takeaway">Key takeaway</h3>
+<section id="key-takeaway" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="key-takeaway"><span class="header-section-number">4.1.4</span> Key takeaway</h3>
 <ul>
 <li>Think hard, be honest.</li>
 </ul>
 </section>
 </section>
-<section id="selection-effects" class="level1">
-<h1>Selection effects</h1>
+<section id="selection-effects" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Selection effects</h1>
 <p>Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.</p>
 <p>For example, we might want to know if people from minority ethnic backgrounds more likely to be arrested after a stop than people from white backgrounds (Knox et al)</p>
 <p>Police collect data on stops - why not just run a regression on these data to see if people from minority ethnic backgrounds are more likely to be stopped?</p>
@@ -255,32 +255,32 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>If you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.</p>
 <p>Others (Gaebler et al.) suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g.&nbsp;court sentencing and not policing?).</p>
-<section id="solutions" class="level2">
-<h2 class="anchored" data-anchor-id="solutions">Solutions?</h2>
+<section id="solutions" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="solutions"><span class="header-section-number">5.1</span> Solutions?</h2>
 <p>Knox et al.&nbsp;(2020) suggest some technical fixes. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.</p>
 </section>
-<section id="probabilistic-bias-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="probabilistic-bias-analysis">Probabilistic Bias Analysis</h2>
+<section id="probabilistic-bias-analysis" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="probabilistic-bias-analysis"><span class="header-section-number">5.2</span> Probabilistic Bias Analysis</h2>
 <p>What Knox et al.&nbsp;suggest is part of a set of approaches called Probabilistic Bias Analysis. This includes things like understanding selection bias, unmeasured confounding and misclassification.</p>
 <p>There are whole books written on this topic! So no general solutions here.</p>
-<section id="selection-bias" class="level3">
-<h3 class="anchored" data-anchor-id="selection-bias">Selection bias</h3>
+<section id="selection-bias" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="selection-bias"><span class="header-section-number">5.2.1</span> Selection bias</h3>
 <p>We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e.&nbsp;people for whom S = 0)</p>
 <p>“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).” - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60</p>
 <p>BiasS D 1 might be estimated as the ratio of estimates without and with information from initial non-responders on whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al.&nbsp;2000). Even with such information, however, concerns about generalization across studies must be addressed by considering how differences between the study populations may have affected response and selection.</p>
 </section>
-<section id="confounding" class="level3">
-<h3 class="anchored" data-anchor-id="confounding">Confounding</h3>
+<section id="confounding" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="confounding"><span class="header-section-number">5.2.2</span> Confounding</h3>
 <p>There’s something that we know affects the outcome we’re interested in and/or our independent variables, but we don’t have a measure for this. In criminology, we might have measures of police stops but not <em>offending</em> (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.</p>
 <ul>
 <li>because we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).</li>
 </ul>
 </section>
 </section>
-<section id="in-general" class="level2">
-<h2 class="anchored" data-anchor-id="in-general">In general</h2>
+<section id="in-general" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="in-general"><span class="header-section-number">5.3</span> In general</h2>
 <p>Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?</p>
-<p>“he preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al. (1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding”</p>
+<p>“he preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al.&nbsp;(1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding”</p>
 <ul>
 <li>so this is based on the idea tat we can identify an “implausibly strong” confounder, which is reasonable.</li>
 </ul>
@@ -707,7 +707,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./simulation.html" class="pagination-link" aria-label="Simulation">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simulation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

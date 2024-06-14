@@ -86,7 +86,7 @@ https://github.com/jkangbrown/when_police_replication
 
 More conceptually, it's important to think about how we frame the results of any analysis.
 
-Three visualizations from [Data Feminism](https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3) 
+Three visualizations from [Data Feminism](https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3)
 
 -   language use
 
