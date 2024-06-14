@@ -16,7 +16,7 @@ book:
     - ethics.qmd
     - references.qmd
 
-bibliography: references.bib
+bibliography: statistical_methods_criminology_references.bib
 
 format:
   html:

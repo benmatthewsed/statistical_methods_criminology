@@ -154,20 +154,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./types-of-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Types of criminological data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of criminological data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">general linear model</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">general linear model</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -179,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulation</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,7 +243,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ purrr::%||%()   masks base::%||%()
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
@@ -339,6 +332,8 @@ AIC: 3977.9
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
+</div>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a reader could calculate the probability of victimization using the inverse</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># link function and then multiply this by the number of minority ethnic people</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># to recover the sample size</span></span>
@@ -351,11 +346,13 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <p>This may not apply in every case, but it is worth checking, particularly if you wanted to include things like interaction terms between categorical variables in a logistic regression model.</p>
 <section id="reproducible-research-practices" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="reproducible-research-practices"><span class="header-section-number">5.1</span> Reproducible research practices?</h2>
+<p>Make sure the data is right!!</p>
+<p>https://github.com/jkangbrown/when_police_replication</p>
 </section>
 <section id="framing" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="framing"><span class="header-section-number">5.2</span> Framing</h2>
 <p>More conceptually, it’s important to think about how we frame the results of any analysis.</p>
-<p>Three visualizations</p>
+<p>Three visualizations from <a href="https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3">Data Feminism</a></p>
 <ul>
 <li><p>language use</p></li>
 <li><p>providing necessary context?</p></li>
@@ -364,12 +361,8 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </ul>
 <section id="community-loss" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="community-loss"><span class="header-section-number">5.2.1</span> community loss</h3>
-<ul>
-<li><p>choosing our measures</p></li>
-<li><p>chronic and long-term exposure to loss due to imprisonment</p></li>
-<li><p>total person-years lost summed over a geographic area</p></li>
-<li><p>more concentrated than imprisonment</p></li>
-</ul>
+<p>Jessica Simes gives a good example of how we may want to come up with theoretically informed measures, or theoretically re-frame measures. Simes analysed imprisonment data from the state of Massachusets in the USA, including spatial regression of prison admission rates and how these relate to “racial demographics, social and economic disadvantage, arrest rates, and violent crime”.</p>
+<p>As part of this analysis Simes suggests that the cumulative years sentenced to residents of a particular neighbourhood be thought of as ‘community loss’. This is not (just?) an indicator of individual punishment histories, but reflects the chronic and long-term exposure to loss due to imprisonment in different neighbourhoods. This highlights the effects of imprisonment on the communities in which people who end up in prison lived prior to their imprisonment, rather than just focusing on the people who are currently in prison.</p>
 
 
 </section>
@@ -788,7 +781,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./simulation.html" class="pagination-link" aria-label="Simulation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Simulation</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

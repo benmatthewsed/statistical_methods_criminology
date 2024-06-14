@@ -21,12 +21,13 @@ Some local surveys​(suchas MOPAC/Islington Crime Survey)
 Can get data on trends for individual police forces (https://data.police.uk/data/), or divisions within Scotland (https://scotland.shinyapps.io/sg-scottish-crime-justice-survey/)
 
 
+## Generative stories for common types of crime data
 
-## How does an event become a crime statistic?
+### How does an event become a crime statistic?
 
 \[add link to SG flow diagram\]
 
-## How does an incident end up as a court record?
+### How does an incident end up as a court record?
 
 Crime​
 
@@ -36,7 +37,7 @@ Court​
 
 Sentencing​
 
-## How does an incident get logged as a police stop?
+### How does an incident get logged as a police stop?
 
 (Knox and Mummolo)
 
@@ -77,6 +78,8 @@ Usually don’t ask about people’s offending behaviour​
 
 Good for measuring common crimes, bad for measuring rare crimes
 
+
+
 ## How does a person get selected for the SCJS?
 
 Random sample of 10,000 postcodes in Scotland are contacted to take part​
@@ -103,7 +106,7 @@ This means that the new questions are only a limited measure of ‘cybercrime’
 
 
 
-## Who is excluded?
+#### Who is excluded?
 
 For SCJS to be a measure of crime for all adults, not just all adults in private households, we need to make a key assumption that “the subset of the adult population not captured in the SCJS experience the same level of victimisation as adults in the household resident population”​
 
@@ -115,12 +118,8 @@ But this excludes people, students, people in prison, and those living in refuge
 
 "The reduction in survey response rates is a phenomenon that has been observed internationally (de Leeuw, Hox and Luiten, 2018), and there are particular concerns that it is the most marginalized in society (often the most prone to victimization) who are no longer responding to surveys (Savage and Burrows, 2009). Again, taking Scotland as an example, valid response rates to the SCJS fell from 71% in 2008/09 to 63% in 2019/20 (Saunders et al, 2021), with a urther reduction (following the Coronavirus pandemic) to just 47.3% in 2021/22 - the lowest response rate for any SCJS sweep since 2008/09 (Scottish Government 2023a). This issue has been compounded by reductions in the valid sample size for successive sweeps of the SCJS, which has reduced from 16,000 in 2008/09 to just 5,500 in the sweeps conducted since 2016/1714, largely in an effort to cut costs. Factoring in the large reduction in the prevalence of victimization (mentioned above), the stark reality is that the number of victims interviewed as part of the Scottish survey reduced from 2,786 in 2008/09 to just 639 in 2021/22. So, whilst the prevalence of crime fell by just over 50% (or in absolute terms, a fall of 10.4 percentage points), the number of survey respondents who had experienced at least one incident of crime has fallen by an astonishing 77%."
 
-_You need to evaluate how useful a data source is in the context of your particular research question. e.g. you might be able to make an overall assessment of victimization for some social group but not look at a trend for that group, whilst you can look at trends for other groups. I guess this is curse of dimensionality. Or you might need a different model for some groups versus others/have to assume more._
 
 
-## Make sure the data is right!!
-
-https://x.com/jkangbrown/status/1790416534776562157
 
 
 ::: {#refs}

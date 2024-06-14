@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Methods for Criminology - 3&nbsp; Types of criminological data</title>
+<title>Statistical Methods for Criminology - 2&nbsp; Types of criminological data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./general-linear-model.html" rel="next">
-<link href="./summary.html" rel="prev">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -100,7 +100,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./types-of-data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Types of criminological data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./types-of-data.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of criminological data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,20 +139,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./types-of-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Types of criminological data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of criminological data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">general linear model</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">general linear model</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,13 +158,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulation</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ethics</span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,17 +183,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#who-cares-about-data-provenance" id="toc-who-cares-about-data-provenance" class="nav-link active" data-scroll-target="#who-cares-about-data-provenance"><span class="header-section-number">3.1</span> Who cares about data provenance?</a></li>
-  <li><a href="#geography" id="toc-geography" class="nav-link" data-scroll-target="#geography"><span class="header-section-number">3.2</span> Geography</a></li>
-  <li><a href="#how-does-an-event-become-a-crime-statistic" id="toc-how-does-an-event-become-a-crime-statistic" class="nav-link" data-scroll-target="#how-does-an-event-become-a-crime-statistic"><span class="header-section-number">3.3</span> How does an event become a crime statistic?</a></li>
-  <li><a href="#how-does-an-incident-end-up-as-a-court-record" id="toc-how-does-an-incident-end-up-as-a-court-record" class="nav-link" data-scroll-target="#how-does-an-incident-end-up-as-a-court-record"><span class="header-section-number">3.4</span> How does an incident end up as a court record?</a></li>
-  <li><a href="#how-does-an-incident-get-logged-as-a-police-stop" id="toc-how-does-an-incident-get-logged-as-a-police-stop" class="nav-link" data-scroll-target="#how-does-an-incident-get-logged-as-a-police-stop"><span class="header-section-number">3.5</span> How does an incident get logged as a police stop?</a></li>
-  <li><a href="#key-dilemma" id="toc-key-dilemma" class="nav-link" data-scroll-target="#key-dilemma"><span class="header-section-number">3.6</span> Key dilemma</a></li>
-  <li><a href="#survey-data" id="toc-survey-data" class="nav-link" data-scroll-target="#survey-data"><span class="header-section-number">3.7</span> Survey data</a></li>
-  <li><a href="#victimization-surveys" id="toc-victimization-surveys" class="nav-link" data-scroll-target="#victimization-surveys"><span class="header-section-number">3.8</span> Victimization surveys</a></li>
-  <li><a href="#how-does-a-person-get-selected-for-the-scjs" id="toc-how-does-a-person-get-selected-for-the-scjs" class="nav-link" data-scroll-target="#how-does-a-person-get-selected-for-the-scjs"><span class="header-section-number">3.9</span> How does a person get selected for the SCJS?</a></li>
-  <li><a href="#who-is-excluded" id="toc-who-is-excluded" class="nav-link" data-scroll-target="#who-is-excluded"><span class="header-section-number">3.10</span> Who is excluded?</a></li>
-  <li><a href="#make-sure-the-data-is-right" id="toc-make-sure-the-data-is-right" class="nav-link" data-scroll-target="#make-sure-the-data-is-right"><span class="header-section-number">3.11</span> Make sure the data is right!!</a></li>
+  <li><a href="#who-cares-about-data-provenance" id="toc-who-cares-about-data-provenance" class="nav-link active" data-scroll-target="#who-cares-about-data-provenance"><span class="header-section-number">2.1</span> Who cares about data provenance?</a></li>
+  <li><a href="#geography" id="toc-geography" class="nav-link" data-scroll-target="#geography"><span class="header-section-number">2.2</span> Geography</a></li>
+  <li><a href="#generative-stories-for-common-types-of-crime-data" id="toc-generative-stories-for-common-types-of-crime-data" class="nav-link" data-scroll-target="#generative-stories-for-common-types-of-crime-data"><span class="header-section-number">2.3</span> Generative stories for common types of crime data</a>
+  <ul class="collapse">
+  <li><a href="#how-does-an-event-become-a-crime-statistic" id="toc-how-does-an-event-become-a-crime-statistic" class="nav-link" data-scroll-target="#how-does-an-event-become-a-crime-statistic"><span class="header-section-number">2.3.1</span> How does an event become a crime statistic?</a></li>
+  <li><a href="#how-does-an-incident-end-up-as-a-court-record" id="toc-how-does-an-incident-end-up-as-a-court-record" class="nav-link" data-scroll-target="#how-does-an-incident-end-up-as-a-court-record"><span class="header-section-number">2.3.2</span> How does an incident end up as a court record?</a></li>
+  <li><a href="#how-does-an-incident-get-logged-as-a-police-stop" id="toc-how-does-an-incident-get-logged-as-a-police-stop" class="nav-link" data-scroll-target="#how-does-an-incident-get-logged-as-a-police-stop"><span class="header-section-number">2.3.3</span> How does an incident get logged as a police stop?</a></li>
+  </ul></li>
+  <li><a href="#key-dilemma" id="toc-key-dilemma" class="nav-link" data-scroll-target="#key-dilemma"><span class="header-section-number">2.4</span> Key dilemma</a></li>
+  <li><a href="#survey-data" id="toc-survey-data" class="nav-link" data-scroll-target="#survey-data"><span class="header-section-number">2.5</span> Survey data</a></li>
+  <li><a href="#victimization-surveys" id="toc-victimization-surveys" class="nav-link" data-scroll-target="#victimization-surveys"><span class="header-section-number">2.6</span> Victimization surveys</a></li>
+  <li><a href="#how-does-a-person-get-selected-for-the-scjs" id="toc-how-does-a-person-get-selected-for-the-scjs" class="nav-link" data-scroll-target="#how-does-a-person-get-selected-for-the-scjs"><span class="header-section-number">2.7</span> How does a person get selected for the SCJS?</a></li>
   </ul>
 </nav>
     </div>
@@ -208,7 +203,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Types of criminological data</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of criminological data</span></h1>
 </div>
 
 
@@ -227,30 +222,32 @@ div.csl-indent {
 
 <p>Criminological data - as with criminology itself - is extremely varied. The main types we will focus on in this workshop are self-reported victimization data, and police recorded crime data. Other forms of crime data include other administrative data, such convictions data, arrest data, data on police disposals (such as stop and search), and survey data which may cover things like self-reported offending, or confidence in police. Criminologists may also want to analyse social media data or data scraped from the web. Each of these data sources needs thinking about carefully, and may need different types of analysis depending on things like potential sources of bias or measurement error.</p>
 <p><em>I guess key point is that you need to know how your data came about to be able to analyse it properly?</em></p>
-<section id="who-cares-about-data-provenance" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="who-cares-about-data-provenance"><span class="header-section-number">3.1</span> Who cares about data provenance?</h2>
+<section id="who-cares-about-data-provenance" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="who-cares-about-data-provenance"><span class="header-section-number">2.1</span> Who cares about data provenance?</h2>
 <p>To conduct a useful analysis - the kind that might help you understand the real world - you need to understand how your data came about. As we’ll see, whether you are analysing a survey or police recorded crime data or convictions data or something else matters in how you conduct your analysis and interpret the results. You need to know the ‘generative story’ about your data to analyse it properly.</p>
 <p>(cite Betancourt)</p>
 </section>
-<section id="geography" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="geography"><span class="header-section-number">3.2</span> Geography</h2>
+<section id="geography" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="geography"><span class="header-section-number">2.2</span> Geography</h2>
 <p>Mostly scope is national, but not always​</p>
 <p>Some local surveys​(suchas MOPAC/Islington Crime Survey)</p>
 <p>Can get data on trends for individual police forces (https://data.police.uk/data/), or divisions within Scotland (https://scotland.shinyapps.io/sg-scottish-crime-justice-survey/)</p>
 </section>
-<section id="how-does-an-event-become-a-crime-statistic" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="how-does-an-event-become-a-crime-statistic"><span class="header-section-number">3.3</span> How does an event become a crime statistic?</h2>
+<section id="generative-stories-for-common-types-of-crime-data" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="generative-stories-for-common-types-of-crime-data"><span class="header-section-number">2.3</span> Generative stories for common types of crime data</h2>
+<section id="how-does-an-event-become-a-crime-statistic" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="how-does-an-event-become-a-crime-statistic"><span class="header-section-number">2.3.1</span> How does an event become a crime statistic?</h3>
 <p>[add link to SG flow diagram]</p>
 </section>
-<section id="how-does-an-incident-end-up-as-a-court-record" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="how-does-an-incident-end-up-as-a-court-record"><span class="header-section-number">3.4</span> How does an incident end up as a court record?</h2>
+<section id="how-does-an-incident-end-up-as-a-court-record" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="how-does-an-incident-end-up-as-a-court-record"><span class="header-section-number">2.3.2</span> How does an incident end up as a court record?</h3>
 <p>Crime​</p>
 <p>Arrest and charge​</p>
 <p>Court​</p>
 <p>Sentencing​</p>
 </section>
-<section id="how-does-an-incident-get-logged-as-a-police-stop" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="how-does-an-incident-get-logged-as-a-police-stop"><span class="header-section-number">3.5</span> How does an incident get logged as a police stop?</h2>
+<section id="how-does-an-incident-get-logged-as-a-police-stop" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="how-does-an-incident-get-logged-as-a-police-stop"><span class="header-section-number">2.3.3</span> How does an incident get logged as a police stop?</h3>
 <p>(Knox and Mummolo)</p>
 <ul>
 <li>Observation</li>
@@ -258,29 +255,30 @@ div.csl-indent {
 <li>Stop</li>
 </ul>
 </section>
-<section id="key-dilemma" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="key-dilemma"><span class="header-section-number">3.6</span> Key dilemma</h2>
+</section>
+<section id="key-dilemma" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="key-dilemma"><span class="header-section-number">2.4</span> Key dilemma</h2>
 <p>Do official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)</p>
 <p>How you see this may depend on your theoretical persuasion (https://www.annualreviews.org/content/journals/10.1146/annurev-soc-031021-035328)</p>
 <p>Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime. Buil-GIl 2022 https://www.tandfonline.com/doi/full/10.1080/15614263.2022.2047047. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )</p>
 </section>
-<section id="survey-data" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="survey-data"><span class="header-section-number">3.7</span> Survey data</h2>
+<section id="survey-data" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="survey-data"><span class="header-section-number">2.5</span> Survey data</h2>
 <p>Mostly specialist secondary survey​</p>
 <p>Scottish Crime and Justice Survey​</p>
 <p>Crime Survey for England and Wales​</p>
 <p>Equivalents in other countries, primarily in Western Europe, North America and Australasia ​</p>
 <p>Smaller geographical scale surveys such as The Mayor’s Office for Policing And Crime (MOPAC) Survey in London</p>
 </section>
-<section id="victimization-surveys" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="victimization-surveys"><span class="header-section-number">3.8</span> Victimization surveys</h2>
+<section id="victimization-surveys" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="victimization-surveys"><span class="header-section-number">2.6</span> Victimization surveys</h2>
 <p>Typically ask people about their experiences of victimization in the last year​</p>
 <p>Can measure crime that isn’t reported to the police​</p>
 <p>Usually don’t ask about people’s offending behaviour​</p>
 <p>Good for measuring common crimes, bad for measuring rare crimes</p>
 </section>
-<section id="how-does-a-person-get-selected-for-the-scjs" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="how-does-a-person-get-selected-for-the-scjs"><span class="header-section-number">3.9</span> How does a person get selected for the SCJS?</h2>
+<section id="how-does-a-person-get-selected-for-the-scjs" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="how-does-a-person-get-selected-for-the-scjs"><span class="header-section-number">2.7</span> How does a person get selected for the SCJS?</h2>
 <p>Random sample of 10,000 postcodes in Scotland are contacted to take part​</p>
 <p>For those who agree, one adult (age 16 or over) in each household is randomly selected for interview​</p>
 <p>Therefore, <em>by design</em> no:​</p>
@@ -292,9 +290,8 @@ div.csl-indent {
 <p>Standardization of surveys means it’s hard to reflect new forms of crime in established surveys – see cyber/enabled crime in CSEW​</p>
 <p>Regular changes to question wording means that time series analysis is compromised which is why only a small number of fraud and cyber questions were added to the CSEW​</p>
 <p>This means that the new questions are only a limited measure of ‘cybercrime’</p>
-</section>
-<section id="who-is-excluded" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="who-is-excluded"><span class="header-section-number">3.10</span> Who is excluded?</h2>
+<section id="who-is-excluded" class="level4" data-number="2.7.0.1">
+<h4 data-number="2.7.0.1" class="anchored" data-anchor-id="who-is-excluded"><span class="header-section-number">2.7.0.1</span> Who is excluded?</h4>
 <p>For SCJS to be a measure of crime for all adults, not just all adults in private households, we need to make a key assumption that “the subset of the adult population not captured in the SCJS experience the same level of victimisation as adults in the household resident population”​</p>
 <p>But this excludes people, students, people in prison, and those living in refuges​</p>
 <p>“Domestic abuse is the main cause of women’s homelessness in Scotland… All women living in Women’s Aid refuges have experienced domestic abuse and many will have experienced other forms of crime”</p>
@@ -302,16 +299,12 @@ div.csl-indent {
 <li>From Handbook chapter - falling sample size, falling response rate and falling victimization all mean less ‘power’ in more recent SCJS sweeps</li>
 </ul>
 <p>“The reduction in survey response rates is a phenomenon that has been observed internationally (de Leeuw, Hox and Luiten, 2018), and there are particular concerns that it is the most marginalized in society (often the most prone to victimization) who are no longer responding to surveys (Savage and Burrows, 2009). Again, taking Scotland as an example, valid response rates to the SCJS fell from 71% in 2008/09 to 63% in 2019/20 (Saunders et al, 2021), with a urther reduction (following the Coronavirus pandemic) to just 47.3% in 2021/22 - the lowest response rate for any SCJS sweep since 2008/09 (Scottish Government 2023a). This issue has been compounded by reductions in the valid sample size for successive sweeps of the SCJS, which has reduced from 16,000 in 2008/09 to just 5,500 in the sweeps conducted since 2016/1714, largely in an effort to cut costs. Factoring in the large reduction in the prevalence of victimization (mentioned above), the stark reality is that the number of victims interviewed as part of the Scottish survey reduced from 2,786 in 2008/09 to just 639 in 2021/22. So, whilst the prevalence of crime fell by just over 50% (or in absolute terms, a fall of 10.4 percentage points), the number of survey respondents who had experienced at least one incident of crime has fallen by an astonishing 77%.”</p>
-<p><em>You need to evaluate how useful a data source is in the context of your particular research question. e.g.&nbsp;you might be able to make an overall assessment of victimization for some social group but not look at a trend for that group, whilst you can look at trends for other groups. I guess this is curse of dimensionality. Or you might need a different model for some groups versus others/have to assume more.</em></p>
-</section>
-<section id="make-sure-the-data-is-right" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="make-sure-the-data-is-right"><span class="header-section-number">3.11</span> Make sure the data is right!!</h2>
-<p>https://x.com/jkangbrown/status/1790416534776562157</p>
 <div id="refs" role="list" style="display: none">
 
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -726,13 +719,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./general-linear-model.html" class="pagination-link" aria-label="general linear model">
-        <span class="nav-page-text">general linear model</span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">general linear model</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

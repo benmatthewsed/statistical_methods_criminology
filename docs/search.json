@@ -39,11 +39,11 @@
   {
     "objectID": "types-of-data.html",
     "href": "types-of-data.html",
-    "title": "3  Types of criminological data",
+    "title": "2  Types of criminological data",
     "section": "",
-    "text": "3.1 Who cares about data provenance?\nTo conduct a useful analysis - the kind that might help you understand the real world - you need to understand how your data came about. As we’ll see, whether you are analysing a survey or police recorded crime data or convictions data or something else matters in how you conduct your analysis and interpret the results. You need to know the ‘generative story’ about your data to analyse it properly.\n(cite Betancourt)",
+    "text": "2.1 Who cares about data provenance?\nTo conduct a useful analysis - the kind that might help you understand the real world - you need to understand how your data came about. As we’ll see, whether you are analysing a survey or police recorded crime data or convictions data or something else matters in how you conduct your analysis and interpret the results. You need to know the ‘generative story’ about your data to analyse it properly.\n(cite Betancourt)",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Types of criminological data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of criminological data</span>"
     ]
   },
   {
@@ -119,41 +119,41 @@
   {
     "objectID": "types-of-data.html#key-dilemma",
     "href": "types-of-data.html#key-dilemma",
-    "title": "3  Types of criminological data",
-    "section": "3.6 Key dilemma",
-    "text": "3.6 Key dilemma\nDo official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)\nHow you see this may depend on your theoretical persuasion (https://www.annualreviews.org/content/journals/10.1146/annurev-soc-031021-035328)\nSometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime. Buil-GIl 2022 https://www.tandfonline.com/doi/full/10.1080/15614263.2022.2047047. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )",
+    "title": "2  Types of criminological data",
+    "section": "2.4 Key dilemma",
+    "text": "2.4 Key dilemma\nDo official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)\nHow you see this may depend on your theoretical persuasion (https://www.annualreviews.org/content/journals/10.1146/annurev-soc-031021-035328)\nSometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime. Buil-GIl 2022 https://www.tandfonline.com/doi/full/10.1080/15614263.2022.2047047. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Types of criminological data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of criminological data</span>"
     ]
   },
   {
     "objectID": "types-of-data.html#survey-data",
     "href": "types-of-data.html#survey-data",
-    "title": "3  Types of criminological data",
-    "section": "3.7 Survey data",
-    "text": "3.7 Survey data\nMostly specialist secondary survey​\nScottish Crime and Justice Survey​\nCrime Survey for England and Wales​\nEquivalents in other countries, primarily in Western Europe, North America and Australasia ​\nSmaller geographical scale surveys such as The Mayor’s Office for Policing And Crime (MOPAC) Survey in London",
+    "title": "2  Types of criminological data",
+    "section": "2.5 Survey data",
+    "text": "2.5 Survey data\nMostly specialist secondary survey​\nScottish Crime and Justice Survey​\nCrime Survey for England and Wales​\nEquivalents in other countries, primarily in Western Europe, North America and Australasia ​\nSmaller geographical scale surveys such as The Mayor’s Office for Policing And Crime (MOPAC) Survey in London",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Types of criminological data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of criminological data</span>"
     ]
   },
   {
     "objectID": "types-of-data.html#victimization-surveys",
     "href": "types-of-data.html#victimization-surveys",
-    "title": "3  Types of criminological data",
-    "section": "3.8 Victimization surveys",
-    "text": "3.8 Victimization surveys\nTypically ask people about their experiences of victimization in the last year​\nCan measure crime that isn’t reported to the police​\nUsually don’t ask about people’s offending behaviour​\nGood for measuring common crimes, bad for measuring rare crimes",
+    "title": "2  Types of criminological data",
+    "section": "2.6 Victimization surveys",
+    "text": "2.6 Victimization surveys\nTypically ask people about their experiences of victimization in the last year​\nCan measure crime that isn’t reported to the police​\nUsually don’t ask about people’s offending behaviour​\nGood for measuring common crimes, bad for measuring rare crimes",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Types of criminological data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of criminological data</span>"
     ]
   },
   {
     "objectID": "types-of-data.html#how-does-a-person-get-selected-for-the-scjs",
     "href": "types-of-data.html#how-does-a-person-get-selected-for-the-scjs",
-    "title": "3  Types of criminological data",
-    "section": "3.9 How does a person get selected for the SCJS?",
-    "text": "3.9 How does a person get selected for the SCJS?\nRandom sample of 10,000 postcodes in Scotland are contacted to take part​\nFor those who agree, one adult (age 16 or over) in each household is randomly selected for interview​\nTherefore, by design no:​\nChildren​\nHomeless people​\nPeople living in communal establishments\n“Moreover, in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” Carr-Hill, R. (2013). Missing Millions and Measuring Development Progress. World Development, 46, 30–44. https://doi.org/10.1016/j.worlddev.2012.12.017​\n(Not going to talk about things like measurment equivalence in internaitonal surveys although that is a thing!)\nStandardization of surveys means it’s hard to reflect new forms of crime in established surveys – see cyber/enabled crime in CSEW​\nRegular changes to question wording means that time series analysis is compromised which is why only a small number of fraud and cyber questions were added to the CSEW​\nThis means that the new questions are only a limited measure of ‘cybercrime’",
+    "title": "2  Types of criminological data",
+    "section": "2.7 How does a person get selected for the SCJS?",
+    "text": "2.7 How does a person get selected for the SCJS?\nRandom sample of 10,000 postcodes in Scotland are contacted to take part​\nFor those who agree, one adult (age 16 or over) in each household is randomly selected for interview​\nTherefore, by design no:​\nChildren​\nHomeless people​\nPeople living in communal establishments\n“Moreover, in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” Carr-Hill, R. (2013). Missing Millions and Measuring Development Progress. World Development, 46, 30–44. https://doi.org/10.1016/j.worlddev.2012.12.017​\n(Not going to talk about things like measurment equivalence in internaitonal surveys although that is a thing!)\nStandardization of surveys means it’s hard to reflect new forms of crime in established surveys – see cyber/enabled crime in CSEW​\nRegular changes to question wording means that time series analysis is compromised which is why only a small number of fraud and cyber questions were added to the CSEW​\nThis means that the new questions are only a limited measure of ‘cybercrime’\n\n2.7.0.1 Who is excluded?\nFor SCJS to be a measure of crime for all adults, not just all adults in private households, we need to make a key assumption that “the subset of the adult population not captured in the SCJS experience the same level of victimisation as adults in the household resident population”​\nBut this excludes people, students, people in prison, and those living in refuges​\n“Domestic abuse is the main cause of women’s homelessness in Scotland… All women living in Women’s Aid refuges have experienced domestic abuse and many will have experienced other forms of crime”\n\nFrom Handbook chapter - falling sample size, falling response rate and falling victimization all mean less ‘power’ in more recent SCJS sweeps\n\n“The reduction in survey response rates is a phenomenon that has been observed internationally (de Leeuw, Hox and Luiten, 2018), and there are particular concerns that it is the most marginalized in society (often the most prone to victimization) who are no longer responding to surveys (Savage and Burrows, 2009). Again, taking Scotland as an example, valid response rates to the SCJS fell from 71% in 2008/09 to 63% in 2019/20 (Saunders et al, 2021), with a urther reduction (following the Coronavirus pandemic) to just 47.3% in 2021/22 - the lowest response rate for any SCJS sweep since 2008/09 (Scottish Government 2023a). This issue has been compounded by reductions in the valid sample size for successive sweeps of the SCJS, which has reduced from 16,000 in 2008/09 to just 5,500 in the sweeps conducted since 2016/1714, largely in an effort to cut costs. Factoring in the large reduction in the prevalence of victimization (mentioned above), the stark reality is that the number of victims interviewed as part of the Scottish survey reduced from 2,786 in 2008/09 to just 639 in 2021/22. So, whilst the prevalence of crime fell by just over 50% (or in absolute terms, a fall of 10.4 percentage points), the number of survey respondents who had experienced at least one incident of crime has fallen by an astonishing 77%.”",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Types of criminological data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of criminological data</span>"
     ]
   },
   {
@@ -241,7 +241,7 @@
     "href": "general-linear-model.html#assumptions-and-p-values",
     "title": "3  general linear model",
     "section": "6.2 Assumptions and p-values",
-    "text": "6.2 Assumptions and p-values\nhttps://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml",
+    "text": "6.2 Assumptions and p-values\nhttps://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml\nFocus on effect size measures instead?\nThink about populations hard (https://benmatthewsed.github.io/what_to_do_odds_ratios/what_to_do_odds_ratios.html#/title-slide)\n\n6.2.1 An example of thinking about populations and generalization\nThis question came from the Policing the Pandemic in Scotland project with excellent colleagues Dr Vicky Gorton and Prof Susan McVie\nWe linked data on all (well, most) fines received for breaching the Covid regulations in Scotland between 27 March 2020 to 31 May 2021 with information on recipients’ health (service use) and (some) social circumstances (I’m not going to go into detail about this)\nWe also have the same information on a comparison group of matched controls (matched by age, sex, Local Authority and SIMD decile)\nWe want to know if people with more ‘vulnerability’ (read - health service use) are more likely than others to have received a Covid fine (FPN)\nHaving done all this, I actually don’t think we’ll use this in our paper. Thinking hard about the population that we’re interested in made me wonder…\n… and what’s wrong with an odds ratio of 35 anyway?\nThis is an accurate description of our dataset!\nIf the problem is that we don’t think a result this extreme would generalize to another ‘sample’ from the sample population - with close to every person who received an FPN do we even have any issues of generalizability (we have basically 100% of the relevant people, minus matching error)?\nInstead of generalizability, I think we have either a massive issue with transportability/external validity (Degtiar and Rose 2023), or we have no issue at all\nIt seems nonsensical to suggest that these results would apply to another country during Covid or another pandemic (countries were very different in their responses)\nThe results for Lockdown One in Scotland don’t even generalize to Lockdown Two - we show that in our analysis!",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>general linear model</span>"
     ]
@@ -271,7 +271,7 @@
     "href": "simulation.html",
     "title": "4  Simulation",
     "section": "",
-    "text": "Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al. (2000).\nFor example, Hunter and Tseloni use the results of a fitted regression model to calculate a measure they call ‘Victimization Divide’. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.\nThis measure is defined as\n(ratio of victimization rates in year 2 - 1) - (ratio of victimization rates in year 2 - 1) / (ratio of victimization rates in year one - 1)\nthis is analagous to exploring the percentage change in victimization inequality between two comparison years.\nHowever, if these ratios of rates come from a statistical model they will also come with some uncertainty measure, such as a standard error. In that case it’s not quite so clear how to incorporate this uncertainty into the calculation of the VD. One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.\nMatthews and McVie (2024; see also Matthews 2024) demonstrate this process. The table below shows the prevalence of victimization (for all crime types) for men and women as reported in the Crime Survey for England and Wales for 2015 and 2020 (Office for National Statistics, n.d.). We can see that the prevalence of victimization was higher for men than women in both years, and that it increased for men (by 3.0 percentage points) and women (by 3.6 percentage points) between 2015 and 2020.\nWe can fit a simple regression model to the data in each year to calculate the ratio of the odds of being a victim for men and women. Model 1 shows a statistically significant difference for men (compared to women) in 2015, with men having 11% greater odds of being a victim of crime. In contrast, Model 2 finds that men had a 5% greater odds of being a victim of crime than women in 2020; however, this difference does not meet the 95% threshold for statistical significance.\nCalculating the VD for these two results, based on the odds ratios from the two models, shows that victimization inequality decreased by 52% between the two years. Victimiztion inequality fell by more than half!\nHowever, this does not factor the uncertainty in these odds ratios into our results. To investigate this we can simulate 1,000 sets of coefficients from the models’ results. Using 10,000 simulations from the models’ results, we get 95% intervals for the VD of -0.95 and 0.22. Whilst our most of our simulations do indicate that victimization inequality has declined, this would not be considered ‘statistically significant’ at the usual 95% threshold.\nThe beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.\nBut remember that our model is wrong!! (Greenland)",
+    "text": "Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al. (2000).\nFor example, Hunter and Tseloni use the results of a fitted regression model to calculate a measure they call ‘Victimization Divide’. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.\nThis measure is defined as\n(ratio of victimization rates in year 2 - 1) - (ratio of victimization rates in year 2 - 1) / (ratio of victimization rates in year one - 1)\nthis is analagous to exploring the percentage change in victimization inequality between two comparison years.\nHowever, if these ratios of rates come from a statistical model they will also come with some uncertainty measure, such as a standard error. In that case it’s not quite so clear how to incorporate this uncertainty into the calculation of the VD. One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.\nMatthews and McVie (2024; see also Matthews 2024) demonstrate this process. The table below shows the prevalence of victimization (for all crime types) for men and women as reported in the Crime Survey for England and Wales for 2015 and 2020 (Office for National Statistics, n.d.). We can see that the prevalence of victimization was higher for men than women in both years, and that it increased for men (by 3.0 percentage points) and women (by 3.6 percentage points) between 2015 and 2020.\nWe can fit a simple regression model to the data in each year to calculate the ratio of the odds of being a victim for men and women. Model 1 shows a statistically significant difference for men (compared to women) in 2015, with men having 11% greater odds of being a victim of crime. In contrast, Model 2 finds that men had a 5% greater odds of being a victim of crime than women in 2020; however, this difference does not meet the 95% threshold for statistical significance.\nCalculating the VD for these two results, based on the odds ratios from the two models, shows that victimization inequality decreased by 52% between the two years. Victimiztion inequality fell by more than half!\nHowever, this does not factor the uncertainty in these odds ratios into our results. To investigate this we can simulate 1,000 sets of coefficients from the models’ results. Using 10,000 simulations from the models’ results, we get 95% intervals for the VD of -0.95 and 0.22. Whilst our most of our simulations do indicate that victimization inequality has declined, this would not be considered ‘statistically significant’ at the usual 95% threshold.\nThe beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.\nBut remember that our model is wrong!! (Greenland) This approach incorporates the uncertainty as expressed by your model’s standard errors. As we’ve seen in the discussions about measurement error and sensitivity analysis, there may be other sources of uncertainty around our results.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Simulation</span>"
     ]
@@ -289,11 +289,11 @@
   {
     "objectID": "types-of-data.html#geography",
     "href": "types-of-data.html#geography",
-    "title": "3  Types of criminological data",
-    "section": "3.2 Geography",
-    "text": "3.2 Geography\nMostly scope is national, but not always​\nSome local surveys​(suchas MOPAC/Islington Crime Survey)\nCan get data on trends for individual police forces (https://data.police.uk/data/), or divisions within Scotland (https://scotland.shinyapps.io/sg-scottish-crime-justice-survey/)",
+    "title": "2  Types of criminological data",
+    "section": "2.2 Geography",
+    "text": "2.2 Geography\nMostly scope is national, but not always​\nSome local surveys​(suchas MOPAC/Islington Crime Survey)\nCan get data on trends for individual police forces (https://data.police.uk/data/), or divisions within Scotland (https://scotland.shinyapps.io/sg-scottish-crime-justice-survey/)",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Types of criminological data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of criminological data</span>"
     ]
   },
   {
@@ -301,7 +301,7 @@
     "href": "ethics.html",
     "title": "5  Ethics",
     "section": "",
-    "text": "5.1 Reproducible research practices?",
+    "text": "5.1 Reproducible research practices?\nMake sure the data is right!!\nhttps://github.com/jkangbrown/when_police_replication",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethics</span>"
     ]
@@ -311,9 +311,19 @@
     "href": "ethics.html#framing",
     "title": "5  Ethics",
     "section": "5.2 Framing",
-    "text": "5.2 Framing\nMore conceptually, it’s important to think about how we frame the results of any analysis.\nThree visualizations\n\nlanguage use\nproviding necessary context?\ndeficit narrative\nthe description of your charts is theoretically informed\n\n\n5.2.1 community loss\n\nchoosing our measures\nchronic and long-term exposure to loss due to imprisonment\ntotal person-years lost summed over a geographic area\nmore concentrated than imprisonment",
+    "text": "5.2 Framing\nMore conceptually, it’s important to think about how we frame the results of any analysis.\nThree visualizations from Data Feminism\n\nlanguage use\nproviding necessary context?\ndeficit narrative\nthe description of your charts is theoretically informed\n\n\n5.2.1 community loss\nJessica Simes gives a good example of how we may want to come up with theoretically informed measures, or theoretically re-frame measures. Simes analysed imprisonment data from the state of Massachusets in the USA, including spatial regression of prison admission rates and how these relate to “racial demographics, social and economic disadvantage, arrest rates, and violent crime”.\nAs part of this analysis Simes suggests that the cumulative years sentenced to residents of a particular neighbourhood be thought of as ‘community loss’. This is not (just?) an indicator of individual punishment histories, but reflects the chronic and long-term exposure to loss due to imprisonment in different neighbourhoods. This highlights the effects of imprisonment on the communities in which people who end up in prison lived prior to their imprisonment, rather than just focusing on the people who are currently in prison.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethics</span>"
+    ]
+  },
+  {
+    "objectID": "types-of-data.html#generative-stories-for-common-types-of-crime-data",
+    "href": "types-of-data.html#generative-stories-for-common-types-of-crime-data",
+    "title": "2  Types of criminological data",
+    "section": "2.3 Generative stories for common types of crime data",
+    "text": "2.3 Generative stories for common types of crime data\n\n2.3.1 How does an event become a crime statistic?\n[add link to SG flow diagram]\n\n\n2.3.2 How does an incident end up as a court record?\nCrime​\nArrest and charge​\nCourt​\nSentencing​\n\n\n2.3.3 How does an incident get logged as a police stop?\n(Knox and Mummolo)\n\nObservation\nEncouter\nStop",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Types of criminological data</span>"
     ]
   }
 ]

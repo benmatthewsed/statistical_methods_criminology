@@ -69,3 +69,32 @@ I am extremely partial to bespoke models. If you have the time I would recommend
 ## Assumptions and p-values
 
 https://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml
+
+Focus on effect size measures instead?
+
+Think about populations hard (https://benmatthewsed.github.io/what_to_do_odds_ratios/what_to_do_odds_ratios.html#/title-slide)
+
+### An example of thinking about populations and generalization
+
+This question came from the Policing the Pandemic in Scotland project with excellent colleagues Dr Vicky Gorton and Prof Susan McVie
+
+We linked data on all (well, most) fines received for breaching the Covid regulations in Scotland between 27 March 2020 to 31 May 2021 with information on recipients’ health (service use) and (some) social circumstances (I’m not going to go into detail about this)
+
+We also have the same information on a comparison group of matched controls (matched by age, sex, Local Authority and SIMD decile)
+
+We want to know if people with more ‘vulnerability’ (read - health service use) are more likely than others to have received a Covid fine (FPN)
+
+Having done all this, I actually don’t think we’ll use this in our paper. Thinking hard about the population that we’re interested in made me wonder…
+
+… and what’s wrong with an odds ratio of 35 anyway?
+
+This is an accurate description of our dataset!
+
+If the problem is that we don’t think a result this extreme would generalize to another ‘sample’ from the sample population - with close to every person who received an FPN do we even have any issues of generalizability (we have basically 100% of the relevant people, minus matching error)?
+
+Instead of generalizability, I think we have either a massive issue with transportability/external validity (Degtiar and Rose 2023), or we have no issue at all
+
+It seems nonsensical to suggest that these results would apply to another country during Covid or another pandemic (countries were very different in their responses)
+
+The results for Lockdown One in Scotland don’t even generalize to Lockdown Two - we show that in our analysis!
+

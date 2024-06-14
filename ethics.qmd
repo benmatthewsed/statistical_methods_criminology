@@ -8,8 +8,7 @@ Sometimes these come up when fitting models to criminological data- UKDS require
 
 Strictly speaking, this means that if you fit a logistic regression model with a categorical independent variable you need to have more than 50 people in each response category.
 
-This can 
-
+This can
 
 ```{r}
 
@@ -62,6 +61,10 @@ dat |>
 
 glm(vict ~ ethnicity, family = "binomial", data = dat) |> 
   summary()
+```
+
+```{r}
+
 
 # a reader could calculate the probability of victimization using the inverse
 # link function and then multiply this by the number of minority ethnic people
@@ -73,33 +76,28 @@ plogis(-1.4253) * 227
 
 This may not apply in every case, but it is worth checking, particularly if you wanted to include things like interaction terms between categorical variables in a logistic regression model.
 
-
 ## Reproducible research practices?
 
+Make sure the data is right!!
 
-
-
-
+https://github.com/jkangbrown/when_police_replication
 
 ## Framing
 
 More conceptually, it's important to think about how we frame the results of any analysis.
 
-Three visualizations
+Three visualizations from [Data Feminism](https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3) 
 
-- language use
-- providing necessary context?
-- deficit narrative
+-   language use
 
-- the description of your charts is theoretically informed
+-   providing necessary context?
+
+-   deficit narrative
+
+-   the description of your charts is theoretically informed
 
 ### community loss
 
-- choosing our measures
+Jessica Simes gives a good example of how we may want to come up with theoretically informed measures, or theoretically re-frame measures. Simes analysed imprisonment data from the state of Massachusets in the USA, including spatial regression of prison admission rates and how these relate to "racial demographics, social and economic disadvantage, arrest rates, and violent crime".
 
-- chronic and long-term exposure to loss due to imprisonment
-
-- total person-years lost summed over a geographic area
-
-- more concentrated than imprisonment
-
+As part of this analysis Simes suggests that the cumulative years sentenced to residents of a particular neighbourhood be thought of as 'community loss'. This is not (just?) an indicator of individual punishment histories, but reflects the chronic and long-term exposure to loss due to imprisonment in different neighbourhoods. This highlights the effects of imprisonment on the communities in which people who end up in prison lived prior to their imprisonment, rather than just focusing on the people who are currently in prison.

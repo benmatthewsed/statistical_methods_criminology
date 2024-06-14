@@ -168,13 +168,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulation</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -198,7 +198,10 @@ window.Quarto = {
   <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data"><span class="header-section-number">6</span> Count data</a>
   <ul class="collapse">
   <li><a href="#a-note-on-bespoke-models" id="toc-a-note-on-bespoke-models" class="nav-link" data-scroll-target="#a-note-on-bespoke-models"><span class="header-section-number">6.1</span> A note on bespoke models</a></li>
-  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values"><span class="header-section-number">6.2</span> Assumptions and p-values</a></li>
+  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values"><span class="header-section-number">6.2</span> Assumptions and p-values</a>
+  <ul class="collapse">
+  <li><a href="#an-example-of-thinking-about-populations-and-generalization" id="toc-an-example-of-thinking-about-populations-and-generalization" class="nav-link" data-scroll-target="#an-example-of-thinking-about-populations-and-generalization"><span class="header-section-number">6.2.1</span> An example of thinking about populations and generalization</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -280,8 +283,24 @@ x_i &amp; : \text{Independent variable (predictor)} \quad \text{for } i = 1, 2, 
 <section id="assumptions-and-p-values" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="assumptions-and-p-values"><span class="header-section-number">6.2</span> Assumptions and p-values</h2>
 <p>https://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml</p>
+<p>Focus on effect size measures instead?</p>
+<p>Think about populations hard (https://benmatthewsed.github.io/what_to_do_odds_ratios/what_to_do_odds_ratios.html#/title-slide)</p>
+<section id="an-example-of-thinking-about-populations-and-generalization" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="an-example-of-thinking-about-populations-and-generalization"><span class="header-section-number">6.2.1</span> An example of thinking about populations and generalization</h3>
+<p>This question came from the Policing the Pandemic in Scotland project with excellent colleagues Dr Vicky Gorton and Prof Susan McVie</p>
+<p>We linked data on all (well, most) fines received for breaching the Covid regulations in Scotland between 27 March 2020 to 31 May 2021 with information on recipients’ health (service use) and (some) social circumstances (I’m not going to go into detail about this)</p>
+<p>We also have the same information on a comparison group of matched controls (matched by age, sex, Local Authority and SIMD decile)</p>
+<p>We want to know if people with more ‘vulnerability’ (read - health service use) are more likely than others to have received a Covid fine (FPN)</p>
+<p>Having done all this, I actually don’t think we’ll use this in our paper. Thinking hard about the population that we’re interested in made me wonder…</p>
+<p>… and what’s wrong with an odds ratio of 35 anyway?</p>
+<p>This is an accurate description of our dataset!</p>
+<p>If the problem is that we don’t think a result this extreme would generalize to another ‘sample’ from the sample population - with close to every person who received an FPN do we even have any issues of generalizability (we have basically 100% of the relevant people, minus matching error)?</p>
+<p>Instead of generalizability, I think we have either a massive issue with transportability/external validity (Degtiar and Rose 2023), or we have no issue at all</p>
+<p>It seems nonsensical to suggest that these results would apply to another country during Covid or another pandemic (countries were very different in their responses)</p>
+<p>The results for Lockdown One in Scotland don’t even generalize to Lockdown Two - we show that in our analysis!</p>
 
 
+</section>
 </section>
 </section>
 
