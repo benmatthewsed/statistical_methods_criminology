@@ -5,7 +5,7 @@ project:
 book:
   title: "Statistical Methods for Criminology"
   author: "Ben Matthews"
-  date: "05/09/2024"
+  date: "09/05/2024"
   chapters:
     - index.qmd
     - intro.qmd
