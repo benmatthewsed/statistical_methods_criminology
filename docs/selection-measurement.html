@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./simulation.html" rel="next">
 <link href="./general-linear-model.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -144,6 +144,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -158,7 +164,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#an-example" id="toc-an-example" class="nav-link active" data-scroll-target="#an-example">An example</a>
+  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link active" data-scroll-target="#measurement-error">Measurement error</a>
+  <ul class="collapse">
+  <li><a href="#what-to-do-about-it" id="toc-what-to-do-about-it" class="nav-link" data-scroll-target="#what-to-do-about-it">What to do about it?</a></li>
+  <li><a href="#simex" id="toc-simex" class="nav-link" data-scroll-target="#simex">SIMEX</a></li>
+  <li><a href="#rcme" id="toc-rcme" class="nav-link" data-scroll-target="#rcme"><code>rcme</code></a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key takeaway</a></li>
+  </ul></li>
+  <li><a href="#selection-effects" id="toc-selection-effects" class="nav-link" data-scroll-target="#selection-effects">Selection effects</a>
   <ul class="collapse">
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions?</a></li>
   <li><a href="#probabilistic-bias-analysis" id="toc-probabilistic-bias-analysis" class="nav-link" data-scroll-target="#probabilistic-bias-analysis">Probabilistic Bias Analysis</a>
@@ -193,8 +206,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="an-example" class="level1">
-<h1>An example</h1>
+<section id="measurement-error" class="level2">
+<h2 class="anchored" data-anchor-id="measurement-error">Measurement error</h2>
+<p>The standard linear model assumes that all variables are measured perfectly (or in other words, with no error).</p>
+<p>In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime ‘out there’ in society. Not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.</p>
+<p>Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios <em>we may not know what impact it is having</em>.</p>
+<section id="what-to-do-about-it" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-do-about-it">What to do about it?</h3>
+<p>What’s more is that it’s not entirely clear what to do about it. Pina-Sanchez has written about measurement error in crime.</p>
+<p>One approach is to use Bayesian methods. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.</p>
+<p>Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here[https://josepinasanchez.uk/short-courses/].</p>
+<p>https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf</p>
+<p>from https://josepinasanchez.uk/short-courses/</p>
+</section>
+<section id="simex" class="level3">
+<h3 class="anchored" data-anchor-id="simex">SIMEX</h3>
+<p>A less involved option involves assessment measurement error through simulation. The <code>simex</code> R package lets you simulate new versions of your dataset with <em>more</em> and more measurement error. By looking to see how your coefficients change with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!</p>
+</section>
+<section id="rcme" class="level3">
+<h3 class="anchored" data-anchor-id="rcme"><code>rcme</code></h3>
+<p>Pina-Sanchez and colleagues have written an R package that can conduct sensitivity analysis for some types of measurement error common to working with police recorded crime.</p>
+<blockquote class="blockquote">
+<p>Work through their example here? https://osf.io/preprints/socarxiv/sbc8w</p>
+</blockquote>
+<p>Open questions - what about survey data? Models other than linear models?</p>
+</section>
+<section id="key-takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="key-takeaway">Key takeaway</h3>
+<ul>
+<li>Think hard, be honest.</li>
+</ul>
+</section>
+</section>
+<section id="selection-effects" class="level1">
+<h1>Selection effects</h1>
 <p>Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.</p>
 <p>For example, we might want to know if people from minority ethnic backgrounds more likely to be arrested after a stop than people from white backgrounds (Knox et al)</p>
 <p>Police collect data on stops - why not just run a regression on these data to see if people from minority ethnic backgrounds are more likely to be stopped?</p>
@@ -661,8 +706,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./simulation.html" class="pagination-link" aria-label="Simulation">
+        <span class="nav-page-text">Simulation</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
