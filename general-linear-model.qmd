@@ -6,41 +6,75 @@ Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&t=1215s
 
 Introduction to LM
 
-$$
-\begin{equation}
-y = \alpha + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p + \epsilon
-\end{equation}
-$$
+- Stochastic (or random) component
+- Systematic component
+- Link function
 
-where:
+
 
 $$
 \begin{align*}
-y & : \text{Dependent variable (response)} \\
-x_i & : \text{Independent variable (predictor)} \quad \text{for } i = 1, 2, \ldots, p \\
-\alpha & : \text{Intercept term} \\
-\beta_i & : \text{Coefficient for the } i\text{-th predictor} \quad \text{for } i = 1, 2, \ldots, p \\
-\epsilon & : \text{Error term}
+y_i \sim & {Distribution} (\theta_i, \phi) \\
+{f(\theta_i)} & = \alpha + \beta (x_i - \bar x),
 \end{align*}
 $$
 
-# Binary data
+where $\theta_i$ is the parameter of interest (e.g., the probability of 1 in a Binomial distribution) and $\phi$ is a placeholder for any other parameters necessary for the likelihood but not typically of primary substantive interest (e.g., $\sigma$ in conventional Gaussian models). The $f(\cdot)$ portion is the link function.
 
--   victim or not? offender or not? confident or not?
+For the linear model, we have:
 
--   \[take from gary king\]
+$$
+\begin{align*}
+y_i \sim & {Normal} (\theta_i, \sigma) \\
+{Identity(\theta_i)} & = \alpha + \beta (x_i - \bar x),
+\end{align*}
+$$
 
-# Count data
+> an example here?
 
--   integers only! stricly positive!
 
--   why not just lm?
+
+## Logistic regression
+
+For logistic regression we have:
+
+$$
+\begin{align*}
+y_i \sim & {Binomial} (n, p_i) \\
+{logit(p_i)} & = \alpha + \beta (x_i),
+\end{align*}
+$$
+for logistic regression, $n$ = 1, and we are just interested in modelling $p_i$.
+
+These kinds of models are very common in the social sciences, including in criminology. We might want to model whether someone is a victim of crime or not, or whether the person has been convicted of a crime in a given year, or whether they are confident in the police or not... and so on and so on. The nice thing about this model formulation is that the ${logit}$ link function makes sure that all the probabilities the model estimates are between 0 and 1. Strictly speaking we don't need to do this (see the linear probability model), but it's nice to avoid results that obviously don't make sense, like negative probabilities and such.
+
+## Count data
+
+The foundational model for count data is the Poisson model:
+
+$$
+\begin{align*}
+y_i \sim & {Poisson} (\lambda) \\
+{log(\lambda)} & = \alpha + \beta (x_i),
+\end{align*}
+$$
+
+Now there is only one parameter (lambda; $\lambda$) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of $\lambda$).
+
+
+The key feature of count data is that it is integers (i.e. whole numbers) only and they are stricly positive - you can't get negative counts. Pretty much all aggregated administrative data about crime in its raw form will be count data. This might be counts of recorded crime, counts of people released from prison and so on. These data might be re-expressed as _rates_ per 1,000 population, but before this they are counts.
+
+
+##  why not just lm?
 
 -   two tribes
 
     -   if all you care about is the average difference then you can just use 'Simple Mean Difference'
     -   you might be an economist
     -   there are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)
+
+
+### Specific problems with GLMs
 
 -   classic problem - over-dispersion
 
@@ -62,9 +96,7 @@ $$
 
 ## A note on bespoke models
 
-
 I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.
-
 
 ## Assumptions and p-values
 
@@ -97,4 +129,3 @@ Instead of generalizability, I think we have either a massive issue with transpo
 It seems nonsensical to suggest that these results would apply to another country during Covid or another pandemic (countries were very different in their responses)
 
 The results for Lockdown One in Scotland don’t even generalize to Lockdown Two - we show that in our analysis!
-
