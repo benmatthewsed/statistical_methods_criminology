@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>statistical_methods_criminology - general linear model</title>
+<title>ethics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,272 +20,210 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./selection-measurement.html" rel="next">
-<link href="./types-of-data.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<script src="ethics_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ethics_files/libs/quarto-html/quarto.js"></script>
+<script src="ethics_files/libs/quarto-html/popper.min.js"></script>
+<script src="ethics_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ethics_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ethics_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ethics_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ethics_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ethics_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ethics_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="fullcontent">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./general-linear-model.html">general linear model</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">statistical_methods_criminology</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./types-of-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Types of criminological data</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">general linear model</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Selection effects, bias and so on</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link active" data-scroll-target="#intro-to-glm">Intro to GLM</a></li>
-  <li><a href="#binary-data" id="toc-binary-data" class="nav-link" data-scroll-target="#binary-data">Binary data</a></li>
-  <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data">Count data</a>
-  <ul class="collapse">
-  <li><a href="#a-note-on-bespoke-models" id="toc-a-note-on-bespoke-models" class="nav-link" data-scroll-target="#a-note-on-bespoke-models">A note on bespoke models</a></li>
-  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values">Assumptions and p-values</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">general linear model</h1>
+
+
+
+<section id="ethics" class="level1 unnumbered">
+<h1 class="unnumbered">Ethics</h1>
+<p>Do no harm!</p>
+<p>In research ethics and governance there is a lot of discussion about informed consent, not disclosing personal information and so on.</p>
+<p>Sometimes these come up when fitting models to criminological data- UKDS requires that any results you produce don’t refer to an unweighted base population of less than 50.</p>
+<p>Strictly speaking, this means that if you fit a logistic regression model with a categorical independent variable you need to have more than 50 people in each response category.</p>
+<p>This can</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ purrr::%||%()   masks base::%||%()
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>n_size <span class="ot">&lt;-</span> <span class="dv">5568</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># approximate sample size for Scottish Crime and Justice Survey</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># The 2011 census found that:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Scotland's population was 96.0% white</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.scotlandscensus.gov.uk/census-results/at-a-glance/ethnicity/</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">ethnicity =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"white scottish/british/other"</span>, <span class="st">"minority ethnic"</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> n_size,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.96</span>, <span class="fl">0.04</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># simulate victimization data</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">minority_ethnic =</span> <span class="fu">if_else</span>(ethnicity <span class="sc">==</span> <span class="st">"minority ethnic"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">vict =</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">rbinom</span>(<span class="at">n =</span> n_size, </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                       <span class="at">size =</span> <span class="dv">1</span>, <span class="co"># either 1 or 0,</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>                       <span class="at">prob =</span> <span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">+</span>  minority_ethnic <span class="sc">*</span> <span class="fl">0.5</span>)))</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ethnicity, vict) <span class="sc">|&gt;</span> </span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ethnicity) <span class="sc">|&gt;</span> </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 4
+# Groups:   ethnicity [2]
+  ethnicity                     vict     n  prop
+  &lt;chr&gt;                        &lt;int&gt; &lt;int&gt; &lt;dbl&gt;
+1 minority ethnic                  0   192 0.850
+2 minority ethnic                  1    34 0.150
+3 white scottish/british/other     0  4735 0.886
+4 white scottish/british/other     1   607 0.114</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">2</span>) <span class="co"># 11%</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1192029</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.5</span>) <span class="co"># 18% - I just made this up, I don't know if this is accurate!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1824255</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if you publish the marginal breakdown by ethnicity in table one</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ethnicity)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  ethnicity                        n
+  &lt;chr&gt;                        &lt;int&gt;
+1 minority ethnic                226
+2 white scottish/british/other  5342</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and then the regression coefficients</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(vict <span class="sc">~</span> ethnicity, <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">data =</span> dat) <span class="sc">|&gt;</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = vict ~ ethnicity, family = "binomial", data = dat)
 
+Coefficients:
+                                      Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                            -1.7311     0.1861  -9.304   &lt;2e-16 ***
+ethnicitywhite scottish/british/other  -0.3231     0.1910  -1.692   0.0907 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
+(Dispersion parameter for binomial family taken to be 1)
 
-<div class="quarto-title-meta">
+    Null deviance: 3976.6  on 5567  degrees of freedom
+Residual deviance: 3973.9  on 5566  degrees of freedom
+AIC: 3977.9
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="intro-to-glm" class="level1">
-<h1>Intro to GLM</h1>
-<p>Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&amp;t=1215s</p>
-<p>Introduction to LM</p>
-<p><span class="math display">\[
-\begin{equation}
-y = \alpha + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p + \epsilon
-\end{equation}
-\]</span></p>
-<p>where:</p>
-<p><span class="math display">\[
-\begin{align*}
-y &amp; : \text{Dependent variable (response)} \\
-x_i &amp; : \text{Independent variable (predictor)} \quad \text{for } i = 1, 2, \ldots, p \\
-\alpha &amp; : \text{Intercept term} \\
-\beta_i &amp; : \text{Coefficient for the } i\text{-th predictor} \quad \text{for } i = 1, 2, \ldots, p \\
-\epsilon &amp; : \text{Error term}
-\end{align*}
-\]</span></p>
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a reader could calculate the probability of victimization using the inverse</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># link function and then multiply this by the number of minority ethnic people</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># to recover the sample size</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plogis</span>(<span class="sc">-</span><span class="fl">1.4253</span>) <span class="sc">*</span> <span class="dv">227</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 43.99988</code></pre>
+</div>
+</div>
+<p>This may not apply in every case, but it is worth checking, particularly if you wanted to include things like interaction terms between categorical variables in a logistic regression model.</p>
+<section id="reproducible-research-practices" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-research-practices">Reproducible research practices?</h2>
 </section>
-<section id="binary-data" class="level1">
-<h1>Binary data</h1>
+<section id="framing" class="level2">
+<h2 class="anchored" data-anchor-id="framing">Framing</h2>
+<p>More conceptually, it’s important to think about how we frame the results of any analysis.</p>
+<p>Three visualizations</p>
 <ul>
-<li><p>victim or not? offender or not? confident or not?</p></li>
-<li><p>[take from gary king]</p></li>
+<li><p>language use</p></li>
+<li><p>providing necessary context?</p></li>
+<li><p>deficit narrative</p></li>
+<li><p>the description of your charts is theoretically informed</p></li>
+</ul>
+<section id="community-loss" class="level3">
+<h3 class="anchored" data-anchor-id="community-loss">community loss</h3>
+<ul>
+<li><p>choosing our measures</p></li>
+<li><p>chronic and long-term exposure to loss due to imprisonment</p></li>
+<li><p>total person-years lost summed over a geographic area</p></li>
+<li><p>more concentrated than imprisonment</p></li>
 </ul>
 </section>
-<section id="count-data" class="level1">
-<h1>Count data</h1>
-<ul>
-<li><p>integers only! stricly positive!</p></li>
-<li><p>why not just lm?</p></li>
-<li><p>two tribes</p>
-<ul>
-<li>if all you care about is the average difference then you can just use ‘Simple Mean Difference’</li>
-<li>you might be an economist</li>
-<li>there are lots of other interesting quesitons we might care about (e.g.&nbsp;modelling dispersion?)</li>
-</ul></li>
-<li><p>classic problem - over-dispersion</p></li>
-<li><p>poisson assumes mean and variance are the same (only one term in the model)</p></li>
-<li><p>so what? mostly under-estimates the standard error</p></li>
-<li><p>p-values are too optimistic</p></li>
-<li><p>you need to think about why your data are over-dispersed</p></li>
-<li><p>take from Hilbe (distinct zeros? ZIP; generic solution; NB?)</p></li>
-<li><p>ZIP can have different predictors for zeros than count part</p></li>
-<li><p>you can also have different predictors for dispersion and rate parameter in NB if you want</p></li>
-<li><p>if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)</p></li>
-</ul>
-<section id="a-note-on-bespoke-models" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-bespoke-models">A note on bespoke models</h2>
-<p>I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.</p>
-</section>
-<section id="assumptions-and-p-values" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-p-values">Assumptions and p-values</h2>
-<p>https://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml</p>
-
-
 </section>
 </section>
 
-</main> <!-- /main -->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -695,18 +633,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./types-of-data.html" class="pagination-link" aria-label="Types of criminological data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Types of criminological data</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./selection-measurement.html" class="pagination-link" aria-label="Selection effects, bias and so on">
-        <span class="nav-page-text">Selection effects, bias and so on</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

@@ -60,6 +60,10 @@ $$
 
 -   if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)
 
+## A note on bespoke models
+
+
+I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.
 
 
 ## Assumptions and p-values

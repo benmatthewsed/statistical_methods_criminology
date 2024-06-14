@@ -4,6 +4,14 @@ Criminological data - as with criminology itself - is extremely varied. The main
 
 *I guess key point is that you need to know how your data came about to be able to analyse it properly?* 
 
+## Who cares about data provenance?
+
+To conduct a useful analysis - the kind that might help you understand the real world - you need to understand how your data came about. As we'll see, whether you are analysing a survey or police recorded crime data or convictions data or something else matters in how you conduct your analysis and interpret the results. You need to know the 'generative story' about your data to analyse it properly.
+
+(cite Betancourt)
+
+
+
 ## Geography
 
 Mostly scope is national, but not always​

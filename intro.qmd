@@ -2,9 +2,12 @@
 
 This workshop will not teach you everything you need to know to be able to effectively fit statistical models to criminological data. This is for good reason - criminology as a discipline is extremely varied (a rendes-vous subject, as some have said). So you might be a criminologist working on self-reported survey data about perceptions of fear and shame amongst young people, or you might be working with spatial data on coordinates of offences reported to the police, or analysing decades worth of convictions data for whole countries.
 
-I assume that you are familiar with the general linear model (although we will have a refresher) - my aim is not to cover things that you will find in a general undergraduate or postgrad methods course on statistical modelling, but focus on a set of illustratons of some specific problems that can arise in some criminological contexts. I've tried to pick examples that are both specific enough to be illuminating, but general enough that the techniques I'll desribe (of say simulating quantities of interest from your fitted model) are generally relevant. No guarantees though. They should hopefully act as inspiration when grappling with your own analytical problems.
+I assume that you are familiar with the general linear model (although we will have a refresher) - my aim is not to cover things that you will find in a general undergraduate or postgrad methods course on statistical modelling, but focus on a set of illustratons of specific problems that can arise in some criminological contexts. I've tried to pick examples that are both specific enough to be illuminating, but general enough that the techniques I'll desribe (of say simulating quantities of interest from your fitted model) are generally relevant. No guarantees though. Hopefully act as inspiration when grappling with your own analytical problems.
 
-I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.
+This also means that we will be skimming over the surface of quite a lot topics, rather than covering them in any great depth. As we go through I will signpost you to where you can find out more about each topic - books and books will have been written about each topic, so you can use this workshop as a jumping off point to dive further into topics that you find particularly useful.
+
+
+
 
 ## Types of criminological data
 
@@ -36,7 +39,7 @@ I am extremely partial to bespoke models. If you have the time I would recommend
 
 ## Measurement error and selection bias
 
--   Jose Pina Sanchez and measurement error
+- Jose Pina Sanchez and measurement error
 
 - Walby and volatility over time
 
