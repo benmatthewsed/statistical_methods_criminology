@@ -14,6 +14,7 @@ book:
     - general-linear-model.qmd
     - selection-measurement.qmd
     - simulation.qmd
+    - ethics.qmd
     - references.qmd
 
 bibliography: references.bib
