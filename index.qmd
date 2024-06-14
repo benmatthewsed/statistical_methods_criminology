@@ -1,3 +1,5 @@
 # Preface {.unnumbered}
 
 This website contains the notes and R code for the NCRM workshop 'Statistical Methods for Criminology' run in September 2024.
+
+It is very work in progress.
