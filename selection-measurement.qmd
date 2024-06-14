@@ -1,6 +1,50 @@
 # Selection effects, bias and so on {.unnumbered}
 
-# An example
+## Measurement error
+
+The standard linear model assumes that all variables are measured perfectly (or in other words, with no error).
+
+In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime 'out there' in society. Not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.
+
+Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios _we may not know what impact it is having_.
+
+### What to do about it?
+
+What's more is that it's not entirely clear what to do about it. Pina-Sanchez has written about measurement error in crime. 
+
+One approach is to use Bayesian methods. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.
+
+Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here[https://josepinasanchez.uk/short-courses/].
+
+
+
+https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf
+
+from https://josepinasanchez.uk/short-courses/
+
+### SIMEX
+
+A less involved option involves assessment measurement error through simulation. The `simex` R package lets you simulate new versions of your dataset with _more_ and more measurement error. By looking to see how your coefficients change with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!
+
+
+### `rcme`
+
+Pina-Sanchez and colleagues have written an R package that can conduct sensitivity analysis for some types of measurement error common to working with police recorded crime.
+
+> Work through their example here? https://osf.io/preprints/socarxiv/sbc8w
+
+
+Open questions - what about survey data? Models other than linear models?
+
+
+### Key takeaway
+
+- Think hard, be honest.
+
+
+
+
+# Selection effects
 
 Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.
 
@@ -77,3 +121,5 @@ examine claims that the smoking-lung cancer relation might be attributable to
 confounding"
 
 - so this is based on the idea tat we can identify an "implausibly strong" confounder, which is reasonable.
+
+

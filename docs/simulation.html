@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>statistical_methods_criminology - general linear model</title>
+<title>statistical_methods_criminology - Simulation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./selection-measurement.html" rel="next">
-<link href="./types-of-data.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./selection-measurement.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -110,7 +81,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./general-linear-model.html">general linear model</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulation.html">Simulation</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -161,7 +132,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link active">
+  <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">general linear model</span></a>
   </div>
 </li>
@@ -169,6 +140,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Selection effects, bias and so on</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simulation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Simulation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,25 +160,14 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link active" data-scroll-target="#intro-to-glm">Intro to GLM</a></li>
-  <li><a href="#binary-data" id="toc-binary-data" class="nav-link" data-scroll-target="#binary-data">Binary data</a></li>
-  <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data">Count data</a>
-  <ul class="collapse">
-  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values">Assumptions and p-values</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">general linear model</h1>
+<h1 class="title">Simulation</h1>
 </div>
 
 
@@ -218,61 +184,20 @@ window.Quarto = {
 </header>
 
 
-<section id="intro-to-glm" class="level1">
-<h1>Intro to GLM</h1>
-<p>Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&amp;t=1215s</p>
-<p>Introduction to LM</p>
-<p><span class="math display">\[
-\begin{equation}
-y = \alpha + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p + \epsilon
-\end{equation}
-\]</span></p>
-<p>where:</p>
-<p><span class="math display">\[
-\begin{align*}
-y &amp; : \text{Dependent variable (response)} \\
-x_i &amp; : \text{Independent variable (predictor)} \quad \text{for } i = 1, 2, \ldots, p \\
-\alpha &amp; : \text{Intercept term} \\
-\beta_i &amp; : \text{Coefficient for the } i\text{-th predictor} \quad \text{for } i = 1, 2, \ldots, p \\
-\epsilon &amp; : \text{Error term}
-\end{align*}
-\]</span></p>
-</section>
-<section id="binary-data" class="level1">
-<h1>Binary data</h1>
-<ul>
-<li><p>victim or not? offender or not? confident or not?</p></li>
-<li><p>[take from gary king]</p></li>
-</ul>
-</section>
-<section id="count-data" class="level1">
-<h1>Count data</h1>
-<ul>
-<li><p>integers only! stricly positive!</p></li>
-<li><p>why not just lm?</p></li>
-<li><p>two tribes</p>
-<ul>
-<li>if all you care about is the average difference then you can just use ‘Simple Mean Difference’</li>
-<li>you might be an economist</li>
-<li>there are lots of other interesting quesitons we might care about (e.g.&nbsp;modelling dispersion?)</li>
-</ul></li>
-<li><p>classic problem - over-dispersion</p></li>
-<li><p>poisson assumes mean and variance are the same (only one term in the model)</p></li>
-<li><p>so what? mostly under-estimates the standard error</p></li>
-<li><p>p-values are too optimistic</p></li>
-<li><p>you need to think about why your data are over-dispersed</p></li>
-<li><p>take from Hilbe (distinct zeros? ZIP; generic solution; NB?)</p></li>
-<li><p>ZIP can have different predictors for zeros than count part</p></li>
-<li><p>you can also have different predictors for dispersion and rate parameter in NB if you want</p></li>
-<li><p>if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)</p></li>
-</ul>
-<section id="assumptions-and-p-values" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-p-values">Assumptions and p-values</h2>
-<p>https://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml</p>
+<p>Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al.&nbsp;(2000).</p>
+<p>For example, Hunter and Tseloni use the results of a fitted regression model to calculate a measure they call ‘Victimization Divide’. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.</p>
+<p>This measure is defined as</p>
+<p>(ratio of victimization rates in year 2 - 1) - (ratio of victimization rates in year 2 - 1) / (ratio of victimization rates in year one - 1)</p>
+<p>this is analagous to exploring the percentage change in victimization inequality between two comparison years.</p>
+<p>However, if these ratios of rates come from a statistical model they will also come with some uncertainty measure, such as a standard error. In that case it’s not quite so clear how to incorporate this uncertainty into the calculation of the VD. One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.</p>
+<p>Matthews and McVie (2024; see also Matthews 2024) demonstrate this process. The table below shows the prevalence of victimization (for all crime types) for men and women as reported in the Crime Survey for England and Wales for 2015 and 2020 (Office for National Statistics, n.d.). We can see that the prevalence of victimization was higher for men than women in both years, and that it increased for men (by 3.0 percentage points) and women (by 3.6 percentage points) between 2015 and 2020.</p>
+<p>We can fit a simple regression model to the data in each year to calculate the ratio of the odds of being a victim for men and women. Model 1 shows a statistically significant difference for men (compared to women) in 2015, with men having 11% greater odds of being a victim of crime. In contrast, Model 2 finds that men had a 5% greater odds of being a victim of crime than women in 2020; however, this difference does not meet the 95% threshold for statistical significance.</p>
+<p>Calculating the VD for these two results, based on the odds ratios from the two models, shows that victimization inequality decreased by 52% between the two years. Victimiztion inequality fell by more than half!</p>
+<p>However, this does not factor the uncertainty in these odds ratios into our results. To investigate this we can simulate 1,000 sets of coefficients from the models’ results. Using 10,000 simulations from the models’ results, we get 95% intervals for the VD of -0.95 and 0.22. Whilst our most of our simulations do indicate that victimization inequality has declined, this would not be considered ‘statistically significant’ at the usual 95% threshold.</p>
+<p>The beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.</p>
+<p>But remember that our model is wrong!! (Greenland)</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -686,13 +611,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./types-of-data.html" class="pagination-link" aria-label="Types of criminological data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Types of criminological data</span>
+      <a href="./selection-measurement.html" class="pagination-link" aria-label="Selection effects, bias and so on">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Selection effects, bias and so on</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./selection-measurement.html" class="pagination-link" aria-label="Selection effects, bias and so on">
-        <span class="nav-page-text">Selection effects, bias and so on</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

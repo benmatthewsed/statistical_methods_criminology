@@ -4,13 +4,15 @@ Criminological data - as with criminology itself - is extremely varied. The main
 
 *I guess key point is that you need to know how your data came about to be able to analyse it properly?* 
 
-## Scope
+## Geography
 
 Mostly scope is national, but not always​
 
-Some local surveys​
+Some local surveys​(suchas MOPAC/Islington Crime Survey)
 
-Can get data on trends for individual police forces, or Local Authorities etc
+Can get data on trends for individual police forces (https://data.police.uk/data/), or divisions within Scotland (https://scotland.shinyapps.io/sg-scottish-crime-justice-survey/)
+
+
 
 ## How does an event become a crime statistic?
 
@@ -38,7 +40,10 @@ Sentencing​
 
 Do official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)
 
-Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime, but is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )
+How you see this may depend on your theoretical persuasion (https://www.annualreviews.org/content/journals/10.1146/annurev-soc-031021-035328)
+
+
+Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime. Buil-GIl 2022 https://www.tandfonline.com/doi/full/10.1080/15614263.2022.2047047. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” (Atak, K. (2020) Beyond the western crime drop: Violence, property offences, and the state in Turkey 1990–2016, International Journal of Law, Crime and Justice (60) https://doi.org/10.1016/j.ijlcj.2019.100373 )
 
 ## Survey data
 

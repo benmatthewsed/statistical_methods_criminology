@@ -59,3 +59,9 @@ $$
 -   you can also have different predictors for dispersion and rate parameter in NB if you want
 
 -   if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)
+
+
+
+## Assumptions and p-values
+
+https://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml
