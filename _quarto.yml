@@ -9,7 +9,6 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
     - types-of-data.qmd
     - general-linear-model.qmd
     - selection-measurement.qmd

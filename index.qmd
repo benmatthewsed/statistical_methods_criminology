@@ -1,5 +1,13 @@
 # Preface {.unnumbered}
 
-This website contains the notes and R code for the NCRM workshop 'Statistical Methods for Criminology' run in September 2024.
+This website contains the notes and R code for the NCRM workshop ['Statistical Methods for Criminology'](https://www.ncrm.ac.uk/training/show.php?article=13428) which will run in September 2024.
 
 It is very work in progress.
+
+# About
+
+This website contains the notes for the course. This is a combination of theoretical discussion and worked examples of fitting statistical models to criminological data and the issues that can arise when doing so.
+
+The worked examples use ode in the [R statistical language](https://www.r-project.org/about.html).
+
+This website was built with [Quarto](https://quarto.org/docs/websites/) using [RStudio](https://posit.co/download/rstudio-desktop/) and is rendered with [Github Pages](https://pages.github.com/).

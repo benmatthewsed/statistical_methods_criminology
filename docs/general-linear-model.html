@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>statistical_methods_criminology - general linear model</title>
+<title>Statistical Methods for Criminology - 3&nbsp; general linear model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./general-linear-model.html">general linear model</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./general-linear-model.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">general linear model</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -125,7 +125,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">statistical_methods_criminology</a> 
+      <a href="./">Statistical Methods for Criminology</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,20 +149,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./types-of-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Types of criminological data</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of criminological data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">general linear model</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">general linear model</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -175,6 +169,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,12 +193,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link active" data-scroll-target="#intro-to-glm">Intro to GLM</a></li>
-  <li><a href="#binary-data" id="toc-binary-data" class="nav-link" data-scroll-target="#binary-data">Binary data</a></li>
-  <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data">Count data</a>
+  <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link active" data-scroll-target="#intro-to-glm"><span class="header-section-number">4</span> Intro to GLM</a></li>
+  <li><a href="#binary-data" id="toc-binary-data" class="nav-link" data-scroll-target="#binary-data"><span class="header-section-number">5</span> Binary data</a></li>
+  <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data"><span class="header-section-number">6</span> Count data</a>
   <ul class="collapse">
-  <li><a href="#a-note-on-bespoke-models" id="toc-a-note-on-bespoke-models" class="nav-link" data-scroll-target="#a-note-on-bespoke-models">A note on bespoke models</a></li>
-  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values">Assumptions and p-values</a></li>
+  <li><a href="#a-note-on-bespoke-models" id="toc-a-note-on-bespoke-models" class="nav-link" data-scroll-target="#a-note-on-bespoke-models"><span class="header-section-number">6.1</span> A note on bespoke models</a></li>
+  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values"><span class="header-section-number">6.2</span> Assumptions and p-values</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -208,7 +208,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">general linear model</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">general linear model</span></h1>
 </div>
 
 
@@ -225,8 +225,8 @@ window.Quarto = {
 </header>
 
 
-<section id="intro-to-glm" class="level1">
-<h1>Intro to GLM</h1>
+<section id="intro-to-glm" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Intro to GLM</h1>
 <p>Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&amp;t=1215s</p>
 <p>Introduction to LM</p>
 <p><span class="math display">\[
@@ -245,15 +245,15 @@ x_i &amp; : \text{Independent variable (predictor)} \quad \text{for } i = 1, 2, 
 \end{align*}
 \]</span></p>
 </section>
-<section id="binary-data" class="level1">
-<h1>Binary data</h1>
+<section id="binary-data" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Binary data</h1>
 <ul>
 <li><p>victim or not? offender or not? confident or not?</p></li>
 <li><p>[take from gary king]</p></li>
 </ul>
 </section>
-<section id="count-data" class="level1">
-<h1>Count data</h1>
+<section id="count-data" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Count data</h1>
 <ul>
 <li><p>integers only! stricly positive!</p></li>
 <li><p>why not just lm?</p></li>
@@ -273,12 +273,12 @@ x_i &amp; : \text{Independent variable (predictor)} \quad \text{for } i = 1, 2, 
 <li><p>you can also have different predictors for dispersion and rate parameter in NB if you want</p></li>
 <li><p>if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)</p></li>
 </ul>
-<section id="a-note-on-bespoke-models" class="level2">
-<h2 class="anchored" data-anchor-id="a-note-on-bespoke-models">A note on bespoke models</h2>
+<section id="a-note-on-bespoke-models" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="a-note-on-bespoke-models"><span class="header-section-number">6.1</span> A note on bespoke models</h2>
 <p>I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.</p>
 </section>
-<section id="assumptions-and-p-values" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-p-values">Assumptions and p-values</h2>
+<section id="assumptions-and-p-values" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="assumptions-and-p-values"><span class="header-section-number">6.2</span> Assumptions and p-values</h2>
 <p>https://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml</p>
 
 
@@ -698,7 +698,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./types-of-data.html" class="pagination-link" aria-label="Types of criminological data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Types of criminological data</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Types of criminological data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

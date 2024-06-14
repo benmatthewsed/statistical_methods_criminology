@@ -1,4 +1,4 @@
-# Simulation {.unnumbered}
+# Simulation
 
 Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al. (2000).
 
