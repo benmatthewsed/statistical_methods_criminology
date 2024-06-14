@@ -1,6 +1,6 @@
 # general linear model
 
-# Intro to GLM
+## Intro to GLM
 
 Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&t=1215s
 
@@ -10,7 +10,7 @@ Introduction to LM
 - Systematic component
 - Link function
 
-
+(I adapted this notation from Solomon Kurz https://bookdown.org/content/4857/god-spiked-the-integers.html#poisson-regression)
 
 $$
 \begin{align*}

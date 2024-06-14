@@ -17,6 +17,7 @@ book:
     - references.qmd
 
 bibliography: statistical_methods_criminology_references.bib
+link-citations: true
 
 format:
   html:
