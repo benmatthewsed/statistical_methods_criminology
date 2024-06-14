@@ -29,9 +29,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "statistical_methods_criminology",
+    "title": "Statistical Methods for Criminology",
     "section": "",
-    "text": "Preface\nThis website contains the notes and R code for the NCRM workshop ‘Statistical Methods for Criminology’ run in September 2024.\nIt is very work in progress.",
+    "text": "Preface\nThis website contains the notes and R code for the NCRM workshop ‘Statistical Methods for Criminology’ which will run in September 2024.\nIt is very work in progress.\n\n\nAbout\nThis website contains the notes for the course. This is a combination of theoretical discussion and worked examples of fitting statistical models to criminological data and the issues that can arise when doing so.\nThe worked examples use ode in the R statistical language.\nThis website was built with Quarto using RStudio and is rendered with Github Pages.",
     "crumbs": [
       "Preface"
     ]
