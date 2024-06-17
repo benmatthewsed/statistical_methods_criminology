@@ -1,18 +1,32 @@
 # Selection effects, bias and so on
 
+## Large worlds and small worlds
+
+Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. This is fine if all we want to do is provide summaries of the the numbers in our spreadsheets. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. We often need to bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview two ways in which our understanding of the 'large world' might influence how we interpret our results from the 'small world': measurement error and selection effects.
+
+
 ## Measurement error
 
 The standard linear model assumes that all variables are measured perfectly (or in other words, with no error).
 
-In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime 'out there' in society. Not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.
+In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime 'out there' in society. As we have discussed already, not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.
+
+If we treat recorded crime data 
 
 Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios *we may not know what impact it is having*.
 
+__More examples here__
+
+
 ### What to do about it?
 
-What's more is that it's not entirely clear what to do about it. Pina-Sanchez has written about measurement error in crime.
+What's more is that it's not entirely clear what to do about it.
 
-One approach is to use Bayesian methods. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.
+One way to approach this, if we know or can reasonably approximate the model for the measurement error then we can use Bayesian methods to jointly estimate a model for our observations and the measurement error. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.
+
+Pina-Sanchez has written about measurement error in crime.
+
+One approach is to use Bayesian methods. 
 
 Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here: [https://josepinasanchez.uk/short-courses/](https://josepinasanchez.uk/short-courses/)
 
@@ -22,7 +36,7 @@ from https://josepinasanchez.uk/short-courses/
 
 ### SIMEX
 
-A less involved option involves assessment measurement error through simulation. The `simex` R package lets you simulate new versions of your dataset with *more* and more measurement error. By looking to see how your coefficients change with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!
+A less involved option involves assessment measurement error through simulation. The process here is to fit the model to the data as observed and try to figure out what the coefficients would be if there was no measurement error in the data. The `simex` R package lets you simulate new versions of your dataset with *more* and more measurement error. By looking to see how your coefficients change after re-fitting your model with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!
 
 ### `rcme`
 
@@ -32,11 +46,18 @@ Pina-Sanchez and colleagues have written an R package that can conduct sensitivi
 
 Open questions - what about survey data? Models other than linear models?
 
+
+
 ### Key takeaway
 
 -   Think hard, be honest.
 
-# Selection effects
+## Selection effects
+
+One use of regression models is to identify 'causal' effects of predictors on outcomes.
+
+
+_Some links on where to read more about causal inference? Maybe [here](https://www.r-causal.org/) _
 
 Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.
 
@@ -60,7 +81,10 @@ Others [@gaeblerCausalFrameworkObservational2022]suggest that maybe you can iden
 
 ## Solutions?
 
-Knox et al. (2020) suggest some technical fixes. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.
+Knox et al. (2020) suggest some technical fixes, but emphasise that - if we are interested in using statistical models to identify _causal_ relationships _there is no general solution_ that can guarantee that coefficients in a regression model will have valid causal interpretations based on administrative data derived from police records. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.
+
+__maybe get the students to play about with the data in the dataverse?https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KFQOCV__
+
 
 ## Probabilistic Bias Analysis
 
@@ -74,20 +98,33 @@ There are whole books written on this topic! So no general solutions here.
 
 We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e. people for whom S = 0)
 
-"But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1)." - https://link.springer.com/referenceworkentry/10.1007/978-0-387-09834-0_60
+"But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1)." In the Knox and colleagues example, this would require knowing the numbers of people who were observed by police but not stopped, in order to calculate the probabilities of selection into the stop dataset. However, we don't know this - and it is hard to imagine a scenario where an analyst of an police administrative dataset _would_ know this.
 
-BiasS D 1 might be estimated as the ratio of estimates without and with information from initial non-responders on whom data was later obtained (“call-back survey” information) from studies reporting such information (e.g., Hatch et al. 2000). Even with such information, however, concerns about generalization across studies must be addressed by considering how differences between the study populations may have affected response and selection.
+Even if we _do_ know this for our particular dataset, there is no guarantee that selection into the data would hold in every case that we might want to generalize our results to. As such we'd need to consider how differences between the study populations may have affected response and selection (e.g. would selection probabilities from a US study map onto a study in Manchester? How about one in Glasgow?)
 
 ### Confounding
 
-There's something that we know affects the outcome we're interested in and/or our independent variables, but we don't have a measure for this. In criminology, we might have measures of police stops but not *offending* (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.
+Confounding describes a situation where there's something that we know affects the outcome we're interested in and/or our independent variables, but we don't have a measure for this. In criminology, we might have measures of police stops but not *offending* (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.
 
 -   because we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).
+
+
+
 
 ## In general
 
 Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?
 
-"he preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al. (1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding"
+"The preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al. (1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding"
 
 -   so this is based on the idea tat we can identify an "implausibly strong" confounder, which is reasonable.
+
+
+
+_Is the small world enough? How do we talk about this? e.g. if all we've done is analysed convictions data do we talk about offending, or just conviction?_
+
+"Despite these considerations, there is no basis for mandating a bias analysis of every study or even most studies. For example, bias analysis is superfluous when conventional intervals show that no useful conclusion could be drawn from the study even if it were perfect apart from random error. More generally, rather than providing a bias analysis, a study may provide greater service by refraining from inference; instead it can focus on carefully reporting its design, conduct, and data in great detail to facilitate pooling and meta-analysis (Greenland et al. 2004). Inferences are best based on a more complete account of evidence than can be provided in a single study report, and thus the effort of bias analysis is more justifiable in research synthesis (Turner et al. 2009; Welton et al. 2009). Even there, bias analysis becomes essential only when doing risk assessment or when authors claim to offer near-definitive conclusions." [@greenlandSensitivityAnalysisBias2014 p703]
+
+... so you only need to bother with this stuff if you 'claim to offer near-definitive conclusions'. Is your study likely to contribute to a meta analysis? Or in other words, when you are moving between the small world and the large world.
+
+Means humility when making policy recommendations!!
