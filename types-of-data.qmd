@@ -20,19 +20,32 @@ How exactly we incorporate this information will depend a lot on what data we're
 
 ### How does an event become a crime statistic?
 
-![Recorded crime](resources/recorded_crime_flowchart.pdf)
+In Scotland there is a very nice discussion of how police recorded crime statistics are put together in the [Scottish Government User Guide to Recorded Crime](https://www.gov.scot/publications/user-guide-recorded-crime-statistics-scotland-3/). We can think of this process as involving four main components:
 
-\[add link to SG flow diagram\]
+![Recorded crime](resources/recorded_crime_flowchart.pdf){style="transform: rotate(90deg);"}
+- _Reporting_: Most of the time incidents come to the attention of the police after a member of the public reports it. However, we know that not all incidents are reported to the police, and not all people are equally likely to report incidents if they are victims [@fohringPuttingFaceDark2014]
+- _Fact-checking/investigation_: Police need to collect initial information about an incident to establish whether a crime has occurred
+- _Discretion/judgement_: Even if the police believe a crime has occurred, not all incidents are followed up, for example if a victim chooses not to prosecute or provide details of the perpetrator [@aplinGreyFigureCrime2019]. __Maybe add discussion of [@hopeEffectThirdParty2023] here__?
+- _Applying crime counting rules_: This might affect the type of crime an incident is recorded as, including whether it is classed as a hate crime. The current [Scottish Crime Recording Standard](https://www.gov.scot/publications/scottish-crime-recording-standard-crime-recording-counting-rules-2/) is 550 pages long (!). I have not read it.
+
+### Key dilemma
+
+Because of all these processes there has long been a question about the extent to which official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system [@kitsuseNoteUsesOfficial1963; @hopeEffectThirdParty2023], and how you see this may depend on your theoretical persuasion [@simesPolicingPunishmentPlace2023]. We'll discuss some practical impacts this may have on analysis later in the workshop.
+
 
 ### How does an incident end up as a court record?
 
-Crime​
+We might also want to analyse data on criminal convictions from courts. Here is a high-level overview of how a court record comes to exist in Scotland:
 
-Arrest and charge​
+![Court records](resources/court_data_flowchart.pdf){style="transform: rotate(90deg);"}
 
-Court​
+- _Crime_: All the factors listed above for recorded crime have to happen first
+- _Arrest and charge_: The police need to be able to identify the person who committed the offence and charge them with a crime. Incidents disposed of using penalties such as Fixed Penalty Notices or warnings will not reach court
+- _Court_: Exactly what a person may end up being convicted for may depend on plea bargaining. In some countries (such as Scotland) court records use the principal offence rule, where only the most serious type of crime included in a set of proceedings is listed. A summary in 2008 found that "eighteen European countries apply a principal offence rule and twenty-one do not apply such a rule".
+- _Sentencing_: There is a large literature on sentencing outcomes and how they vary by the characteristics of people being sentenced (see [@pina-sanchezEthnicDisparitiesSentencing2022] for a recent example)
 
-Sentencing​
+One good thing about using convictions data is that we can be pretty confident (other than in cases such as wrongful conviction) that a crime has occurred. We may be less confident of this using other data sources.
+
 
 ### How does an incident get logged as a police stop?
 
@@ -48,17 +61,13 @@ https://www.scotland.police.uk/about-us/covid-19-police-scotland-response/enforc
 
 
 
-## Key dilemma
-
-Do official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system?​(Kitsuse and Cicourel, 1963)
-
-How you see this may depend on your theoretical persuasion [@simesPolicingPunishmentPlace2023]
 
 Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime [@buil-gilComparingMeasurementsViolent2022]. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” [@atakWesternCrimeDrop2020]
 
 ## Survey data
 
-Mostly specialist secondary survey​
+In response to known issues with measuring levels of crime with administrative data, since the 1980s criminologists in some parts of the world have been surveying the public to ask about their levels of victimization. 
+
 
 Scottish Crime and Justice Survey​
 
@@ -80,7 +89,7 @@ Good for measuring common crimes, bad for measuring rare crimes
 
 ## How does a person get selected for the SCJS?
 
-Random sample of 10,000 postcodes in Scotland are contacted to take part​
+Random sample of 12,000ish postcodes in Scotland are contacted to take part​(for 2020/21 survey it was 12,681 addresses)
 
 For those who agree, one adult (age 16 or over) in each household is randomly selected for interview​
 

@@ -1,8 +1,5 @@
 # Selection effects, bias and so on
 
-## Large worlds and small worlds
-
-Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. This is fine if all we want to do is provide summaries of the the numbers in our spreadsheets. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. We often need to bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview two ways in which our understanding of the 'large world' might influence how we interpret our results from the 'small world': measurement error and selection effects.
 
 
 ## Measurement error
