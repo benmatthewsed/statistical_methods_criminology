@@ -15,15 +15,6 @@ When working with criminological data we often know quite a lot about how the da
 How exactly we incorporate this information will depend a lot on what data we're working with and what the goals of our analysis are. There are no general solutions to what information we should incorporate and how we might do this, but in this workshop we'll cover some scenarios that can arise in criminological research.
 
 
-## Geography
-
-Mostly scope is national, but not always​
-
-Some local surveys​(suchas MOPAC/Islington Crime Survey)
-
-Can get data on trends for [individual police forces in the UK] (https://data.police.uk/data/), or [victimization survey data aggreted to police division level within Scotland] (https://scotland.shinyapps.io/sg-scottish-crime-justice-survey/)
-
-
 
 ## Generative stories for common types of crime data
 
