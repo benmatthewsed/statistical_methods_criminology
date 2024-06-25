@@ -1,14 +1,20 @@
-# general linear model
+# The general linear model
+
+## Large worlds and small worlds
+
+Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. This is fine if all we want to do is provide summaries of the the numbers in our spreadsheets. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. We often need to bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview two ways in which our understanding of the 'large world' might influence how we interpret our results from the 'small world': measurement error and selection effects.
+
 
 ## Intro to GLM
+
 
 Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&t=1215s
 
 Introduction to LM
 
-- Stochastic (or random) component
-- Systematic component
-- Link function
+-   Stochastic (or random) component
+-   Systematic component
+-   Link function
 
 (I adapted this notation from Solomon Kurz https://bookdown.org/content/4857/god-spiked-the-integers.html#poisson-regression)
 
@@ -32,8 +38,6 @@ $$
 
 > an example here?
 
-
-
 ## Logistic regression
 
 For logistic regression we have:
@@ -43,8 +47,7 @@ $$
 y_i \sim & {Binomial} (n, p_i) \\
 {logit(p_i)} & = \alpha + \beta (x_i),
 \end{align*}
-$$
-for logistic regression, $n$ = 1, and we are just interested in modelling $p_i$.
+$$ for logistic regression, $n$ = 1, and we are just interested in modelling $p_i$.
 
 These kinds of models are very common in the social sciences, including in criminology. We might want to model whether someone is a victim of crime or not, or whether the person has been convicted of a crime in a given year, or whether they are confident in the police or not... and so on and so on. The nice thing about this model formulation is that the ${logit}$ link function makes sure that all the probabilities the model estimates are between 0 and 1. Strictly speaking we don't need to do this (see the linear probability model), but it's nice to avoid results that obviously don't make sense, like negative probabilities and such.
 
@@ -61,18 +64,15 @@ $$
 
 Now there is only one parameter (lambda; $\lambda$) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of $\lambda$).
 
+The key feature of count data is that it is integers (i.e. whole numbers) only and they are stricly positive - you can't get negative counts. Pretty much all aggregated administrative data about crime in its raw form will be count data. This might be counts of recorded crime, counts of people released from prison and so on. These data might be re-expressed as *rates* per 1,000 population, but before this they are counts.
 
-The key feature of count data is that it is integers (i.e. whole numbers) only and they are stricly positive - you can't get negative counts. Pretty much all aggregated administrative data about crime in its raw form will be count data. This might be counts of recorded crime, counts of people released from prison and so on. These data might be re-expressed as _rates_ per 1,000 population, but before this they are counts.
-
-
-##  why not just lm?
+## why not just lm?
 
 -   two tribes
 
     -   if all you care about is the average difference then you can just use 'Simple Mean Difference'
     -   you might be an economist
     -   there are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)
-
 
 ### Specific problems with GLMs
 
