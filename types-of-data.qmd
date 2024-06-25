@@ -20,6 +20,8 @@ How exactly we incorporate this information will depend a lot on what data we're
 
 ### How does an event become a crime statistic?
 
+![Recorded crime](resources/recorded_crime_flowchart.pdf)
+
 \[add link to SG flow diagram\]
 
 ### How does an incident end up as a court record?
