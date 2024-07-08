@@ -33,6 +33,23 @@ In Scotland there is a very nice discussion of how police recorded crime statist
 Because of all these processes there has long been a question about the extent to which official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system [@kitsuseNoteUsesOfficial1963; @hopeEffectThirdParty2023], and how you see this may depend on your theoretical persuasion [@simesPolicingPunishmentPlace2023]. We'll discuss some practical impacts this may have on analysis later in the workshop.
 
 
+### Philosophical questions
+
+Verland and Langton (2024) outline two possible approaches to conceptualizing police recorded crime data: a population or superpopulation approach.
+
+In the population approach the data you observe for a particular time and place (e.g. Scotland in 2023) are all the data you could ever observe - you don't need to fit statistical models to generalize from the data you observe to a wider population because _there is no wider population_. [^2] You have the data you have, and that's that.
+
+[^2:] You might want to fit models for other reasons though.
+
+In the superpopulation approach you are interesting in thinking about other ways the data you have may have arisen. Verlan and Langton (2024) give examples where you may think that data on crimes recorded by police in cities in Texas from 2023 were data drawn from the population of cities in the whole USA, or the whole of the USA, or the whole planet. Alternatively, data from cities in Texas from 2023 may be seen as a sample from cities in Texas from 2023 and 2024, or 2023-2030 and so on. Gelman (2011) takes this approach using an example from political science - you may have data on all seats in a lesislature but want to predict what will happen to those same seats in future elections under "hypothetical alternative conditions". Applying the same logic, statistical models could be used with police recorded crime data to ask 'counterfactual' questions about what crime rates in Dallas may have been if the poverty rate fell by 5%.
+
+Verlan and Langton list some possible problems using inferential statistcs/statistical models using administrative data.
+
+1. It wrongly leads people to assume that their results are generalizable. This is often not done explicitly but implicitly (for example suggesting that results may apply in other jurisdictions)
+2. It can lead people to undervalue actual observed differences in their data. For example, researchers may deny that an association between two variables exists in their dataset if it is not statistically significant
+
+
+
 ### How does an incident end up as a court record?
 
 We might also want to analyse data on criminal convictions from courts. Here is a high-level overview of how a court record comes to exist in Scotland:
@@ -95,28 +112,36 @@ For those who agree, one adult (age 16 or over) in each household is randomly se
 
 Therefore, *by design* no:​
 
-Children​
+- Children​
+- Homeless people​
+- People living in communal establishments (e.g. students, people in prison)
 
-Homeless people​
-
-People living in communal establishments
-
-“Moreover, in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” [@carr-hillMissingMillionsMeasuring2013]
+There may also be limitations on who ends up in a survey dataset even if they are included in the design. With a focus on International Development, Carr-Hill says that “in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” [@carr-hillMissingMillionsMeasuring2013]. The extent to which these factors may affect any particular data collection exercise may vary from having little to extreme impact (for example, research being conduct in a conflict zone). It is up to the researcher to determine the likely extent of factors such as these in their own analysis.
 
 (Not going to talk about things like measurment equivalence in internaitonal surveys although that is a thing!)
 
-Standardization of surveys means it’s hard to reflect new forms of crime in established surveys – see cyber/enabled crime in CSEW​
-
-Regular changes to question wording means that time series analysis is compromised which is why only a small number of fraud and cyber questions were added to the CSEW​
-
-This means that the new questions are only a limited measure of ‘cybercrime’
 
 #### Who is excluded?
 
 For SCJS to be a measure of crime for all adults, not just all adults in private households, we need to make a key assumption that “the subset of the adult population not captured in the SCJS experience the same level of victimisation as adults in the household resident population”​
 
-But this excludes people, students, people in prison, and those living in refuges​
-
-“Domestic abuse is the main cause of women’s homelessness in Scotland… All women living in Women’s Aid refuges have experienced domestic abuse and many will have experienced other forms of crime”
+But this excludes people, students, people in prison, and those living in refuges. However, “Domestic abuse is the main cause of women’s homelessness in Scotland… All women living in Women’s Aid refuges have experienced domestic abuse and many will have experienced other forms of crime”
 
 [@scottishwomensaidResponseConsultationScottish2021]
+
+
+"The self-completion questionnaire on partner abuse and the questionnaire on sexual violence are the last part of an already long interview. The 2019/2020 technical report notes that
+“ran out of time” accounts for 34.2% (the largest proportion) of reasons for not doing the selfcompletion part of the SCJS."
+
+This means that students are excluded from estimates of domestic abuse in Scotland.
+
+If you want to fit a statistical model to SCJS to understand partner abuse you need to be aware of these issues and possible bias (in terms of non-representativeness that may arise)
+
+Importantly, this is not a sample _size_ issue - if you had all the data on the people in the sampling frame then you still wouldn't find out anything about students because they are excluded from the survey by design.
+
+
+### Accounting for survey design in analysis
+
+Crime surveys usually come with sampling weights (see https://notstatschat.rbind.io/2020/08/04/weights-in-statistics/). This adjusts for the non-random selection of participants into the survey. It's useful to think about the distinction between your survey and the population. If you want to calculate descriptive statistics from the survey that are accurate for the target population, you should use the weights. There are other occasions when you might want to know the unweighted/base sample size (e.g. to avoid presenting results that are based on a small number of responses). Different authorities have different perspectives on whether you should use sampling weights when fitting a statistical model. For example, Understanding Society say that you should definitely use sampling weights when analysing that dataset (https://www.understandingsociety.ac.uk/documentation/mainstage/user-guides/main-survey-user-guide/why-use-weights). Economists at the world bank say 'yes when doing descriptive research and it depends when doing 'causal inference'" (https://www.nber.org/papers/w18859). As ever, the appropriate strategy will depend on the data you are working with and what question you are trying to answer. The best place to start is to consult the documentation for the survey you are using and see its description of the weights provided. For example, in the Scottish Crime and Justice survey they are different weights for individuals, households and incidents.
+
+Again, weights will only help adjust the data you see towards the target population in the survey design frame. Weighting cannot adjust for populations who are excluded from the survey by design.
