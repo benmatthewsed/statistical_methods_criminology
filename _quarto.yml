@@ -11,8 +11,8 @@ book:
     - intro.qmd
     - types-of-data.qmd
     - general-linear-model.qmd
-    - selection-measurement.qmd
     - simulation.qmd
+    - selection-measurement.qmd
     - ethics.qmd
     - references.qmd
 

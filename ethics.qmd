@@ -96,7 +96,7 @@ Three visualizations from [Data Feminism](https://data-feminism.mitpress.mit.edu
 
 -   the description of your charts is theoretically informed
 
-### community loss
+## community loss
 
 Jessica Simes [@simesPunishingPlacesGeography2021] gives a good example of how we may want to come up with theoretically informed measures, or theoretically re-frame measures. Simes analysed imprisonment data from the state of Massachusets in the USA, including spatial regression of prison admission rates and how these relate to "racial demographics, social and economic disadvantage, arrest rates, and violent crime" [@simesPlacePunishmentSpatial2018a].
 

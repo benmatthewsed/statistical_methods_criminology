@@ -189,16 +189,13 @@ div.csl-indent {
   <li><a href="#what-to-do-about-it" id="toc-what-to-do-about-it" class="nav-link" data-scroll-target="#what-to-do-about-it"><span class="header-section-number">4.1.1</span> What to do about it?</a></li>
   <li><a href="#simex" id="toc-simex" class="nav-link" data-scroll-target="#simex"><span class="header-section-number">4.1.2</span> SIMEX</a></li>
   <li><a href="#rcme" id="toc-rcme" class="nav-link" data-scroll-target="#rcme"><span class="header-section-number">4.1.3</span> <code>rcme</code></a></li>
-  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway"><span class="header-section-number">4.1.4</span> Key takeaway</a></li>
   </ul></li>
   <li><a href="#selection-effects" id="toc-selection-effects" class="nav-link" data-scroll-target="#selection-effects"><span class="header-section-number">4.2</span> Selection effects</a></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">4.3</span> Solutions?</a></li>
-  <li><a href="#probabilistic-bias-analysis" id="toc-probabilistic-bias-analysis" class="nav-link" data-scroll-target="#probabilistic-bias-analysis"><span class="header-section-number">4.4</span> Probabilistic Bias Analysis</a>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">4.3</span> Solutions?</a>
   <ul class="collapse">
-  <li><a href="#selection-bias" id="toc-selection-bias" class="nav-link" data-scroll-target="#selection-bias"><span class="header-section-number">4.4.1</span> Selection bias</a></li>
-  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"><span class="header-section-number">4.4.2</span> Confounding</a></li>
+  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"><span class="header-section-number">4.3.1</span> Confounding</a></li>
   </ul></li>
-  <li><a href="#in-general" id="toc-in-general" class="nav-link" data-scroll-target="#in-general"><span class="header-section-number">4.5</span> In general</a></li>
+  <li><a href="#in-general" id="toc-in-general" class="nav-link" data-scroll-target="#in-general"><span class="header-section-number">4.4</span> In general</a></li>
   </ul>
 </nav>
     </div>
@@ -224,11 +221,13 @@ div.csl-indent {
 </header>
 
 
+<p>We may be skeptial of conclusions drawn from ‘small world’ of our data and model for lots of reasons. In this section we’ll briefly introduce three ways in which we may want to interrogate our statistical models. Books and books have been written about each topic, so this will only offer a brief overview of each, with links to further reading for those who want to know more.</p>
+<p>The common thread running through all these measures is that they rely on being skeptical about the numbers in our spreadsheets. Either these numbers may be inaccurate (measurement error); they may omit some variables that we theoretically think are important (confounding), or; they omit some people/cases we care about (selection effects).</p>
+<p>The data never speak for themselves.</p>
 <section id="measurement-error" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">4.1</span> Measurement error</h2>
 <p>The standard linear model assumes that all variables are measured perfectly (or in other words, with no error).</p>
 <p>In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime ‘out there’ in society. As we have discussed already, not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.</p>
-<p>If we treat recorded crime data</p>
 <p>Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios <em>we may not know what impact it is having</em>.</p>
 <p><strong>More examples here</strong></p>
 <section id="what-to-do-about-it" class="level3" data-number="4.1.1">
@@ -254,16 +253,14 @@ div.csl-indent {
 </blockquote>
 <p>Open questions - what about survey data? Models other than linear models?</p>
 </section>
-<section id="key-takeaway" class="level3" data-number="4.1.4">
-<h3 data-number="4.1.4" class="anchored" data-anchor-id="key-takeaway"><span class="header-section-number">4.1.4</span> Key takeaway</h3>
-<ul>
-<li>Think hard, be honest.</li>
-</ul>
-</section>
 </section>
 <section id="selection-effects" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="selection-effects"><span class="header-section-number">4.2</span> Selection effects</h2>
 <p>One use of regression models is to identify ‘causal’ effects of predictors on outcomes.</p>
+<p><span class="citation" data-cites="greenlandSensitivityAnalysisBias2014">(<a href="references.html#ref-greenlandSensitivityAnalysisBias2014" role="doc-biblioref">Greenland 2014</a>)</span></p>
+<p>We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e.&nbsp;people for whom S = 0)</p>
+<p>“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).” In the Knox and colleagues example, this would require knowing the numbers of people who were observed by police but not stopped, in order to calculate the probabilities of selection into the stop dataset. However, we don’t know this - and it is hard to imagine a scenario where an analyst of an police administrative dataset <em>would</em> know this.</p>
+<p>Even if we <em>do</em> know this for our particular dataset, there is no guarantee that selection into the data would hold in every case that we might want to generalize our results to. As such we’d need to consider how differences between the study populations may have affected response and selection (e.g.&nbsp;would selection probabilities from a US study map onto a study in Manchester? How about one in Glasgow?)</p>
 <p><em>Some links on where to read more about causal inference? Maybe <a href="https://www.r-causal.org/">here</a> </em></p>
 <p>Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.</p>
 <p>For example, we might want to know if people from minority ethnic backgrounds more likely to be arrested after a stop than people from white backgrounds (Knox et al)</p>
@@ -285,37 +282,28 @@ div.csl-indent {
 <h2 data-number="4.3" class="anchored" data-anchor-id="solutions"><span class="header-section-number">4.3</span> Solutions?</h2>
 <p>Knox et al.&nbsp;(2020) suggest some technical fixes, but emphasise that - if we are interested in using statistical models to identify <em>causal</em> relationships <em>there is no general solution</em> that can guarantee that coefficients in a regression model will have valid causal interpretations based on administrative data derived from police records. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.</p>
 <p><strong>maybe get the students to play about with the data in the dataverse?https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KFQOCV</strong></p>
-</section>
-<section id="probabilistic-bias-analysis" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="probabilistic-bias-analysis"><span class="header-section-number">4.4</span> Probabilistic Bias Analysis</h2>
-<p>What Knox et al.&nbsp;suggest is part of a set of approaches called Probabilistic Bias Analysis. This includes things like understanding selection bias, unmeasured confounding and misclassification.</p>
-<p>There are whole books written on this topic! So no general solutions here.</p>
-<section id="selection-bias" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="selection-bias"><span class="header-section-number">4.4.1</span> Selection bias</h3>
-<p><span class="citation" data-cites="greenlandSensitivityAnalysisBias2014">(<a href="references.html#ref-greenlandSensitivityAnalysisBias2014" role="doc-biblioref">Greenland 2014</a>)</span></p>
-<p>We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e.&nbsp;people for whom S = 0)</p>
-<p>“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).” In the Knox and colleagues example, this would require knowing the numbers of people who were observed by police but not stopped, in order to calculate the probabilities of selection into the stop dataset. However, we don’t know this - and it is hard to imagine a scenario where an analyst of an police administrative dataset <em>would</em> know this.</p>
-<p>Even if we <em>do</em> know this for our particular dataset, there is no guarantee that selection into the data would hold in every case that we might want to generalize our results to. As such we’d need to consider how differences between the study populations may have affected response and selection (e.g.&nbsp;would selection probabilities from a US study map onto a study in Manchester? How about one in Glasgow?)</p>
-</section>
-<section id="confounding" class="level3" data-number="4.4.2">
-<h3 data-number="4.4.2" class="anchored" data-anchor-id="confounding"><span class="header-section-number">4.4.2</span> Confounding</h3>
+<section id="confounding" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="confounding"><span class="header-section-number">4.3.1</span> Confounding</h3>
 <p>Confounding describes a situation where there’s something that we know affects the outcome we’re interested in and/or our independent variables, but we don’t have a measure for this. In criminology, we might have measures of police stops but not <em>offending</em> (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.</p>
 <ul>
 <li>because we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).</li>
 </ul>
+<p><em>The tipr approach is to unmeasured confounding - not just that we have a variable measured inaccurately, but that there is a key variable we haven’t measured</em></p>
+<p><em>need some criminological examples here</em></p>
 </section>
 </section>
-<section id="in-general" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="in-general"><span class="header-section-number">4.5</span> In general</h2>
+<section id="in-general" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="in-general"><span class="header-section-number">4.4</span> In general</h2>
 <p>Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?</p>
 <p>“The preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al.&nbsp;(1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding”</p>
 <ul>
-<li>so this is based on the idea tat we can identify an “implausibly strong” confounder, which is reasonable.</li>
+<li><p>so this is based on the idea tat we can identify an “implausibly strong” confounder, which is reasonable.</p></li>
+<li><p>One approach is to pick a bunch of possible bias parameters and test to see if results are robust to all of them.</p></li>
 </ul>
-<p><em>Is the small world enough? How do we talk about this? e.g.&nbsp;if all we’ve done is analysed convictions data do we talk about offending, or just conviction?</em></p>
 <p>“Despite these considerations, there is no basis for mandating a bias analysis of every study or even most studies. For example, bias analysis is superfluous when conventional intervals show that no useful conclusion could be drawn from the study even if it were perfect apart from random error. More generally, rather than providing a bias analysis, a study may provide greater service by refraining from inference; instead it can focus on carefully reporting its design, conduct, and data in great detail to facilitate pooling and meta-analysis (Greenland et al.&nbsp;2004). Inferences are best based on a more complete account of evidence than can be provided in a single study report, and thus the effort of bias analysis is more justifiable in research synthesis (Turner et al.&nbsp;2009; Welton et al.&nbsp;2009). Even there, bias analysis becomes essential only when doing risk assessment or when authors claim to offer near-definitive conclusions.” <span class="citation" data-cites="greenlandSensitivityAnalysisBias2014">(<a href="references.html#ref-greenlandSensitivityAnalysisBias2014" role="doc-biblioref">Greenland 2014, p703</a>)</span></p>
 <p>… so you only need to bother with this stuff if you ‘claim to offer near-definitive conclusions’. Is your study likely to contribute to a meta analysis? Or in other words, when you are moving between the small world and the large world.</p>
 <p>Means humility when making policy recommendations!!</p>
+<p><em>Is the small world enough? How do we talk about this? e.g.&nbsp;if all we’ve done is analysed convictions data do we talk about offending, or just conviction?</em></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

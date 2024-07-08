@@ -64,43 +64,6 @@ We might also want to analyse data on criminal convictions from courts. Here is 
 One good thing about using convictions data is that we can be pretty confident (other than in cases such as wrongful conviction) that a crime has occurred. We may be less confident of this using other data sources.
 
 
-### CVI data?
-
-https://www.scotland.police.uk/about-us/covid-19-police-scotland-response/enforcement-and-response-data/
-
-"In response to the introduction of The Health Protection (Coronavirus) (Restrictions) (Scotland) Regulations 2020 and Coronavirus Act 2020, Police Scotland developed a ‘Coronavirus
-Interventions’ (CVI) recording system. This system allowed Police Scotland to begin gathering data in relation to the public co-operation levels with the new legislation. This system relies
-on Police Officers manually updating the system with the co-operation level when they encounter an individual in contravention of the new legislation.
-Due to the manual input required to form this data set, the contents of this slide are indicative only. Actual figures will differ from those recorded on Crime Systems (please see further
-slide), may be subject to change, and cannot be considered Official Police Statistics. They do provide an indication of the public co-operation levels across Scotland."
-
-"Notes on the CVI System
-The second data source was the Coronavirus Intervention (CVI) system, introduced by Police
-Scotland on 6 April 2020 in response to the introduction of the Coronavirus Act 2020 and
-associated Health Protection Regulations in Scotland.52 Data from the CVI were published
-throughout the pandemic on a weekly basis by Police Scotland until 17 November 2021. The
-main purpose of this system was to gather data on levels of public co-operation with the new
-Regulations, based on police officer interventions. The CVI system relies on manual updates
-from police officers about any interventions they have had with members of the public in
-respect of the legislation. It is not compulsory and, as a result, does not provide a
-comprehensive estimate of the total number of policing encounters. Nevertheless, it
-measures all policing-related activity (not just use of enforcement) and so provides a useful
-indicator of the relative use of different types of police activity in the context of the ‘Four Es
-strategy’, which was widely adopted by police forces across the UK in the context of the
-pandemic.53 To our knowledge, the CVI System is the only database of its kind to be used to
-measure the overall use of extended policing powers across the UK police forces from the
-start of the pandemic. Therefore, it provides an extremely useful source of complementary
-information to the FPN data.
-Comparison between FPN tickets and the CVI system
-Figure 22 shows a comparison of the number of tickets issued and the number recorded on
-the CVI as a seven-day rolling average between 27 March 2020 and 31 May 2021. The dark
-line shows the average number of FPNs issued, and the light line shows the average number
-recorded on Police Scotland’s CVI system. Both trend lines show four ‘phases’ of policing
-activity in relation to FPNs which are broadly reflective of the tightening and easing of
-restrictions in Scotland.
-The total number of FPN tickets actually issued (n = 20,410) was 20.9% higher than the
-number recorded on Police Scotland’s Coronavirus Intervention (CVI) system over the same
-period (n = 16,876)" https://www.law.ed.ac.uk/sites/default/files/2022-08/FPN%204th%20report%20-%20FINAL.pdf
 
 
 Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime [@buil-gilComparingMeasurementsViolent2022]. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” [@atakWesternCrimeDrop2020]
@@ -169,3 +132,43 @@ Importantly, this is not a sample _size_ issue - if you had all the data on the 
 Crime surveys usually come with sampling weights (see https://notstatschat.rbind.io/2020/08/04/weights-in-statistics/). This adjusts for the non-random selection of participants into the survey. It's useful to think about the distinction between your survey and the population. If you want to calculate descriptive statistics from the survey that are accurate for the target population, you should use the weights. There are other occasions when you might want to know the unweighted/base sample size (e.g. to avoid presenting results that are based on a small number of responses). Different authorities have different perspectives on whether you should use sampling weights when fitting a statistical model. For example, Understanding Society say that you should definitely use sampling weights when analysing that dataset (https://www.understandingsociety.ac.uk/documentation/mainstage/user-guides/main-survey-user-guide/why-use-weights). Economists at the world bank say 'yes when doing descriptive research and it depends when doing 'causal inference'" (https://www.nber.org/papers/w18859). As ever, the appropriate strategy will depend on the data you are working with and what question you are trying to answer. The best place to start is to consult the documentation for the survey you are using and see its description of the weights provided. For example, in the Scottish Crime and Justice survey they are different weights for individuals, households and incidents.
 
 Again, weights will only help adjust the data you see towards the target population in the survey design frame. Weighting cannot adjust for populations who are excluded from the survey by design.
+
+
+## 
+### CVI data?
+
+https://www.scotland.police.uk/about-us/covid-19-police-scotland-response/enforcement-and-response-data/
+
+"In response to the introduction of The Health Protection (Coronavirus) (Restrictions) (Scotland) Regulations 2020 and Coronavirus Act 2020, Police Scotland developed a ‘Coronavirus
+Interventions’ (CVI) recording system. This system allowed Police Scotland to begin gathering data in relation to the public co-operation levels with the new legislation. This system relies
+on Police Officers manually updating the system with the co-operation level when they encounter an individual in contravention of the new legislation.
+Due to the manual input required to form this data set, the contents of this slide are indicative only. Actual figures will differ from those recorded on Crime Systems (please see further
+slide), may be subject to change, and cannot be considered Official Police Statistics. They do provide an indication of the public co-operation levels across Scotland."
+
+"Notes on the CVI System
+The second data source was the Coronavirus Intervention (CVI) system, introduced by Police
+Scotland on 6 April 2020 in response to the introduction of the Coronavirus Act 2020 and
+associated Health Protection Regulations in Scotland.52 Data from the CVI were published
+throughout the pandemic on a weekly basis by Police Scotland until 17 November 2021. The
+main purpose of this system was to gather data on levels of public co-operation with the new
+Regulations, based on police officer interventions. The CVI system relies on manual updates
+from police officers about any interventions they have had with members of the public in
+respect of the legislation. It is not compulsory and, as a result, does not provide a
+comprehensive estimate of the total number of policing encounters. Nevertheless, it
+measures all policing-related activity (not just use of enforcement) and so provides a useful
+indicator of the relative use of different types of police activity in the context of the ‘Four Es
+strategy’, which was widely adopted by police forces across the UK in the context of the
+pandemic.53 To our knowledge, the CVI System is the only database of its kind to be used to
+measure the overall use of extended policing powers across the UK police forces from the
+start of the pandemic. Therefore, it provides an extremely useful source of complementary
+information to the FPN data.
+Comparison between FPN tickets and the CVI system
+Figure 22 shows a comparison of the number of tickets issued and the number recorded on
+the CVI as a seven-day rolling average between 27 March 2020 and 31 May 2021. The dark
+line shows the average number of FPNs issued, and the light line shows the average number
+recorded on Police Scotland’s CVI system. Both trend lines show four ‘phases’ of policing
+activity in relation to FPNs which are broadly reflective of the tightening and easing of
+restrictions in Scotland.
+The total number of FPN tickets actually issued (n = 20,410) was 20.9% higher than the
+number recorded on Police Scotland’s Coronavirus Intervention (CVI) system over the same
+period (n = 16,876)" https://www.law.ed.ac.uk/sites/default/files/2022-08/FPN%204th%20report%20-%20FINAL.pdf
