@@ -35,6 +35,9 @@ from https://josepinasanchez.uk/short-courses/
 
 A less involved option involves assessment measurement error through simulation. The process here is to fit the model to the data as observed and try to figure out what the coefficients would be if there was no measurement error in the data. The `simex` R package lets you simulate new versions of your dataset with *more* and more measurement error. By looking to see how your coefficients change after re-fitting your model with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!
 
+However, SIMEX works best when there is only one variable with measurement error in the analysis, and can be more difficult to compute when there are multiple variables with measurement error [@blackwellUnifiedApproachMeasurement2017]
+
+
 ### `rcme`
 
 Pina-Sanchez and colleagues have written an R package that can conduct sensitivity analysis for some types of measurement error common to working with police recorded crime.

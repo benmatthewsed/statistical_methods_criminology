@@ -244,6 +244,7 @@ div.csl-indent {
 <section id="simex" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="simex"><span class="header-section-number">4.1.2</span> SIMEX</h3>
 <p>A less involved option involves assessment measurement error through simulation. The process here is to fit the model to the data as observed and try to figure out what the coefficients would be if there was no measurement error in the data. The <code>simex</code> R package lets you simulate new versions of your dataset with <em>more</em> and more measurement error. By looking to see how your coefficients change after re-fitting your model with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!</p>
+<p>However, SIMEX works best when there is only one variable with measurement error in the analysis, and can be more difficult to compute when there are multiple variables with measurement error <span class="citation" data-cites="blackwellUnifiedApproachMeasurement2017">(<a href="references.html#ref-blackwellUnifiedApproachMeasurement2017" role="doc-biblioref">Blackwell, Honaker, and King 2017</a>)</span></p>
 </section>
 <section id="rcme" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="rcme"><span class="header-section-number">4.1.3</span> <code>rcme</code></h3>
@@ -318,6 +319,9 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-blackwellUnifiedApproachMeasurement2017" class="csl-entry" role="listitem">
+Blackwell, Matthew, James Honaker, and Gary King. 2017. <span>“A <span>Unified Approach</span> to <span>Measurement Error</span> and <span>Missing Data</span>: <span>Overview</span> and <span>Applications</span>.”</span> <em>Sociological Methods &amp; Research</em> 46 (3): 303–41. <a href="https://doi.org/10.1177/0049124115585360">https://doi.org/10.1177/0049124115585360</a>.
+</div>
 <div id="ref-gaeblerCausalFrameworkObservational2022" class="csl-entry" role="listitem">
 Gaebler, Johann, William Cai, Guillaume Basse, Ravi Shroff, Sharad Goel, and Jennifer Hill. 2022. <span>“A <span>Causal Framework</span> for <span>Observational Studies</span> of <span>Discrimination</span>.”</span> <em>Statistics and Public Policy</em> 9 (1): 26–48. <a href="https://doi.org/10.1080/2330443X.2021.2024778">https://doi.org/10.1080/2330443X.2021.2024778</a>.
 </div>
