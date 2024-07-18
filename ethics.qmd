@@ -6,11 +6,42 @@ In research ethics and governance there is a lot of discussion about informed co
 
 ## Reproducible research practices?
 
-Make sure the data is right!!
+It is an ethical responsibility of quantitative researchers to make sure that their analyses are (to the best of their capacity) correct and reproducible. This process is called 'workflow'. 
 
-https://github.com/jkangbrown/when_police_replication
 
-## Framing
+### Workflow good practices
+
+Gayle 2022:
+
+(i) Use established data analysis tools (e.g. Stata, SPSS, R or SAS), and clearly state the version, and all the libraries, dependencies and plugins that are used.
+(ii) Clearly identify the version of the dataset and its origins (i.e. where and when it was obtained) using a persistent identifier such as a digital object identifier (DOI).
+(iii) Construct a data dictionary in a literate format that can easily be understood by someone unconnected with the project.
+(iv) Write down all of the code for how the data were prepared for analysis, in a literate format that can easily be understood by someone unconnected with the project.
+(v) Write down all of the code for all of the analyses undertaken, and not just the analyses that are presented in the published work, in a literate format that can easily be understood by someone unconnected with the project.
+(vi) Archive the project materials, bundled-up as a research object in a findable and accessible location, and endeavour to make them interoperable and re-useable in the future.
+
+The last point may be difficult when working with administrative data (for example if this was accessed through a Data Sharing Agreement with a police force)
+
+
+### An example: de-policing and crime
+
+There have been some well-documented instances of poor workflow leading to erroneous conclusions (see discussion in Gayle 2022), but despite this established best practices are not widespread in criminology (Sweeten 2020).
+
+For example, there was some controversy around a recent paper which suggested that 'de-policing' in Denver in 2020 led to increases in violent crime (Nix et al https://onlinelibrary.wiley.com/doi/full/10.1111/1745-9125.12363). However, another research who attempted to reproduce their findings - and fair play to Nix and colleagues for making their research reproducible - suggested that their main result was due to a merging error which led to the analytical dataset being scrambled (https://github.com/jkangbrown/when_police_replication).
+
+
+## Framing: The tyranny of the means
+
+We should avoid essentializing.
+
+Typical focus of regression results is group average effect. Even if we have a statiistically significant difference between two groups in their likelihood of being convicted for a crime, on its own this doesn't tell us about how likely any individual member of those groups is to be convicted. 
+
+By focusing on how people with the same observables vary we can avoid essentializing people? (McCall 2005).
+
+This is an added benefit of the simulation approach we discussed in the previous section - we can use these kind of methods to illustrate the variation of outcomes for people _with the same observables_, not just average differences in outcomes for people with different observables.
+
+
+## Framing: the importance of language
 
 More conceptually, it's important to think about how we frame the results of any analysis.
 
@@ -22,10 +53,36 @@ Three visualizations from [Data Feminism](https://data-feminism.mitpress.mit.edu
 
 -   deficit narrative
 
+"...a narrative that reduces a social group to negative stereotypes and fails to portray them with creativity and agency." (https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3)
+
+
+https://data-feminism.mitpress.mit.edu/pub/czq9dfs5#ndayi2fa1pk
+
+
+
+
 -   the description of your charts is theoretically informed
 
-## community loss
+
+The value of this exercise is not to say that any of these framings is 'right' (although for the reasons Klein and D'Ignazio outline we might find some preferable to others), but that they reflect different theoretical positions, and give different emphases to contextual factors - factors outside our datasets.
+
+"Placing numbers in context and naming racism or sexism when it is present in those numbers should be a requirement—not only for feminist data communication, but for data communication full stop."
+
+
+Data Feminism is mostly aimed towards data scientists and data journalists, not academics. Does this change how we should view their recommendations?
+
+(the original study: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4539829/)
+
+
+
+
+### An example of theoretical framing: community loss
 
 Jessica Simes [@simesPunishingPlacesGeography2021] gives a good example of how we may want to come up with theoretically informed measures, or theoretically re-frame measures. Simes analysed imprisonment data from the state of Massachusets in the USA, including spatial regression of prison admission rates and how these relate to "racial demographics, social and economic disadvantage, arrest rates, and violent crime" [@simesPlacePunishmentSpatial2018a].
 
 As part of this analysis Simes suggests that the cumulative years sentenced to residents of a particular neighbourhood be thought of as 'community loss'. This is not (just?) an indicator of individual punishment histories, but reflects the chronic and long-term exposure to loss due to imprisonment in different neighbourhoods. This highlights the effects of imprisonment on the communities in which people who end up in prison lived prior to their imprisonment, rather than just focusing on the people who are currently in prison.
+
+
+# Practical
+
+- Give some examples of results being presented and ask to assess their theoretical framings?

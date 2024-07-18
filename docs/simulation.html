@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Methods for Criminology - 4&nbsp; Simulation</title>
+<title>Statistical Methods for Criminology - 4&nbsp; The data don’t speak for themselves, part two: Presenting results</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,7 +135,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part two: Presenting results</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -187,13 +187,13 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part two: Presenting results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part one: Measurement error, selection and confounding</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,8 +218,15 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#add-clarify-example-here" id="toc-add-clarify-example-here" class="nav-link active" data-scroll-target="#add-clarify-example-here"><span class="header-section-number">4.1</span> Add clarify example here</a></li>
-  <li><a href="#limits-to-simulation-approaches" id="toc-limits-to-simulation-approaches" class="nav-link" data-scroll-target="#limits-to-simulation-approaches"><span class="header-section-number">4.2</span> Limits to simulation approaches</a></li>
+  <li><a href="#the-tide-machine" id="toc-the-tide-machine" class="nav-link active" data-scroll-target="#the-tide-machine"><span class="header-section-number">4.1</span> The tide machine</a></li>
+  <li><a href="#whats-your-estimand" id="toc-whats-your-estimand" class="nav-link" data-scroll-target="#whats-your-estimand"><span class="header-section-number">4.2</span> What’s your estimand?</a>
+  <ul class="collapse">
+  <li><a href="#quantities-of-interest" id="toc-quantities-of-interest" class="nav-link" data-scroll-target="#quantities-of-interest"><span class="header-section-number">4.2.1</span> Quantities of interest</a></li>
+  </ul></li>
+  <li><a href="#add-clarify-example-here" id="toc-add-clarify-example-here" class="nav-link" data-scroll-target="#add-clarify-example-here"><span class="header-section-number">4.3</span> Add clarify example here</a></li>
+  <li><a href="#limits-to-simulation-approaches" id="toc-limits-to-simulation-approaches" class="nav-link" data-scroll-target="#limits-to-simulation-approaches"><span class="header-section-number">4.4</span> Limits to simulation approaches</a></li>
+  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="header-section-number">5</span> Practical</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">6</span> Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -228,7 +235,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part two: Presenting results</span></h1>
 </div>
 
 
@@ -246,8 +253,24 @@ div.csl-indent {
 
 
 <p>__There’s nothing special about simulation here we can also do this with delta method or whatever? I should say this?__s</p>
+<p>In Part One we talked about reasons we might be skeptical about our model coefficients. In this part we are also moving beyond a focus on regression coefficients, but this time we are going to translate coefficients into more interesting and informative quantities.</p>
+<section id="the-tide-machine" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-tide-machine"><span class="header-section-number">4.1</span> The tide machine</h2>
+</section>
+<section id="whats-your-estimand" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="whats-your-estimand"><span class="header-section-number">4.2</span> What’s your estimand?</h2>
+<p><span class="citation" data-cites="lundbergWhatYourEstimand2021a">Lundberg, Johnson, and Stewart (<a href="references.html#ref-lundbergWhatYourEstimand2021a" role="doc-biblioref">2021</a>)</span> state that all analyst should be able to describe what their ‘estimand’ is. The estimand is the “target quantity” of your analysis. Lundberg and colleagues suggest an estimand as two compnents: a ‘unit specific quantity’ and a ‘target population’.</p>
+<p>These target quantities can be observed outcomes (was a particular person a victim of crime), potential outcomes (would a person have been a victim of crime if they lived in a high-deprivation area?), or differences in potential outcomes (the effect of area deprivation on a person’s victim status). The target population describes over what units we are aggregating our ‘unit specific quantities’ - this may be the whole of Scotland, or a particular city, or a group of people with particular characteristics. Lunberg and colleagues describe a paper by “Harding and colleagues (2018) [who] estimate the effect of prison on labor market outcomes by leveraging random variation in judges’ propensities to sentence people convicted of felonies to probation instead of prison. The target population is offenders who would have been sentenced to probation rather than prison if they had faced a more lenient judge (Harding et al.&nbsp;2018:67). This is a subpopulation that is conceptually interesting: individuals whose sentences might plausibly change if judges were encouraged to be more lenient in sentencing.”</p>
+<p>Crucially the link between the theoretical estimand and the empirical estimand that we actually try to learn from our dataset based on “assumptions about the relationship between the data we observe and the data we do not.”</p>
+<section id="quantities-of-interest" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="quantities-of-interest"><span class="header-section-number">4.2.1</span> Quantities of interest</h3>
 <p>Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al.&nbsp;(2000).</p>
-<p>For example, <span class="citation" data-cites="hunterEquityJusticeCrime2016">(<a href="references.html#ref-hunterEquityJusticeCrime2016" role="doc-biblioref">Hunter and Tseloni 2016</a>)</span> use the results of a fitted regression model to calculate a measure they call ‘Victimization Divide’. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.</p>
+<section id="a-simple-example-difference-in-probabilities" class="level4" data-number="4.2.1.1">
+<h4 data-number="4.2.1.1" class="anchored" data-anchor-id="a-simple-example-difference-in-probabilities"><span class="header-section-number">4.2.1.1</span> A simple example: difference in probabilities?</h4>
+</section>
+<section id="a-complicated-example-victimization-divides" class="level4" data-number="4.2.1.2">
+<h4 data-number="4.2.1.2" class="anchored" data-anchor-id="a-complicated-example-victimization-divides"><span class="header-section-number">4.2.1.2</span> A complicated example: victimization divides</h4>
+<p>For example, <span class="citation" data-cites="hunterEquityJusticeCrime2016">(<a href="references.html#ref-hunterEquityJusticeCrime2016" role="doc-biblioref">Hunter and Tseloni 2016</a>)</span> use the results of a fitted regression model to calculate a measure they call ‘Victimization Divide’. This measure is a way to describe how victimization inequality has changed over time - an important thing for criminologists to care about.</p>
 <p>This measure is defined as</p>
 <p>(ratio of victimization rates in year 2 - 1) - (ratio of victimization rates in year 2 - 1) / (ratio of victimization rates in year one - 1)</p>
 <p>in R code this might look like</p>
@@ -257,7 +280,9 @@ div.csl-indent {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>this is analogous to exploring the percentage change in victimization inequality between two comparison years.</p>
-<p>However, if these ratios of rates come from a statistical model they will also come with some uncertainty measure, such as a standard error. In that case it’s not quite so clear how to incorporate this uncertainty into the calculation of the VD. One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.</p>
+<p>To calculate the ratio of victimization rates in years 1 and 2, Hunter and Tseloni fit a regression model (specifically a negative binomial model) and then use the coefficients from this model as inputs into the Victimization Divide formula. Based on this they conclude <em>ADD SUMMARY OF THEIR FINDINGS</em></p>
+<p>However, Hunter and Tseloni’s data come from the Crime Survey for England and Wales. As such we should also be interested in the uncertainty in these coefficients. In that case it’s not quite so clear how to incorporate this uncertainty into the calculation of the VD. The process described by King et al.&nbsp;(2000) and implemented in the R package clarify (https://github.com/iqss/clarify) provides one solution.</p>
+<p>One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.</p>
 <p>Matthews and McVie (2024; see also Matthews 2024) demonstrate this process. The table below shows the prevalence of victimization (for all crime types) for men and women as reported in the Crime Survey for England and Wales for 2015 and 2020 (Office for National Statistics, n.d.). We can see that the prevalence of victimization was higher for men than women in both years, and that it increased for men (by 3.0 percentage points) and women (by 3.6 percentage points) between 2015 and 2020.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed and load packages</span></span>
@@ -367,8 +392,12 @@ div.csl-indent {
 </div>
 </div>
 <p>The beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.</p>
-<section id="add-clarify-example-here" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="add-clarify-example-here"><span class="header-section-number">4.1</span> Add clarify example here</h2>
+<p>Matthews and McVie (forthcoming) illustrate that there are many (many!) ways to empirically describe victimization inequality. Using these simulation methods means you can use a statistical model to describe any of these measures, and factor in the unceratinty implied by the model. This means that you have more scope to map your theoretical estimand onto your empirical results.</p>
+</section>
+</section>
+</section>
+<section id="add-clarify-example-here" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="add-clarify-example-here"><span class="header-section-number">4.3</span> Add clarify example here</h2>
 <p>In the example above we performed the simulation from each models’ variance-covariance matrix ourselves. Whilst it’s good to know how this works, in practice there are R packages which can do this for us. One good option is <a href="https://cran.r-project.org/web/packages/clarify/index.html">clarify</a>.</p>
 <p>Here we reproduce our results using clarify. Instead of fitting a model to each year as above, clarify expects us to give it a single model object, so we re-express the two separate models (one for each year) as a single model, now including year as an interaction term with sex.</p>
 <div class="cell">
@@ -431,14 +460,27 @@ div.csl-indent {
 <li>link to marginal_effects?s</li>
 </ul>
 </section>
-<section id="limits-to-simulation-approaches" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="limits-to-simulation-approaches"><span class="header-section-number">4.2</span> Limits to simulation approaches</h2>
+<section id="limits-to-simulation-approaches" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="limits-to-simulation-approaches"><span class="header-section-number">4.4</span> Limits to simulation approaches</h2>
 <p>But remember that our model is wrong!! (Greenland) This approach incorporates the uncertainty <em>as expressed by your model’s standard errors</em>. This still makes a load of assumptions - basically that we’ve fit the right model and that we had the right data. In more complex cases - like most real-world research - we might be fitting a much more complicated statistical model with non-linear effects and interaction terms and all sorts. As we’ll discuss in the next section, we might also want to cast a critical eye over the data that we are analysing before drawing our conclusions.</p>
+<p>We still need to bear in mind the generative story for our - data is our uncertainty due to survey sampling? What population does a victimization divide relate to?</p>
+</section>
+<section id="practical" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Practical</h1>
+<ul>
+<li>Fit a regression model, simulate victimization divides with {clarify}</li>
+</ul>
+</section>
+<section id="resources" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Resources</h1>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-hunterEquityJusticeCrime2016" class="csl-entry" role="listitem">
 Hunter, James, and Andromachi Tseloni. 2016. <span>“Equity, Justice and the Crime Drop: The Case of Burglary in <span>England</span> and <span>Wales</span>.”</span> <em>Crime Science</em> 5 (1): 3. <a href="https://doi.org/10.1186/s40163-016-0051-z">https://doi.org/10.1186/s40163-016-0051-z</a>.
+</div>
+<div id="ref-lundbergWhatYourEstimand2021a" class="csl-entry" role="listitem">
+Lundberg, Ian, Rebecca Johnson, and Brandon M. Stewart. 2021. <span>“What <span>Is Your Estimand</span>? <span>Defining</span> the <span>Target Quantity Connects Statistical Evidence</span> to <span>Theory</span>.”</span> <em>American Sociological Review</em> 86 (3): 532–65. <a href="https://doi.org/10.1177/00031224211004187">https://doi.org/10.1177/00031224211004187</a>.
 </div>
 </div>
 </section>
@@ -860,8 +902,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./selection-measurement.html" class="pagination-link" aria-label="Selection effects, bias and so on">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./selection-measurement.html" class="pagination-link" aria-label="The data don't speak for themselves, part one: Measurement error, selection and confounding">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part one: Measurement error, selection and confounding</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

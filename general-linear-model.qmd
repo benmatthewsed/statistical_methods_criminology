@@ -129,5 +129,7 @@ take from Hilbe (distinct zeros? ZIP; generic solution; NB?)
 
 -   you can also have different predictors for dispersion and rate parameter in NB if you want
 
+# Practical
 
+- In this practical we'll fit some count models in R
 

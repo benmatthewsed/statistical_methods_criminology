@@ -1,13 +1,39 @@
-# Simulation
+# The data don't speak for themselves, part two: Presenting results
 
 \_\_There's nothing special about simulation here we can also do this with delta method or whatever? I should say this?\_\_s
 
+In Part One we talked about reasons we might be skeptical about our model coefficients. In this part we are also moving beyond a focus on regression coefficients, but this time we are going to translate coefficients into more interesting and informative quantities.
+
+
+
+## The tide machine
+
+
+
+
+
+## What's your estimand?
+
+@lundbergWhatYourEstimand2021a state that all analyst should be able to describe what their 'estimand' is. The estimand is the "target quantity" of your analysis. Lundberg and colleagues suggest an estimand as two compnents: a 'unit specific quantity' and a 'target population'. 
+
+These target quantities can be observed outcomes (was a particular person a victim of crime), potential outcomes (would a person have been a victim of crime if they lived in a high-deprivation area?), or differences in potential outcomes (the effect of area deprivation on a person's victim status). The target population describes over what units we are aggregating our 'unit specific quantities' - this may be the whole of Scotland, or a particular city, or a group of people with particular characteristics. Lunberg and colleagues describe a paper by "Harding and colleagues (2018) [who] estimate the effect of prison on labor market outcomes by leveraging random variation in judges’ propensities to sentence people convicted of felonies to probation instead of prison. The target population is offenders who would have been sentenced to probation rather than prison if they had faced a more lenient judge (Harding et al. 2018:67). This is a subpopulation that is conceptually interesting: individuals whose sentences might plausibly change if judges were encouraged to be more lenient in sentencing."
+
+Crucially the link between the theoretical estimand and the empirical estimand that we actually try to learn from our dataset based on "assumptions about the relationship between the data we observe and the data we do not."
+
+### Quantities of interest
+
+
+
+
+
 Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al. (2000).
 
-TO ADD: what's your estimand?
+#### A simple example: difference in probabilities?
 
 
-For example, [@hunterEquityJusticeCrime2016] use the results of a fitted regression model to calculate a measure they call 'Victimization Divide'. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.
+#### A complicated example: victimization divides
+
+For example, [@hunterEquityJusticeCrime2016] use the results of a fitted regression model to calculate a measure they call 'Victimization Divide'. This measure is a way to describe how victimization inequality has changed over time - an important thing for criminologists to care about.
 
 This measure is defined as
 
@@ -25,7 +51,11 @@ victim_divide <- function(base_y1, base_y2){
 
 this is analogous to exploring the percentage change in victimization inequality between two comparison years.
 
-However, if these ratios of rates come from a statistical model they will also come with some uncertainty measure, such as a standard error. In that case it's not quite so clear how to incorporate this uncertainty into the calculation of the VD. One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.
+To calculate the ratio of victimization rates in years 1 and 2, Hunter and Tseloni fit a regression model (specifically a negative binomial model) and then use the coefficients from this model as inputs into the Victimization Divide formula. Based on this they conclude _ADD SUMMARY OF THEIR FINDINGS_
+
+However, Hunter and Tseloni's data come from the Crime Survey for England and Wales. As such we should also be interested in the uncertainty in these coefficients. In that case it's not quite so clear how to incorporate this uncertainty into the calculation of the VD. The process described by King et al. (2000) and implemented in the R package clarify (https://github.com/iqss/clarify) provides one solution.
+
+One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.
 
 Matthews and McVie (2024; see also Matthews 2024) demonstrate this process. The table below shows the prevalence of victimization (for all crime types) for men and women as reported in the Crime Survey for England and Wales for 2015 and 2020 (Office for National Statistics, n.d.). We can see that the prevalence of victimization was higher for men than women in both years, and that it increased for men (by 3.0 percentage points) and women (by 3.6 percentage points) between 2015 and 2020.
 
@@ -136,6 +166,9 @@ sim_dat %>%
 
 The beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.
 
+Matthews and McVie (forthcoming) illustrate that there are many (many!) ways to empirically describe victimization inequality. Using these simulation methods means you can use a statistical model to describe any of these measures, and factor in the unceratinty implied by the model. This means that you have more scope to map your theoretical estimand onto your empirical results.
+
+
 ## Add clarify example here
 
 In the example above we performed the simulation from each models' variance-covariance matrix ourselves. Whilst it's good to know how this works, in practice there are R packages which can do this for us. One good option is [clarify](https://cran.r-project.org/web/packages/clarify/index.html).
@@ -188,6 +221,17 @@ Why clarify:
 -   examples/tutorials online
 -   link to marginal_effects?s
 
+
+
 ## Limits to simulation approaches
 
 But remember that our model is wrong!! (Greenland) This approach incorporates the uncertainty *as expressed by your model's standard errors*. This still makes a load of assumptions - basically that we've fit the right model and that we had the right data. In more complex cases - like most real-world research - we might be fitting a much more complicated statistical model with non-linear effects and interaction terms and all sorts. As we'll discuss in the next section, we might also want to cast a critical eye over the data that we are analysing before drawing our conclusions.
+
+We still need to bear in mind the generative story for our - data is our uncertainty due to survey sampling? What population does a victimization divide relate to?
+
+
+# Practical
+
+- Fit a regression model, simulate victimization divides with {clarify}
+
+# Resources

@@ -1,0 +1,11 @@
+# Conclusion
+
+Summary:
+
+- In this workshop I have argued that the key to effective analysis of criminological data lies outside the spreadsheet. 
+
+- We should start our analysis by understanding how our data came to be
+- This informs our choice of model
+- And how we might choose to account for measurement error, selection effects or omitted variables (or not) in estimates from our models
+- And in our choice of theoretical estimands, and how we use model results to come up with estimates of those estimands
+- And in how we do our work (using workflow best practices) and how we talk about our results

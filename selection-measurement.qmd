@@ -1,14 +1,16 @@
-# Selection effects, bias and so on
-
-We may be skeptial of conclusions drawn from 'small world' of our data and model for lots of reasons. In this section we'll briefly introduce three ways in which we may want to interrogate our statistical models. Books and books have been written about each topic, so this will only offer a brief overview of each, with links to further reading for those who want to know more.
-
-The common thread running through all these measures is that they rely on being skeptical about the numbers in our spreadsheets. Either these numbers may be inaccurate (measurement error); they may omit some variables that we theoretically think are important (confounding), or; they omit some people/cases we care about (selection effects).
+# The data don't speak for themselves, part one: Measurement error, selection and confounding
 
 The data never speak for themselves.
 
+We may be skeptical of conclusions drawn from 'small world' of our data and model for lots of reasons. In this section we'll briefly introduce three ways in which we may want to interrogate our statistical models. Books and books have been written about each topic, so this will only offer a brief overview of each, with links to further reading for those who want to know more.
+
+The common thread running through all these measures is that they rely on being skeptical about the numbers in our spreadsheets. Either these numbers may be inaccurate (measurement error); they may omit some variables that we theoretically think are important (confounding), or; they omit some people/cases we care about (selection effects).
+
+
+
 ## Measurement error
 
-Measurement error is just the gap between what we are conceptually interested in and the way that this concept is recorded in our spreadsheet.
+Measurement error is the gap between what we are conceptually interested in and the way that this concept is recorded in our spreadsheet.
 
 Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. The standard linear model which we have just been discussing assumes that all variables are measured perfectly (or in other words, with no error). It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios *we may not know what impact it is having*.
 
@@ -16,13 +18,13 @@ In practice we know criminological data are likely to be measured with some degr
 
 
 
-#### Example One: Measurement error in police recorded crime data
+### Example One: Measurement error in police recorded crime data
 
 - From our discussion in Session One, we know that crime data recorded by the police are not a complete record of all crimes experienced in society in a given period - only crimes which are reported and recorded make it into recorded crime data.
 - So if we are interested in, for example, how many crimes there were in Scotland in 2023, the number of crimes recorded by police is likely to be an _under_ count.
 - The many years of work comparing crimes recorded to the police with victimization surveys - the 'dark figure of crime' - attests to this.
 
-#### Example Two: Measurement error in victimizaton survey data
+### Example Two: Measurement error in victimizaton survey data
 
 - Historically, national victimization surveys (such as the SCJS and CSEW) capped the number of victim forms that victims could complete. In 2019, ONS said that "Since the survey began in 1981, “repeat” incidents have been limited to a total of 5. Historically, including a
 maximum of 5 repeat incidents for any individual victim had proven to be an effective way of reducing the effects
@@ -39,7 +41,7 @@ victimisations over time once high order repeat victimisations were treated in t
 
 ### What to do about it?
 
-What's more is that it's not entirely clear what to do about it.
+It depends on the context.
 
 One way to approach this, if we know or can reasonably approximate the model for the measurement error then we can use Bayesian methods to jointly estimate a model for our observations and the measurement error. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.
 
@@ -118,7 +120,7 @@ Knox et al. (2020) suggest some technical fixes, but emphasise that - if we are 
 
 **maybe get the students to play about with the data in the dataverse?https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KFQOCV**
 
-### Confounding
+## Confounding
 
 Confounding describes a situation where there's something that we know affects the outcome we're interested in and/or our independent variables, but we don't have a measure for this. In criminology, we might have measures of police stops but not *offending* (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.
 
@@ -128,7 +130,6 @@ Confounding describes a situation where there's something that we know affects t
 
 *need some criminological examples here*
 
-## In general
 
 Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?
 
@@ -138,13 +139,27 @@ Need to make assumptions about the magnitude of the bias to implement any of the
 
 -   One approach is to pick a bunch of possible bias parameters and test to see if results are robust to all of them.
 
+
+## Should we all be doing bias analysis all the time?
+
+
+
 "Despite these considerations, there is no basis for mandating a bias analysis of every study or even most studies. For example, bias analysis is superfluous when conventional intervals show that no useful conclusion could be drawn from the study even if it were perfect apart from random error. More generally, rather than providing a bias analysis, a study may provide greater service by refraining from inference; instead it can focus on carefully reporting its design, conduct, and data in great detail to facilitate pooling and meta-analysis (Greenland et al. 2004). Inferences are best based on a more complete account of evidence than can be provided in a single study report, and thus the effort of bias analysis is more justifiable in research synthesis (Turner et al. 2009; Welton et al. 2009). Even there, bias analysis becomes essential only when doing risk assessment or when authors claim to offer near-definitive conclusions." [@greenlandSensitivityAnalysisBias2014 p703]
 
 ... so you only need to bother with this stuff if you 'claim to offer near-definitive conclusions'. Is your study likely to contribute to a meta analysis? Or in other words, when you are moving between the small world and the large world.
+
+So the key thing is how we talk about our models - it _us_ that moves between the small world and the large world.
 
 Means humility when making policy recommendations!!
 
 *Is the small world enough? How do we talk about this? e.g. if all we've done is analysed convictions data do we talk about offending, or just conviction?*
 
 
+# Practical
 
+- We're going to revisit the generative stories that you came up with in Section One. Is there possible:
+  - Measurement error?
+  - Selection effects?
+  - Omitted variables?
+  
+- Write a vignette describing some results and then critique?

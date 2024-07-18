@@ -14,6 +14,7 @@ book:
     - simulation.qmd
     - selection-measurement.qmd
     - ethics.qmd
+    - conclusion.qmd
     - references.qmd
 
 bibliography: statistical_methods_criminology_references.bib
