@@ -1,80 +1,8 @@
 # Ethics
 
-Do no harm!
+## General ethical principles in social science research
 
-In research ethics and governance there is a lot of discussion about informed consent, not disclosing personal information and so on.
-
-Sometimes these come up when fitting models to criminological data- UKDS requires that any results you produce don't refer to an unweighted base population of less than 50.
-
-Strictly speaking, this means that if you fit a logistic regression model with a categorical independent variable you need to have more than 50 people in each response category.
-
-This can
-
-```{r}
-
-library(tidyverse)
-
-set.seed(1234)
-
-n_size <- 5568
-
-# approximate sample size for Scottish Crime and Justice Survey
-
-# The 2011 census found that:
-# Scotland's population was 96.0% white
-
-# https://www.scotlandscensus.gov.uk/census-results/at-a-glance/ethnicity/
-
-dat <- tibble(
-  ethnicity = sample(c("white scottish/british/other", "minority ethnic"),
-       size = n_size,
-       prob = c(0.96, 0.04),
-       replace = TRUE)
-)
-
-# simulate victimization data
-
-dat <- 
-dat |> 
-  mutate(minority_ethnic = if_else(ethnicity == "minority ethnic", 1, 0),
-         vict =
-                    rbinom(n = n_size, 
-                       size = 1, # either 1 or 0,
-                       prob = plogis(-2 +  minority_ethnic * 0.5)))
-
-dat |> 
-  count(ethnicity, vict) |> 
-  group_by(ethnicity) |> 
-  mutate(prop = n / sum(n))
-
-
-plogis(-2) # 11%
-
-plogis(-2 + 0.5) # 18% - I just made this up, I don't know if this is accurate!
-
-# if you publish the marginal breakdown by ethnicity in table one
-
-dat |> 
-  count(ethnicity)
-
-# and then the regression coefficients
-
-glm(vict ~ ethnicity, family = "binomial", data = dat) |> 
-  summary()
-```
-
-```{r}
-
-
-# a reader could calculate the probability of victimization using the inverse
-# link function and then multiply this by the number of minority ethnic people
-# to recover the sample size
-
-plogis(-1.4253) * 227
-         
-```
-
-This may not apply in every case, but it is worth checking, particularly if you wanted to include things like interaction terms between categorical variables in a logistic regression model.
+In research ethics and governance there is a lot of discussion about informed consent, not disclosing personal information and so on. 
 
 ## Reproducible research practices?
 
