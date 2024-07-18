@@ -2,6 +2,9 @@
 
 Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al. (2000).
 
+TO ADD: what's your estimand?
+
+
 For example, [@hunterEquityJusticeCrime2016] use the results of a fitted regression model to calculate a measure they call 'Victimization Divide'. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.
 
 This measure is defined as
