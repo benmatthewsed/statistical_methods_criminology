@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Methods for Criminology - 4&nbsp; Selection effects, bias and so on</title>
+<title>Statistical Methods for Criminology - 5&nbsp; Selection effects, bias and so on</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./simulation.html" rel="next">
-<link href="./general-linear-model.html" rel="prev">
+<link href="./ethics.html" rel="next">
+<link href="./simulation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -101,7 +101,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./selection-measurement.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./selection-measurement.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -152,14 +152,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
+  <a href="./simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
+  <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,18 +184,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link active" data-scroll-target="#measurement-error"><span class="header-section-number">4.1</span> Measurement error</a>
+  <li><a href="#measurement-error" id="toc-measurement-error" class="nav-link active" data-scroll-target="#measurement-error"><span class="header-section-number">5.1</span> Measurement error</a>
   <ul class="collapse">
-  <li><a href="#what-to-do-about-it" id="toc-what-to-do-about-it" class="nav-link" data-scroll-target="#what-to-do-about-it"><span class="header-section-number">4.1.1</span> What to do about it?</a></li>
-  <li><a href="#simex" id="toc-simex" class="nav-link" data-scroll-target="#simex"><span class="header-section-number">4.1.2</span> SIMEX</a></li>
-  <li><a href="#rcme" id="toc-rcme" class="nav-link" data-scroll-target="#rcme"><span class="header-section-number">4.1.3</span> <code>rcme</code></a></li>
+  <li><a href="#what-to-do-about-it" id="toc-what-to-do-about-it" class="nav-link" data-scroll-target="#what-to-do-about-it"><span class="header-section-number">5.1.1</span> What to do about it?</a></li>
+  <li><a href="#simex" id="toc-simex" class="nav-link" data-scroll-target="#simex"><span class="header-section-number">5.1.2</span> SIMEX</a></li>
+  <li><a href="#rcme" id="toc-rcme" class="nav-link" data-scroll-target="#rcme"><span class="header-section-number">5.1.3</span> <code>rcme</code></a></li>
   </ul></li>
-  <li><a href="#selection-effects" id="toc-selection-effects" class="nav-link" data-scroll-target="#selection-effects"><span class="header-section-number">4.2</span> Selection effects</a></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">4.3</span> Solutions?</a>
+  <li><a href="#selection-effects" id="toc-selection-effects" class="nav-link" data-scroll-target="#selection-effects"><span class="header-section-number">5.2</span> Selection effects</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">5.3</span> Solutions?</a>
   <ul class="collapse">
-  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"><span class="header-section-number">4.3.1</span> Confounding</a></li>
+  <li><a href="#confounding" id="toc-confounding" class="nav-link" data-scroll-target="#confounding"><span class="header-section-number">5.3.1</span> Confounding</a></li>
   </ul></li>
-  <li><a href="#in-general" id="toc-in-general" class="nav-link" data-scroll-target="#in-general"><span class="header-section-number">4.4</span> In general</a></li>
+  <li><a href="#in-general" id="toc-in-general" class="nav-link" data-scroll-target="#in-general"><span class="header-section-number">5.4</span> In general</a></li>
   </ul>
 </nav>
     </div>
@@ -204,7 +204,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></h1>
 </div>
 
 
@@ -224,29 +224,45 @@ div.csl-indent {
 <p>We may be skeptial of conclusions drawn from ‘small world’ of our data and model for lots of reasons. In this section we’ll briefly introduce three ways in which we may want to interrogate our statistical models. Books and books have been written about each topic, so this will only offer a brief overview of each, with links to further reading for those who want to know more.</p>
 <p>The common thread running through all these measures is that they rely on being skeptical about the numbers in our spreadsheets. Either these numbers may be inaccurate (measurement error); they may omit some variables that we theoretically think are important (confounding), or; they omit some people/cases we care about (selection effects).</p>
 <p>The data never speak for themselves.</p>
-<section id="measurement-error" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">4.1</span> Measurement error</h2>
-<p>The standard linear model assumes that all variables are measured perfectly (or in other words, with no error).</p>
-<p>In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime ‘out there’ in society. As we have discussed already, not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.</p>
-<p>Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios <em>we may not know what impact it is having</em>.</p>
-<p><strong>More examples here</strong></p>
-<section id="what-to-do-about-it" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="what-to-do-about-it"><span class="header-section-number">4.1.1</span> What to do about it?</h3>
+<section id="measurement-error" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">5.1</span> Measurement error</h2>
+<p>Measurement error is just the gap between what we are conceptually interested in and the way that this concept is recorded in our spreadsheet.</p>
+<p>Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. The standard linear model which we have just been discussing assumes that all variables are measured perfectly (or in other words, with no error). It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios <em>we may not know what impact it is having</em>.</p>
+<p>In practice we know criminological data are likely to be measured with some degree of error. For example, we know that police recorded crime data is not a perfect measure of the amount of crime ‘out there’ in society. As we have discussed already, not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.</p>
+<section id="example-one-measurement-error-in-police-recorded-crime-data" class="level4" data-number="5.1.0.1">
+<h4 data-number="5.1.0.1" class="anchored" data-anchor-id="example-one-measurement-error-in-police-recorded-crime-data"><span class="header-section-number">5.1.0.1</span> Example One: Measurement error in police recorded crime data</h4>
+<ul>
+<li>From our discussion in Session One, we know that crime data recorded by the police are not a complete record of all crimes experienced in society in a given period - only crimes which are reported and recorded make it into recorded crime data.</li>
+<li>So if we are interested in, for example, how many crimes there were in Scotland in 2023, the number of crimes recorded by police is likely to be an <em>under</em> count.</li>
+<li>The many years of work comparing crimes recorded to the police with victimization surveys - the ‘dark figure of crime’ - attests to this.</li>
+</ul>
+</section>
+<section id="example-two-measurement-error-in-victimizaton-survey-data" class="level4" data-number="5.1.0.2">
+<h4 data-number="5.1.0.2" class="anchored" data-anchor-id="example-two-measurement-error-in-victimizaton-survey-data"><span class="header-section-number">5.1.0.2</span> Example Two: Measurement error in victimizaton survey data</h4>
+<ul>
+<li><p>Historically, national victimization surveys (such as the SCJS and CSEW) capped the number of victim forms that victims could complete. In 2019, ONS said that “Since the survey began in 1981, “repeat” incidents have been limited to a total of 5. Historically, including a maximum of 5 repeat incidents for any individual victim had proven to be an effective way of reducing the effects of sample variability from year to year. This approach enabled the publication of incident rates that were not subject to large fluctuation between survey years. This approach yields a more reliable picture of changes in victimisations over time once high order repeat victimisations were treated in this way.” (https://doc.ukdataservice.ac.uk/doc/7280/mrdoc/pdf/7280_csew_improving_victimisation_estimates_2019.pdf)</p></li>
+<li><p>However, it also means that people who experienced more than five incidents of a particular ‘series’ crime type did not have their data accurately recorded</p></li>
+<li><p>This was particularly important for women’s reporting of violent victimization (Walby et al.&nbsp;2015) - women who experienced domestic violence may well report more than five repeat incidents of victimization in a given year. A second measurement error issue came from the ‘97 code’ - the option to report the number of incidents experienced as ‘96/too many to count’. Instead, based on the domestic violence literature Walby and colleagues propose using an estimate of 60 incidents for those who report the 97 code.</p></li>
+<li><p>Sometimes it’s possible to use uncapped data</p></li>
+</ul>
+</section>
+<section id="what-to-do-about-it" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="what-to-do-about-it"><span class="header-section-number">5.1.1</span> What to do about it?</h3>
 <p>What’s more is that it’s not entirely clear what to do about it.</p>
 <p>One way to approach this, if we know or can reasonably approximate the model for the measurement error then we can use Bayesian methods to jointly estimate a model for our observations and the measurement error. This is easier said than done! Bayesian methods are extremely flexible and allow the researcher to model to specify a model for the measurement error which is estimated jointly with the model for their outcome. This relies on knowing what the right model for the measurement error should be. It also relies on fitting a Bayesian model to your data which comes with its own set of challenges.</p>
 <p>Pina-Sanchez has written about measurement error in crime.</p>
 <p>One approach is to use Bayesian methods.</p>
-<p>Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here: <a href="https://josepinasanchez.uk/short-courses/">https://josepinasanchez.uk/short-courses/</a></p>
+<p>Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here: <a href="https://josepinasanchez.uk/short-courses/" class="uri">https://josepinasanchez.uk/short-courses/</a></p>
 <p>https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf</p>
 <p>from https://josepinasanchez.uk/short-courses/</p>
 </section>
-<section id="simex" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="simex"><span class="header-section-number">4.1.2</span> SIMEX</h3>
+<section id="simex" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="simex"><span class="header-section-number">5.1.2</span> SIMEX</h3>
 <p>A less involved option involves assessment measurement error through simulation. The process here is to fit the model to the data as observed and try to figure out what the coefficients would be if there was no measurement error in the data. The <code>simex</code> R package lets you simulate new versions of your dataset with <em>more</em> and more measurement error. By looking to see how your coefficients change after re-fitting your model with increasing measurement error you can project backwards to what the coefficients would be with zero measurement error. Neat!</p>
 <p>However, SIMEX works best when there is only one variable with measurement error in the analysis, and can be more difficult to compute when there are multiple variables with measurement error <span class="citation" data-cites="blackwellUnifiedApproachMeasurement2017">(<a href="references.html#ref-blackwellUnifiedApproachMeasurement2017" role="doc-biblioref">Blackwell, Honaker, and King 2017</a>)</span></p>
 </section>
-<section id="rcme" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="rcme"><span class="header-section-number">4.1.3</span> <code>rcme</code></h3>
+<section id="rcme" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="rcme"><span class="header-section-number">5.1.3</span> <code>rcme</code></h3>
 <p>Pina-Sanchez and colleagues have written an R package that can conduct sensitivity analysis for some types of measurement error common to working with police recorded crime.</p>
 <blockquote class="blockquote">
 <p>Work through their example here? https://osf.io/preprints/socarxiv/sbc8w</p>
@@ -254,14 +270,17 @@ div.csl-indent {
 <p>Open questions - what about survey data? Models other than linear models?</p>
 </section>
 </section>
-<section id="selection-effects" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="selection-effects"><span class="header-section-number">4.2</span> Selection effects</h2>
-<p>One use of regression models is to identify ‘causal’ effects of predictors on outcomes.</p>
+<section id="selection-effects" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="selection-effects"><span class="header-section-number">5.2</span> Selection effects</h2>
+<p>Selection bias arises when there are people who we would have liked to observe in our study but we don’t observe them, and this lack of observation is related to their characteristics. Put another way, we can think of selection bias as affecting the rows of our dataset - there are some rows that are missing that we would like to see.</p>
 <p><span class="citation" data-cites="greenlandSensitivityAnalysisBias2014">(<a href="references.html#ref-greenlandSensitivityAnalysisBias2014" role="doc-biblioref">Greenland 2014</a>)</span></p>
 <p>We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e.&nbsp;people for whom S = 0)</p>
-<p>“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).” In the Knox and colleagues example, this would require knowing the numbers of people who were observed by police but not stopped, in order to calculate the probabilities of selection into the stop dataset. However, we don’t know this - and it is hard to imagine a scenario where an analyst of an police administrative dataset <em>would</em> know this.</p>
+<p>“But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1).”</p>
+<p>Bushway (2007) gives an example from sentencing research: say we want to investigate racial discrimination in sentencing. A common approach has been to focus on whether people from different ethnic backgrounds receive different lengths of prison sentence, after statistically adjusting for other factors such as the offence type, age at time of offence and so on <span class="citation" data-cites="pina-sanchezTacklingSelectionBias2020">(<a href="references.html#ref-pina-sanchezTacklingSelectionBias2020" role="doc-biblioref">Pina-Sánchez and Gosling 2020</a>)</span>. However this creates a selection bias problem - not all convictions lead to custodial sentences, and so focusing only on custodial sentences means that the analyst is focusing on discrimination “<em>conditional</em> on being selected into the incarcerated population” <span class="citation" data-cites="bushwayMagicStillThere2007a">(<a href="references.html#ref-bushwayMagicStillThere2007a" role="doc-biblioref">Bushway, Johnson, and Slocum 2007</a>)</span>. Any results derived would then not relate to all convicted people.</p>
+<p>Add more from (https://www-jstor-org.ezproxy-s2.stir.ac.uk/stable/2095230?seq=8)?</p>
+<p>In the Knox and colleagues example, this would require knowing the numbers of people who were observed by police but not stopped, in order to calculate the probabilities of selection into the stop dataset. However, we don’t know this - and it is hard to imagine a scenario where an analyst of an police administrative dataset <em>would</em> know this.</p>
 <p>Even if we <em>do</em> know this for our particular dataset, there is no guarantee that selection into the data would hold in every case that we might want to generalize our results to. As such we’d need to consider how differences between the study populations may have affected response and selection (e.g.&nbsp;would selection probabilities from a US study map onto a study in Manchester? How about one in Glasgow?)</p>
-<p><em>Some links on where to read more about causal inference? Maybe <a href="https://www.r-causal.org/">here</a> </em></p>
+<p><em>Some links on where to read more about causal inference? Maybe <a href="https://www.r-causal.org/">here</a></em></p>
 <p>Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.</p>
 <p>For example, we might want to know if people from minority ethnic backgrounds more likely to be arrested after a stop than people from white backgrounds (Knox et al)</p>
 <p>Police collect data on stops - why not just run a regression on these data to see if people from minority ethnic backgrounds are more likely to be stopped?</p>
@@ -278,12 +297,12 @@ div.csl-indent {
 <p>If you only analyse data that are the result of police stops then your results will be biased. To analyse data on police stops to estimate racial bias, you also need to know the total number of encounters (for each ethnic group) – that is, including encounters that did not lead to a stop.</p>
 <p>Others <span class="citation" data-cites="gaeblerCausalFrameworkObservational2022">(<a href="references.html#ref-gaeblerCausalFrameworkObservational2022" role="doc-biblioref">Gaebler et al. 2022</a>)</span>suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g.&nbsp;court sentencing and not policing?).</p>
 </section>
-<section id="solutions" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="solutions"><span class="header-section-number">4.3</span> Solutions?</h2>
+<section id="solutions" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="solutions"><span class="header-section-number">5.3</span> Solutions?</h2>
 <p>Knox et al.&nbsp;(2020) suggest some technical fixes, but emphasise that - if we are interested in using statistical models to identify <em>causal</em> relationships <em>there is no general solution</em> that can guarantee that coefficients in a regression model will have valid causal interpretations based on administrative data derived from police records. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.</p>
 <p><strong>maybe get the students to play about with the data in the dataverse?https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KFQOCV</strong></p>
-<section id="confounding" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="confounding"><span class="header-section-number">4.3.1</span> Confounding</h3>
+<section id="confounding" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="confounding"><span class="header-section-number">5.3.1</span> Confounding</h3>
 <p>Confounding describes a situation where there’s something that we know affects the outcome we’re interested in and/or our independent variables, but we don’t have a measure for this. In criminology, we might have measures of police stops but not <em>offending</em> (.e.g from self-reports). Offending is likely to be a big - but not the only driver - of whether a person has contact with the police.</p>
 <ul>
 <li>because we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).</li>
@@ -292,8 +311,8 @@ div.csl-indent {
 <p><em>need some criminological examples here</em></p>
 </section>
 </section>
-<section id="in-general" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="in-general"><span class="header-section-number">4.4</span> In general</h2>
+<section id="in-general" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="in-general"><span class="header-section-number">5.4</span> In general</h2>
 <p>Need to make assumptions about the magnitude of the bias to implement any of the technical fixes. Fine. But where does this information come from?</p>
 <p>“The preceding approach assumes that U is a known confounder (e.g., a smoking indicator) that was unmeasured in the study in question but has been previously identified and subject to study in relation to disease if not exposure. If instead U represents an unspecified, unknown confounder, then the entire sensitivity exercise will remain far more speculative. Nonetheless, decomposition of the bias factor can still be successful in demonstrating that only implausibly strong confounder or selection effects can account for a strong observed association. Cornfield et al.&nbsp;(1959) is considered a landmark study in which such an approach was used to examine claims that the smoking-lung cancer relation might be attributable to confounding”</p>
 <ul>
@@ -310,11 +329,17 @@ div.csl-indent {
 <div id="ref-blackwellUnifiedApproachMeasurement2017" class="csl-entry" role="listitem">
 Blackwell, Matthew, James Honaker, and Gary King. 2017. <span>“A <span>Unified Approach</span> to <span>Measurement Error</span> and <span>Missing Data</span>: <span>Overview</span> and <span>Applications</span>.”</span> <em>Sociological Methods &amp; Research</em> 46 (3): 303–41. <a href="https://doi.org/10.1177/0049124115585360">https://doi.org/10.1177/0049124115585360</a>.
 </div>
+<div id="ref-bushwayMagicStillThere2007a" class="csl-entry" role="listitem">
+Bushway, Shawn, Brian D. Johnson, and Lee Ann Slocum. 2007. <span>“Is the <span>Magic Still There</span>? <span>The Use</span> of the <span>Heckman Two-Step Correction</span> for <span>Selection Bias</span> in <span>Criminology</span>.”</span> <em>Journal of Quantitative Criminology</em> 23 (2): 151–78. <a href="https://doi.org/10.1007/s10940-007-9024-4">https://doi.org/10.1007/s10940-007-9024-4</a>.
+</div>
 <div id="ref-gaeblerCausalFrameworkObservational2022" class="csl-entry" role="listitem">
 Gaebler, Johann, William Cai, Guillaume Basse, Ravi Shroff, Sharad Goel, and Jennifer Hill. 2022. <span>“A <span>Causal Framework</span> for <span>Observational Studies</span> of <span>Discrimination</span>.”</span> <em>Statistics and Public Policy</em> 9 (1): 26–48. <a href="https://doi.org/10.1080/2330443X.2021.2024778">https://doi.org/10.1080/2330443X.2021.2024778</a>.
 </div>
 <div id="ref-greenlandSensitivityAnalysisBias2014" class="csl-entry" role="listitem">
 Greenland, Sander. 2014. <span>“Sensitivity <span>Analysis</span> and <span>Bias Analysis</span>.”</span> In <em>Handbook of <span>Epidemiology</span></em>, edited by Wolfgang Ahrens and Iris Pigeot, 685–706. New York, NY: Springer. <a href="https://doi.org/10.1007/978-0-387-09834-0_60">https://doi.org/10.1007/978-0-387-09834-0_60</a>.
+</div>
+<div id="ref-pina-sanchezTacklingSelectionBias2020" class="csl-entry" role="listitem">
+Pina-Sánchez, Jose, and John Paul Gosling. 2020. <span>“Tackling Selection Bias in Sentencing Data Analysis: A New Approach Based on a Scale of Severity.”</span> <em>Quality &amp; Quantity</em> 54 (3): 1047–73. <a href="https://doi.org/10.1007/s11135-020-00973-z">https://doi.org/10.1007/s11135-020-00973-z</a>.
 </div>
 </div>
 </section>
@@ -731,13 +756,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./general-linear-model.html" class="pagination-link" aria-label="The general linear model">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The general linear model</span></span>
+      <a href="./simulation.html" class="pagination-link" aria-label="Simulation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./simulation.html" class="pagination-link" aria-label="Simulation">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simulation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ethics.html" class="pagination-link" aria-label="Ethics">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ethics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

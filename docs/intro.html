@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -127,13 +127,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./general-linear-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">general linear model</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Selection effects, bias and so on</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The general linear model</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -144,8 +138,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,7 +164,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#types-of-criminological-data" id="toc-types-of-criminological-data" class="nav-link active" data-scroll-target="#types-of-criminological-data"><span class="header-section-number">1.1</span> Types of criminological data</a></li>
+  <li><a href="#about-you" id="toc-about-you" class="nav-link active" data-scroll-target="#about-you"><span class="header-section-number">1.0.1</span> About you</a></li>
+  <li><a href="#types-of-criminological-data" id="toc-types-of-criminological-data" class="nav-link" data-scroll-target="#types-of-criminological-data"><span class="header-section-number">1.1</span> Types of criminological data</a></li>
   <li><a href="#the-general-linear-model" id="toc-the-general-linear-model" class="nav-link" data-scroll-target="#the-general-linear-model"><span class="header-section-number">1.2</span> The general linear model</a></li>
   <li><a href="#measurement-error-and-selection-bias" id="toc-measurement-error-and-selection-bias" class="nav-link" data-scroll-target="#measurement-error-and-selection-bias"><span class="header-section-number">1.3</span> Measurement error and selection bias</a></li>
   <li><a href="#using-models-to-describe-quantities-of-interest" id="toc-using-models-to-describe-quantities-of-interest" class="nav-link" data-scroll-target="#using-models-to-describe-quantities-of-interest"><span class="header-section-number">1.4</span> Using models to describe quantities of interest</a></li>
@@ -194,9 +195,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This workshop will not teach you everything you need to know to be able to effectively fit statistical models to criminological data. This is for good reason - criminology as a discipline is extremely varied (a rendes-vous subject, as some have said). So you might be a criminologist working on self-reported survey data about perceptions of fear and shame amongst young people, or you might be working with spatial data on coordinates of offences reported to the police, or analysing decades worth of convictions data for whole countries.</p>
-<p>I assume that you are familiar with the general linear model (although we will have a refresher) - my aim is not to cover things that you will find in a general undergraduate or postgrad methods course on statistical modelling, but focus on a set of illustratons of specific problems that can arise in some criminological contexts. I’ve tried to pick examples that are both specific enough to be illuminating, but general enough that the techniques I’ll desribe (of say simulating quantities of interest from your fitted model) are generally relevant. No guarantees though. Hopefully act as inspiration when grappling with your own analytical problems.</p>
+<p>Data analysis is hard.</p>
+<p>If you are going to be doing data analysis with criminological data it’s likely that during your PhD/post-/undergraduate study you will receive some formal training in calculating descriptive statistics, statistical significance testing and probably some kind of statistical modelling. It’s pretty likely that you may also have been on a training course to teach you how to apply a specific method to data (NCRM is great for these!)</p>
+<p>I took courses like this when I was a student, and I teach on them now.</p>
+<p>However, when I have been working with criminological data in practice there have been a lot of topics which have come up that weren’t part of this formal curriculum. This is not to knock the formal curriculum - I don’t teach these things either! But it is, I hope, useful to chart some of this extra-curricular terrain and to signpost areas which might benefit you in your data analysis.</p>
+<p>So, this workshop will not teach you everything you need to know to be able to effectively fit statistical models to criminological data. I couldn’t hope to do this anyway - criminology as a discipline is extremely varied (a rendes-vous subject, as some have said). So you might be a criminologist working on self-reported survey data about perceptions of fear and shame amongst young people, or you might be working with spatial data on coordinates of offences reported to the police, or analysing decades worth of convictions data for whole countries.</p>
 <p>This also means that we will be skimming over the surface of quite a lot topics, rather than covering them in any great depth. As we go through I will signpost you to where you can find out more about each topic - books and books will have been written about each topic, so you can use this workshop as a jumping off point to dive further into topics that you find particularly useful.</p>
+<section id="about-you" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="about-you"><span class="header-section-number">1.0.1</span> About you</h3>
+<p>I assume that you are familiar with the general linear model (although we will have a refresher) - my aim is not to cover things that you will find in a general undergraduate or postgrad methods course on statistical modelling, but focus on a set of illustratons of specific problems that can arise in some criminological contexts. I’ve tried to pick examples that are both specific enough to be illuminating, but general enough that the techniques I’ll desribe (of say simulating quantities of interest from your fitted model) are generally relevant. No guarantees though. Hopefully act as inspiration when grappling with your own analytical problems.</p>
+</section>
 <section id="types-of-criminological-data" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="types-of-criminological-data"><span class="header-section-number">1.1</span> Types of criminological data</h2>
 <ul>

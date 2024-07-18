@@ -6,16 +6,35 @@ The common thread running through all these measures is that they rely on being 
 
 The data never speak for themselves.
 
-
 ## Measurement error
 
-The standard linear model assumes that all variables are measured perfectly (or in other words, with no error).
+Measurement error is just the gap between what we are conceptually interested in and the way that this concept is recorded in our spreadsheet.
 
-In practice we know this is unlikely, particularly with crime data. For example, we know that police recorded crime data is not a perfect measure of the amount of crime 'out there' in society. As we have discussed already, not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on.
+Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. The standard linear model which we have just been discussing assumes that all variables are measured perfectly (or in other words, with no error). It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios *we may not know what impact it is having*.
 
-Measurement error can impact an analysis in pretty much any conceiveable way, depending on the type, magnitude and source of measurement error - whether the error is in the outcome, or in a key independent variable, or in a control variable. It may bias your regression coefficients, meaning that your results are valid and in reality there is a stronger association between predictor and outcome that you have observed. It may not bias your regression coefficients at all but just impact the precision of your results. Other than in simple scenarios *we may not know what impact it is having*.
+In practice we know criminological data are likely to be measured with some degree of error. For example, we know that police recorded crime data is not a perfect measure of the amount of crime 'out there' in society. As we have discussed already, not all crimes are reported to the police, not all incidents which are reported are recorded as crimes and so on. 
 
-__More examples here__
+
+
+#### Example One: Measurement error in police recorded crime data
+
+- From our discussion in Session One, we know that crime data recorded by the police are not a complete record of all crimes experienced in society in a given period - only crimes which are reported and recorded make it into recorded crime data.
+- So if we are interested in, for example, how many crimes there were in Scotland in 2023, the number of crimes recorded by police is likely to be an _under_ count.
+- The many years of work comparing crimes recorded to the police with victimization surveys - the 'dark figure of crime' - attests to this.
+
+#### Example Two: Measurement error in victimizaton survey data
+
+- Historically, national victimization surveys (such as the SCJS and CSEW) capped the number of victim forms that victims could complete. In 2019, ONS said that "Since the survey began in 1981, “repeat” incidents have been limited to a total of 5. Historically, including a
+maximum of 5 repeat incidents for any individual victim had proven to be an effective way of reducing the effects
+of sample variability from year to year. This approach enabled the publication of incident rates that were not
+subject to large fluctuation between survey years. This approach yields a more reliable picture of changes in
+victimisations over time once high order repeat victimisations were treated in this way." (https://doc.ukdataservice.ac.uk/doc/7280/mrdoc/pdf/7280_csew_improving_victimisation_estimates_2019.pdf)
+
+- However, it also means that people who experienced more than five incidents of a particular 'series' crime type did not have their data accurately recorded
+
+- This was particularly important for women's reporting of violent victimization (Walby et al. 2015) - women who experienced domestic violence may well report more than five repeat incidents of victimization in a given year. A second measurement error issue came from the '97 code' - the option to report the number of incidents experienced as '96/too many to count'. Instead, based on the domestic violence literature Walby and colleagues propose using an estimate of 60 incidents for those who report the 97 code.
+
+- Sometimes it's possible to use uncapped data
 
 
 ### What to do about it?
@@ -26,9 +45,9 @@ One way to approach this, if we know or can reasonably approximate the model for
 
 Pina-Sanchez has written about measurement error in crime.
 
-One approach is to use Bayesian methods. 
+One approach is to use Bayesian methods.
 
-Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here: [https://josepinasanchez.uk/short-courses/](https://josepinasanchez.uk/short-courses/)
+Pina Sanchez gave a workshop on Bayesian adjustments for measurement error, and you can find the materials here: <https://josepinasanchez.uk/short-courses/>
 
 https://josepinasanchez.uk/wp-content/uploads/2021/12/rmef_measurement-error_b.pdf
 
@@ -40,7 +59,6 @@ A less involved option involves assessment measurement error through simulation.
 
 However, SIMEX works best when there is only one variable with measurement error in the analysis, and can be more difficult to compute when there are multiple variables with measurement error [@blackwellUnifiedApproachMeasurement2017]
 
-
 ### `rcme`
 
 Pina-Sanchez and colleagues have written an R package that can conduct sensitivity analysis for some types of measurement error common to working with police recorded crime.
@@ -49,24 +67,30 @@ Pina-Sanchez and colleagues have written an R package that can conduct sensitivi
 
 Open questions - what about survey data? Models other than linear models?
 
-
-
 ## Selection effects
 
-One use of regression models is to identify 'causal' effects of predictors on outcomes.
+Selection bias arises when there are people who we would have liked to observe in our study but we don't observe them, and this lack of observation is related to their characteristics. Put another way, we can think of selection bias as affecting the rows of our dataset - there are some rows that are missing that we would like to see.
+
 
 
 [@greenlandSensitivityAnalysisBias2014]
 
 We only see people in our study if they meet some criterion (in other words, where S = 1), but we want to see everybody (i.e. people for whom S = 0)
 
-"But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1)." In the Knox and colleagues example, this would require knowing the numbers of people who were observed by police but not stopped, in order to calculate the probabilities of selection into the stop dataset. However, we don't know this - and it is hard to imagine a scenario where an analyst of an police administrative dataset _would_ know this.
 
-Even if we _do_ know this for our particular dataset, there is no guarantee that selection into the data would hold in every case that we might want to generalize our results to. As such we'd need to consider how differences between the study populations may have affected response and selection (e.g. would selection probabilities from a US study map onto a study in Manchester? How about one in Glasgow?)
-
+"But because we see only the relation of X to Y conditional on selection (S D 1), we must impute the unconditional relation of X to Y using probabilities of selection given what we do see (X and Y given S D 1)." 
 
 
-_Some links on where to read more about causal inference? Maybe [here](https://www.r-causal.org/) _
+Bushway (2007) gives an example from sentencing research: say we want to investigate racial discrimination in sentencing. A common approach has been to focus on whether people from different ethnic backgrounds receive different lengths of prison sentence, after statistically adjusting for other factors such as the offence type, age at time of offence and so on [@pina-sanchezTacklingSelectionBias2020]. However this creates a selection bias problem - not all convictions lead to custodial sentences, and so focusing only on custodial sentences means that the analyst is focusing on discrimination "_conditional_ on being selected into the incarcerated population" [@bushwayMagicStillThere2007a]. Any results derived would then not relate to all convicted people.
+
+Add more from (https://www-jstor-org.ezproxy-s2.stir.ac.uk/stable/2095230?seq=8)?
+
+
+In the Knox and colleagues example, this would require knowing the numbers of people who were observed by police but not stopped, in order to calculate the probabilities of selection into the stop dataset. However, we don't know this - and it is hard to imagine a scenario where an analyst of an police administrative dataset *would* know this.
+
+Even if we *do* know this for our particular dataset, there is no guarantee that selection into the data would hold in every case that we might want to generalize our results to. As such we'd need to consider how differences between the study populations may have affected response and selection (e.g. would selection probabilities from a US study map onto a study in Manchester? How about one in Glasgow?)
+
+*Some links on where to read more about causal inference? Maybe [here](https://www.r-causal.org/)*
 
 Imagine that we want to know whether police are racially biased in how they treat members of the public. One way to assess this is by using data from the police about the outcomes of their interactions with the public.
 
@@ -88,15 +112,11 @@ If you only analyse data that are the result of police stops then your results w
 
 Others [@gaeblerCausalFrameworkObservational2022]suggest that maybe you can identify some aspects of discrimination in administrative data. This would be discrimination at some point in the process, not total discrimination. It’s really important to be clear about what it is you want to know – do you care about total discrimination, or discrimination in a particular part of the process (e.g. court sentencing and not policing?).
 
-
-
 ## Solutions?
 
-Knox et al. (2020) suggest some technical fixes, but emphasise that - if we are interested in using statistical models to identify _causal_ relationships _there is no general solution_ that can guarantee that coefficients in a regression model will have valid causal interpretations based on administrative data derived from police records. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.
+Knox et al. (2020) suggest some technical fixes, but emphasise that - if we are interested in using statistical models to identify *causal* relationships *there is no general solution* that can guarantee that coefficients in a regression model will have valid causal interpretations based on administrative data derived from police records. The key thing is thinking through the process by which the dataset was constructed, and conveying this to your reader.
 
-__maybe get the students to play about with the data in the dataverse?https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KFQOCV__
-
-
+**maybe get the students to play about with the data in the dataverse?https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KFQOCV**
 
 ### Confounding
 
@@ -104,15 +124,9 @@ Confounding describes a situation where there's something that we know affects t
 
 -   because we do not see U, we must impute its values using probabilities (bets) about the values of U given what we do see (again, X and Y ).
 
+*The tipr approach is to unmeasured confounding - not just that we have a variable measured inaccurately, but that there is a key variable we haven't measured*
 
-
-_The tipr approach is to unmeasured confounding - not just that we have a variable measured inaccurately, but that there is a key variable we haven't measured_
-
-
-_need some criminological examples here_
-
-
-
+*need some criminological examples here*
 
 ## In general
 
@@ -122,9 +136,7 @@ Need to make assumptions about the magnitude of the bias to implement any of the
 
 -   so this is based on the idea tat we can identify an "implausibly strong" confounder, which is reasonable.
 
-- One approach is to pick a bunch of possible bias parameters and test to see if results are robust to all of them.
-
-
+-   One approach is to pick a bunch of possible bias parameters and test to see if results are robust to all of them.
 
 "Despite these considerations, there is no basis for mandating a bias analysis of every study or even most studies. For example, bias analysis is superfluous when conventional intervals show that no useful conclusion could be drawn from the study even if it were perfect apart from random error. More generally, rather than providing a bias analysis, a study may provide greater service by refraining from inference; instead it can focus on carefully reporting its design, conduct, and data in great detail to facilitate pooling and meta-analysis (Greenland et al. 2004). Inferences are best based on a more complete account of evidence than can be provided in a single study report, and thus the effort of bias analysis is more justifiable in research synthesis (Turner et al. 2009; Welton et al. 2009). Even there, bias analysis becomes essential only when doing risk assessment or when authors claim to offer near-definitive conclusions." [@greenlandSensitivityAnalysisBias2014 p703]
 
@@ -132,5 +144,7 @@ Need to make assumptions about the magnitude of the bias to implement any of the
 
 Means humility when making policy recommendations!!
 
-_Is the small world enough? How do we talk about this? e.g. if all we've done is analysed convictions data do we talk about offending, or just conviction?_
+*Is the small world enough? How do we talk about this? e.g. if all we've done is analysed convictions data do we talk about offending, or just conviction?*
+
+
 

@@ -218,7 +218,8 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#limits-to-simulation-approaches" id="toc-limits-to-simulation-approaches" class="nav-link active" data-scroll-target="#limits-to-simulation-approaches"><span class="header-section-number">4.1</span> Limits to simulation approaches</a></li>
+  <li><a href="#add-clarify-example-here" id="toc-add-clarify-example-here" class="nav-link active" data-scroll-target="#add-clarify-example-here"><span class="header-section-number">4.1</span> Add clarify example here</a></li>
+  <li><a href="#limits-to-simulation-approaches" id="toc-limits-to-simulation-approaches" class="nav-link" data-scroll-target="#limits-to-simulation-approaches"><span class="header-section-number">4.2</span> Limits to simulation approaches</a></li>
   </ul>
 </nav>
     </div>
@@ -244,6 +245,7 @@ div.csl-indent {
 </header>
 
 
+<p>__There’s nothing special about simulation here we can also do this with delta method or whatever? I should say this?__s</p>
 <p>Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al.&nbsp;(2000).</p>
 <p>For example, <span class="citation" data-cites="hunterEquityJusticeCrime2016">(<a href="references.html#ref-hunterEquityJusticeCrime2016" role="doc-biblioref">Hunter and Tseloni 2016</a>)</span> use the results of a fitted regression model to calculate a measure they call ‘Victimization Divide’. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.</p>
 <p>This measure is defined as</p>
@@ -365,8 +367,72 @@ div.csl-indent {
 </div>
 </div>
 <p>The beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.</p>
-<section id="limits-to-simulation-approaches" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="limits-to-simulation-approaches"><span class="header-section-number">4.1</span> Limits to simulation approaches</h2>
+<section id="add-clarify-example-here" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="add-clarify-example-here"><span class="header-section-number">4.1</span> Add clarify example here</h2>
+<p>In the example above we performed the simulation from each models’ variance-covariance matrix ourselves. Whilst it’s good to know how this works, in practice there are R packages which can do this for us. One good option is <a href="https://cran.r-project.org/web/packages/clarify/index.html">clarify</a>.</p>
+<p>Here we reproduce our results using clarify. Instead of fitting a model to each year as above, clarify expects us to give it a single model object, so we re-express the two separate models (one for each year) as a single model, now including year as an interaction term with sex.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using clarify -----------------------------------------------------------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(clarify)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(<span class="fu">cbind</span>(vict, n <span class="sc">-</span> vict) <span class="sc">~</span> <span class="fu">fct_rev</span>(sex) <span class="sc">*</span> year,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> dat)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sim</span>(mod1,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">n =</span> n_sims)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>sim_fun2 <span class="ot">&lt;-</span> <span class="cf">function</span>(coefs) {</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  men_2015 <span class="ot">&lt;-</span> <span class="fu">unname</span>(coefs[<span class="st">"fct_rev(sex)men"</span>])</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  men_interact <span class="ot">&lt;-</span> <span class="fu">unname</span>(coefs[<span class="st">"fct_rev(sex)men:year2020"</span>])</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  men_2020 <span class="ot">&lt;-</span> men_2015 <span class="sc">+</span> men_interact</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  or_2015 <span class="ot">&lt;-</span> <span class="fu">exp</span>(men_2015)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  or_2020 <span class="ot">&lt;-</span> <span class="fu">exp</span>(men_2020)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">victim_divide</span>(or_2015, or_2020)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>est2 <span class="ot">&lt;-</span> <span class="fu">sim_apply</span>(s, </span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                  <span class="at">FUN =</span> sim_fun2)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">x =</span> <span class="fu">as.vector</span>(est2)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reframe</span>(<span class="at">vds =</span> <span class="fu">quantile</span>(x, <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>, <span class="fl">0.975</span>, <span class="fl">0.99</span>)),</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">vals =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>, <span class="fl">0.975</span>, <span class="fl">0.99</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 11 × 2
+       vds  vals
+     &lt;dbl&gt; &lt;dbl&gt;
+ 1 -1.12   0.01 
+ 2 -1.02   0.025
+ 3 -0.948  0.05 
+ 4 -0.860  0.1  
+ 5 -0.710  0.25 
+ 6 -0.524  0.5  
+ 7 -0.296  0.75 
+ 8 -0.0193 0.9  
+ 9  0.210  0.95 
+10  0.469  0.975
+11  0.911  0.99 </code></pre>
+</div>
+</div>
+<p>Here we can see that the results are basically the same.</p>
+<p>Why clarify:</p>
+<ul>
+<li>get someone else to do the coding</li>
+<li>more efficient</li>
+<li>examples/tutorials online</li>
+<li>link to marginal_effects?s</li>
+</ul>
+</section>
+<section id="limits-to-simulation-approaches" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="limits-to-simulation-approaches"><span class="header-section-number">4.2</span> Limits to simulation approaches</h2>
 <p>But remember that our model is wrong!! (Greenland) This approach incorporates the uncertainty <em>as expressed by your model’s standard errors</em>. This still makes a load of assumptions - basically that we’ve fit the right model and that we had the right data. In more complex cases - like most real-world research - we might be fitting a much more complicated statistical model with non-linear effects and interaction terms and all sorts. As we’ll discuss in the next section, we might also want to cast a critical eye over the data that we are analysing before drawing our conclusions.</p>
 
 

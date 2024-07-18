@@ -6,15 +6,23 @@ Criminological data - as with criminology itself - is extremely varied. The main
 
 ## Who cares about data provenance?
 
-To conduct a useful analysis - the kind that might help you understand the real world - you need to understand how your data came about. As we'll see, whether you are analysing a survey or police recorded crime data or convictions data or something else matters in how you conduct your analysis and interpret the results. You need to know the 'generative story'[^1] about your data to analyse it properly.
+To conduct a useful analysis - the kind that might help you understand the real world - you need to understand how your data came about. As we'll see, whether you are analysing a survey or police recorded crime data or convictions data or something else matters in how you conduct your analysis and interpret the results. You need to know the 'generative story'[^types-of-data-1] about your data to analyse it properly.
 
-[^1]: 'Generative modelling' is - depressingly - a term that means different things to different audiences [@sankaranGenerativeModelsInterdisciplinary2023]. Michael Betancourt talks about 'narratively generative' models [@betancourtWhatProbabilisticStory], which is a terminology I quite like - we can tell a story about how the data came to be and this can influence the model/s we fit.
+[^types-of-data-1]: 'Generative modelling' is - depressingly - a term that means different things to different audiences [@sankaranGenerativeModelsInterdisciplinary2023]. Michael Betancourt talks about 'narratively generative' models [@betancourtWhatProbabilisticStory], which is a terminology I quite like - we can tell a story about how the data came to be and this can influence the model/s we fit.
 
 When working with criminological data we often know quite a lot about how the data (or if you like, the numbers in the spreadsheet in front of you) came to exist. Using this information - information that might be in metadata, or based on our theoretical knowledge of the world - can help us do better data analysis.
 
 How exactly we incorporate this information will depend a lot on what data we're working with and what the goals of our analysis are. There are no general solutions to what information we should incorporate and how we might do this, but in this workshop we'll cover some scenarios that can arise in criminological research.
 
 
+- "Why has the data been collected (and collected in this way)?
+- How has the data been collected and/or by whom or by what?
+- What/who is included and what/who is excluded?
+- What is the context for the data collection (routine activity, bespoke intervention, to meet a target)?
+- Has the data been dis/aggregated or manipulated or cleaned in some other way to arrive at its present form?
+- What are the relevant definitions and concepts that govern the data/data collection?"
+
+[@8347e95e012d4212a5ee429a18ee592e, p228-229]
 
 ## Generative stories for common types of crime data
 
@@ -22,56 +30,42 @@ How exactly we incorporate this information will depend a lot on what data we're
 
 In Scotland there is a very nice discussion of how police recorded crime statistics are put together in the [Scottish Government User Guide to Recorded Crime](https://www.gov.scot/publications/user-guide-recorded-crime-statistics-scotland-3/). We can think of this process as involving four main components:
 
-![Recorded crime](resources/recorded_crime_flowchart.pdf){style="transform: rotate(90deg);"}
-- _Reporting_: Most of the time incidents come to the attention of the police after a member of the public reports it. However, we know that not all incidents are reported to the police, and not all people are equally likely to report incidents if they are victims [@fohringPuttingFaceDark2014]
-- _Fact-checking/investigation_: Police need to collect initial information about an incident to establish whether a crime has occurred
-- _Discretion/judgement_: Even if the police believe a crime has occurred, not all incidents are followed up, for example if a victim chooses not to prosecute or provide details of the perpetrator [@aplinGreyFigureCrime2019]. __Maybe add discussion of [@hopeEffectThirdParty2023] here__?
-- _Applying crime counting rules_: This might affect the type of crime an incident is recorded as, including whether it is classed as a hate crime. The current [Scottish Crime Recording Standard](https://www.gov.scot/publications/scottish-crime-recording-standard-crime-recording-counting-rules-2/) is 550 pages long (!). I have not read it.
+![Recorded crime](resources/recorded_crime_flowchart.pdf){style="transform: rotate(90deg);"} - *Reporting*: Most of the time incidents come to the attention of the police after a member of the public reports it. However, we know that not all incidents are reported to the police, and not all people are equally likely to report incidents if they are victims [@fohringPuttingFaceDark2014] - *Fact-checking/investigation*: Police need to collect initial information about an incident to establish whether a crime has occurred - *Discretion/judgement*: Even if the police believe a crime has occurred, not all incidents are followed up, for example if a victim chooses not to prosecute or provide details of the perpetrator [@aplinGreyFigureCrime2019]. **Maybe add discussion of [@hopeEffectThirdParty2023] here**? - *Applying crime counting rules*: This might affect the type of crime an incident is recorded as, including whether it is classed as a hate crime. The current [Scottish Crime Recording Standard](https://www.gov.scot/publications/scottish-crime-recording-standard-crime-recording-counting-rules-2/) is 550 pages long (!). I have not read it.
 
-### Key dilemma
+### Answering our key questions
+
+
+### Implications of the generative story
+
+#### System or heaviour?
 
 Because of all these processes there has long been a question about the extent to which official crime statistics reflect ‘behavioural’ trends in crime, or just the actions of the justice system [@kitsuseNoteUsesOfficial1963; @hopeEffectThirdParty2023], and how you see this may depend on your theoretical persuasion [@simesPolicingPunishmentPlace2023]. We'll discuss some practical impacts this may have on analysis later in the workshop.
 
 
-### Philosophical questions
+#### Undercounting and the dark-figure
+
+
+#### Population or super-population?
 
 [@verlaan2024use] outline two possible approaches to conceptualizing police recorded crime data: a population or superpopulation approach.
 
-In the population approach the data you observe for a particular time and place (e.g. Scotland in 2023) are all the data you could ever observe - you don't need to fit statistical models to generalize from the data you observe to a wider population because _there is no wider population_. [^2] You have the data you have, and that's that.
+In the population approach the data you observe for a particular time and place (e.g. Scotland in 2023) are all the data you could ever observe - you don't need to fit statistical models to generalize from the data you observe to a wider population because *there is no wider population*. \[\^2\] You have the data you have, and that's that.
 
-[^2:] You might want to fit models for other reasons though.
+\[\^2:\] You might want to fit models for other reasons though.
 
 In the superpopulation approach you are interesting in thinking about other ways the data you have may have arisen. Verlan and Langton (2024) give examples where you may think that data on crimes recorded by police in cities in Texas from 2023 were data drawn from the population of cities in the whole USA, or the whole of the USA, or the whole planet. Alternatively, data from cities in Texas from 2023 may be seen as a sample from cities in Texas from 2023 and 2024, or 2023-2030 and so on. Gelman (2011) takes this approach using an example from political science - you may have data on all seats in a lesislature but want to predict what will happen to those same seats in future elections under "hypothetical alternative conditions". Applying the same logic, statistical models could be used with police recorded crime data to ask 'counterfactual' questions about what crime rates in Dallas may have been if the poverty rate fell by 5%.
 
 Verlan and Langton list some possible problems using inferential statistcs/statistical models using administrative data.
 
-1. It wrongly leads people to assume that their results are generalizable. This is often not done explicitly but implicitly (for example suggesting that results may apply in other jurisdictions)
-2. It can lead people to undervalue actual observed differences in their data. For example, researchers may deny that an association between two variables exists in their dataset if it is not statistically significant
+1.  It wrongly leads people to assume that their results are generalizable. This is often not done explicitly but implicitly (for example suggesting that results may apply in other jurisdictions)
+2.  It can lead people to undervalue actual observed differences in their data. For example, researchers may deny that an association between two variables exists in their dataset if it is not statistically significant
 
 
 
-### How does an incident end up as a court record?
-
-We might also want to analyse data on criminal convictions from courts. Here is a high-level overview of how a court record comes to exist in Scotland:
-
-![Court records](resources/court_data_flowchart.pdf){style="transform: rotate(90deg);"}
-
-- _Crime_: All the factors listed above for recorded crime have to happen first
-- _Arrest and charge_: The police need to be able to identify the person who committed the offence and charge them with a crime. Incidents disposed of using penalties such as Fixed Penalty Notices or warnings will not reach court
-- _Court_: Exactly what a person may end up being convicted for may depend on plea bargaining. In some countries (such as Scotland) court records use the principal offence rule, where only the most serious type of crime included in a set of proceedings is listed. A summary in 2008 found that "eighteen European countries apply a principal offence rule and twenty-one do not apply such a rule".
-- _Sentencing_: There is a large literature on sentencing outcomes and how they vary by the characteristics of people being sentenced (see [@pina-sanchezEthnicDisparitiesSentencing2022] for a recent example)
-
-One good thing about using convictions data is that we can be pretty confident (other than in cases such as wrongful conviction) that a crime has occurred. We may be less confident of this using other data sources.
-
-
-
-
-Sometimes this is less of a dilemma when you have a comparable victim survey and you are interested in overall levels of crime [@buil-gilComparingMeasurementsViolent2022]. However, this is a challenge “outside consolidated western democracies where the range of available data is often limited” [@atakWesternCrimeDrop2020]
 
 ## Survey data
 
-In response to known issues with measuring levels of crime with administrative data, since the 1980s criminologists in some parts of the world have been surveying the public to ask about their levels of victimization. 
-
+In response to known issues with measuring levels of crime with administrative data, since the 1980s criminologists in some parts of the world have been surveying the public to ask about their levels of victimization.
 
 Scottish Crime and Justice Survey​
 
@@ -91,7 +85,10 @@ Usually don’t ask about people’s offending behaviour​
 
 Good for measuring common crimes, bad for measuring rare crimes
 
-## How does a person get selected for the SCJS?
+### Answering our key questions
+
+
+### How does a person get selected for the SCJS?
 
 Random sample of 12,000ish postcodes in Scotland are contacted to take part​(for 2020/21 survey it was 12,681 addresses)
 
@@ -99,14 +96,13 @@ For those who agree, one adult (age 16 or over) in each household is randomly se
 
 Therefore, *by design* no:​
 
-- Children​
-- Homeless people​
-- People living in communal establishments (e.g. students, people in prison)
+-   Children​
+-   Homeless people​
+-   People living in communal establishments (e.g. students, people in prison)
 
 There may also be limitations on who ends up in a survey dataset even if they are included in the design. With a focus on International Development, Carr-Hill says that “in practice, household surveys typically under-represent: those in fragile, disjointed households; slum populations and areas posing security risks.” [@carr-hillMissingMillionsMeasuring2013]. The extent to which these factors may affect any particular data collection exercise may vary from having little to extreme impact (for example, research being conduct in a conflict zone). It is up to the researcher to determine the likely extent of factors such as these in their own analysis.
 
 (Not going to talk about things like measurment equivalence in internaitonal surveys although that is a thing!)
-
 
 #### Who is excluded?
 
@@ -116,59 +112,48 @@ But this excludes people, students, people in prison, and those living in refuge
 
 [@scottishwomensaidResponseConsultationScottish2021]
 
-
-"The self-completion questionnaire on partner abuse and the questionnaire on sexual violence are the last part of an already long interview. The 2019/2020 technical report notes that
-“ran out of time” accounts for 34.2% (the largest proportion) of reasons for not doing the selfcompletion part of the SCJS."
+"The self-completion questionnaire on partner abuse and the questionnaire on sexual violence are the last part of an already long interview. The 2019/2020 technical report notes that “ran out of time” accounts for 34.2% (the largest proportion) of reasons for not doing the selfcompletion part of the SCJS."
 
 This means that students are excluded from estimates of domestic abuse in Scotland.
 
 If you want to fit a statistical model to SCJS to understand partner abuse you need to be aware of these issues and possible bias (in terms of non-representativeness that may arise)
 
-Importantly, this is not a sample _size_ issue - if you had all the data on the people in the sampling frame then you still wouldn't find out anything about students because they are excluded from the survey by design.
+Importantly, this is not a sample *size* issue - if you had all the data on the people in the sampling frame then you still wouldn't find out anything about students because they are excluded from the survey by design.
 
+### Implications of the generative story for modelling
 
-### Accounting for survey design in analysis
+#### Accounting for survey design in analysis
 
 Crime surveys usually come with sampling weights (see https://notstatschat.rbind.io/2020/08/04/weights-in-statistics/). This adjusts for the non-random selection of participants into the survey. It's useful to think about the distinction between your survey and the population. If you want to calculate descriptive statistics from the survey that are accurate for the target population, you should use the weights. There are other occasions when you might want to know the unweighted/base sample size (e.g. to avoid presenting results that are based on a small number of responses). Different authorities have different perspectives on whether you should use sampling weights when fitting a statistical model. For example, Understanding Society say that you should definitely use sampling weights when analysing that dataset (https://www.understandingsociety.ac.uk/documentation/mainstage/user-guides/main-survey-user-guide/why-use-weights). Economists at the world bank say 'yes when doing descriptive research and it depends when doing 'causal inference'" (https://www.nber.org/papers/w18859). As ever, the appropriate strategy will depend on the data you are working with and what question you are trying to answer. The best place to start is to consult the documentation for the survey you are using and see its description of the weights provided. For example, in the Scottish Crime and Justice survey they are different weights for individuals, households and incidents.
+
+#### What's the population of interest?
+
 
 Again, weights will only help adjust the data you see towards the target population in the survey design frame. Weighting cannot adjust for populations who are excluded from the survey by design.
 
 
-## 
+
+## Other forms of crime data
+
 ### CVI data?
 
 https://www.scotland.police.uk/about-us/covid-19-police-scotland-response/enforcement-and-response-data/
 
-"In response to the introduction of The Health Protection (Coronavirus) (Restrictions) (Scotland) Regulations 2020 and Coronavirus Act 2020, Police Scotland developed a ‘Coronavirus
-Interventions’ (CVI) recording system. This system allowed Police Scotland to begin gathering data in relation to the public co-operation levels with the new legislation. This system relies
-on Police Officers manually updating the system with the co-operation level when they encounter an individual in contravention of the new legislation.
-Due to the manual input required to form this data set, the contents of this slide are indicative only. Actual figures will differ from those recorded on Crime Systems (please see further
-slide), may be subject to change, and cannot be considered Official Police Statistics. They do provide an indication of the public co-operation levels across Scotland."
+"In response to the introduction of The Health Protection (Coronavirus) (Restrictions) (Scotland) Regulations 2020 and Coronavirus Act 2020, Police Scotland developed a ‘Coronavirus Interventions’ (CVI) recording system. This system allowed Police Scotland to begin gathering data in relation to the public co-operation levels with the new legislation. This system relies on Police Officers manually updating the system with the co-operation level when they encounter an individual in contravention of the new legislation. Due to the manual input required to form this data set, the contents of this slide are indicative only. Actual figures will differ from those recorded on Crime Systems (please see further slide), may be subject to change, and cannot be considered Official Police Statistics. They do provide an indication of the public co-operation levels across Scotland."
 
-"Notes on the CVI System
-The second data source was the Coronavirus Intervention (CVI) system, introduced by Police
-Scotland on 6 April 2020 in response to the introduction of the Coronavirus Act 2020 and
-associated Health Protection Regulations in Scotland.52 Data from the CVI were published
-throughout the pandemic on a weekly basis by Police Scotland until 17 November 2021. The
-main purpose of this system was to gather data on levels of public co-operation with the new
-Regulations, based on police officer interventions. The CVI system relies on manual updates
-from police officers about any interventions they have had with members of the public in
-respect of the legislation. It is not compulsory and, as a result, does not provide a
-comprehensive estimate of the total number of policing encounters. Nevertheless, it
-measures all policing-related activity (not just use of enforcement) and so provides a useful
-indicator of the relative use of different types of police activity in the context of the ‘Four Es
-strategy’, which was widely adopted by police forces across the UK in the context of the
-pandemic.53 To our knowledge, the CVI System is the only database of its kind to be used to
-measure the overall use of extended policing powers across the UK police forces from the
-start of the pandemic. Therefore, it provides an extremely useful source of complementary
-information to the FPN data.
-Comparison between FPN tickets and the CVI system
-Figure 22 shows a comparison of the number of tickets issued and the number recorded on
-the CVI as a seven-day rolling average between 27 March 2020 and 31 May 2021. The dark
-line shows the average number of FPNs issued, and the light line shows the average number
-recorded on Police Scotland’s CVI system. Both trend lines show four ‘phases’ of policing
-activity in relation to FPNs which are broadly reflective of the tightening and easing of
-restrictions in Scotland.
-The total number of FPN tickets actually issued (n = 20,410) was 20.9% higher than the
-number recorded on Police Scotland’s Coronavirus Intervention (CVI) system over the same
-period (n = 16,876)" https://www.law.ed.ac.uk/sites/default/files/2022-08/FPN%204th%20report%20-%20FINAL.pdf
+"Notes on the CVI System The second data source was the Coronavirus Intervention (CVI) system, introduced by Police Scotland on 6 April 2020 in response to the introduction of the Coronavirus Act 2020 and associated Health Protection Regulations in Scotland.52 Data from the CVI were published throughout the pandemic on a weekly basis by Police Scotland until 17 November 2021. The main purpose of this system was to gather data on levels of public co-operation with the new Regulations, based on police officer interventions. The CVI system relies on manual updates from police officers about any interventions they have had with members of the public in respect of the legislation. It is not compulsory and, as a result, does not provide a comprehensive estimate of the total number of policing encounters. Nevertheless, it measures all policing-related activity (not just use of enforcement) and so provides a useful indicator of the relative use of different types of police activity in the context of the ‘Four Es strategy’, which was widely adopted by police forces across the UK in the context of the pandemic.53 To our knowledge, the CVI System is the only database of its kind to be used to measure the overall use of extended policing powers across the UK police forces from the start of the pandemic. Therefore, it provides an extremely useful source of complementary information to the FPN data. Comparison between FPN tickets and the CVI system Figure 22 shows a comparison of the number of tickets issued and the number recorded on the CVI as a seven-day rolling average between 27 March 2020 and 31 May 2021. The dark line shows the average number of FPNs issued, and the light line shows the average number recorded on Police Scotland’s CVI system. Both trend lines show four ‘phases’ of policing activity in relation to FPNs which are broadly reflective of the tightening and easing of restrictions in Scotland. The total number of FPN tickets actually issued (n = 20,410) was 20.9% higher than the number recorded on Police Scotland’s Coronavirus Intervention (CVI) system over the same period (n = 16,876)" https://www.law.ed.ac.uk/sites/default/files/2022-08/FPN%204th%20report%20-%20FINAL.pdf
+
+## Triangulation: a solution?
+
+Atak - triangulation is good
+Buil-GIl says it's best practice
+- ... but need to assume that measures are of the same thing?
+
+- 
+
+
+# Practical
+
+- What's the story of your crime data?
+- Read [Paper One]
+  - What is the 'story' of these data?

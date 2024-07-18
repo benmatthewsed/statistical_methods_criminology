@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./selection-measurement.html" rel="next">
+<link href="./simulation.html" rel="next">
 <link href="./types-of-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -181,14 +181,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
+  <a href="./simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
+  <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -213,18 +213,22 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#large-worlds-and-small-worlds" id="toc-large-worlds-and-small-worlds" class="nav-link active" data-scroll-target="#large-worlds-and-small-worlds"><span class="header-section-number">3.1</span> Large worlds and small worlds</a></li>
-  <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link" data-scroll-target="#intro-to-glm"><span class="header-section-number">3.2</span> Intro to GLM</a></li>
-  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">3.3</span> Logistic regression</a></li>
-  <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data"><span class="header-section-number">3.4</span> Count data</a></li>
-  <li><a href="#why-not-just-lm" id="toc-why-not-just-lm" class="nav-link" data-scroll-target="#why-not-just-lm"><span class="header-section-number">3.5</span> why not just lm?</a>
+  <li><a href="#large-worlds-and-small-worlds" id="toc-large-worlds-and-small-worlds" class="nav-link active" data-scroll-target="#large-worlds-and-small-worlds"><span class="header-section-number">3.1</span> Large worlds and small worlds</a>
   <ul class="collapse">
-  <li><a href="#specific-problems-with-glms" id="toc-specific-problems-with-glms" class="nav-link" data-scroll-target="#specific-problems-with-glms"><span class="header-section-number">3.5.1</span> Specific problems with GLMs</a></li>
+  <li><a href="#big-picture-two-tribes-of-modellers" id="toc-big-picture-two-tribes-of-modellers" class="nav-link" data-scroll-target="#big-picture-two-tribes-of-modellers"><span class="header-section-number">3.1.1</span> Big picture: two tribes of modellers?</a></li>
   </ul></li>
-  <li><a href="#a-note-on-bespoke-models" id="toc-a-note-on-bespoke-models" class="nav-link" data-scroll-target="#a-note-on-bespoke-models"><span class="header-section-number">3.6</span> A note on bespoke models</a></li>
-  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values"><span class="header-section-number">3.7</span> Assumptions and p-values</a>
+  <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link" data-scroll-target="#intro-to-glm"><span class="header-section-number">3.2</span> Intro to GLM</a>
   <ul class="collapse">
-  <li><a href="#an-example-of-thinking-about-populations-and-generalization" id="toc-an-example-of-thinking-about-populations-and-generalization" class="nav-link" data-scroll-target="#an-example-of-thinking-about-populations-and-generalization"><span class="header-section-number">3.7.1</span> An example of thinking about populations and generalization</a></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">3.2.1</span> Logistic regression</a></li>
+  </ul></li>
+  <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data"><span class="header-section-number">3.3</span> Count data</a></li>
+  <li><a href="#why-not-just-lm" id="toc-why-not-just-lm" class="nav-link" data-scroll-target="#why-not-just-lm"><span class="header-section-number">3.4</span> why not just lm?</a>
+  <ul class="collapse">
+  <li><a href="#specific-problems-with-glms" id="toc-specific-problems-with-glms" class="nav-link" data-scroll-target="#specific-problems-with-glms"><span class="header-section-number">3.4.1</span> Specific problems with GLMs</a></li>
+  </ul></li>
+  <li><a href="#assumptions-and-p-values" id="toc-assumptions-and-p-values" class="nav-link" data-scroll-target="#assumptions-and-p-values"><span class="header-section-number">3.5</span> Assumptions and p-values</a>
+  <ul class="collapse">
+  <li><a href="#an-example-of-thinking-about-populations-and-generalization" id="toc-an-example-of-thinking-about-populations-and-generalization" class="nav-link" data-scroll-target="#an-example-of-thinking-about-populations-and-generalization"><span class="header-section-number">3.5.1</span> An example of thinking about populations and generalization</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -254,9 +258,14 @@ window.Quarto = {
 <section id="large-worlds-and-small-worlds" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="large-worlds-and-small-worlds"><span class="header-section-number">3.1</span> Large worlds and small worlds</h2>
 <p>Richard McElreath <span class="citation" data-cites="mcelreathStatisticalRethinkingBayesian2020">(<a href="references.html#ref-mcelreathStatisticalRethinkingBayesian2020" role="doc-biblioref">McElreath 2020</a>)</span> talks about the ‘small world’ of the model and the ‘large world’ that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. This is fine if all we want to do is provide summaries of the the numbers in our spreadsheets. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. We often need to bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we’ll overview two ways in which our understanding of the ‘large world’ might influence how we interpret our results from the ‘small world’: measurement error and selection effects.</p>
+<section id="big-picture-two-tribes-of-modellers" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="big-picture-two-tribes-of-modellers"><span class="header-section-number">3.1.1</span> Big picture: two tribes of modellers?</h3>
+<pre><code>-   Economists versus epidemiologists</code></pre>
+</section>
 </section>
 <section id="intro-to-glm" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="intro-to-glm"><span class="header-section-number">3.2</span> Intro to GLM</h2>
+<p>Things we don’t cover: - Won’t include: mixed/multilevel/hierarchical/etc - Additive models (GAMs) - ‘bespoke’ models</p>
 <p>Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&amp;t=1215s</p>
 <p>Introduction to LM</p>
 <ul>
@@ -282,9 +291,9 @@ y_i \sim &amp; {Normal} (\theta_i, \sigma) \\
 <blockquote class="blockquote">
 <p>an example here?</p>
 </blockquote>
-</section>
-<section id="logistic-regression" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="logistic-regression"><span class="header-section-number">3.3</span> Logistic regression</h2>
+<p>One key feature of a GLM is that you can get predictions for your outcome by adding up the coefficients for each element of your systematic component, and then applying the appropriate transformation through the link function.</p>
+<section id="logistic-regression" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="logistic-regression"><span class="header-section-number">3.2.1</span> Logistic regression</h3>
 <p>For logistic regression we have:</p>
 <p><span class="math display">\[
 \begin{align*}
@@ -294,8 +303,11 @@ y_i \sim &amp; {Binomial} (n, p_i) \\
 \]</span> for logistic regression, <span class="math inline">\(n\)</span> = 1, and we are just interested in modelling <span class="math inline">\(p_i\)</span>.</p>
 <p>These kinds of models are very common in the social sciences, including in criminology. We might want to model whether someone is a victim of crime or not, or whether the person has been convicted of a crime in a given year, or whether they are confident in the police or not… and so on and so on. The nice thing about this model formulation is that the <span class="math inline">\({logit}\)</span> link function makes sure that all the probabilities the model estimates are between 0 and 1. Strictly speaking we don’t need to do this (see the linear probability model), but it’s nice to avoid results that obviously don’t make sense, like negative probabilities and such.</p>
 </section>
-<section id="count-data" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="count-data"><span class="header-section-number">3.4</span> Count data</h2>
+</section>
+<section id="count-data" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="count-data"><span class="header-section-number">3.3</span> Count data</h2>
+<p>Count data are counts of things. That’s it! This means that they non-negative whole numbers. Count data are common in criminology when it comes to modelling crime - e.g.&nbsp;the number of crimes reported to the police, or the number of victimization incidents experienced by victims.</p>
+<p>Whilst we may see crime data be re-expressed as <em>rates</em> per 1,000 population, before this they are counts.</p>
 <p>The foundational model for count data is the Poisson model:</p>
 <p><span class="math display">\[
 \begin{align*}
@@ -304,44 +316,46 @@ y_i \sim &amp; {Poisson} (\lambda) \\
 \end{align*}
 \]</span></p>
 <p>Now there is only one parameter (lambda; <span class="math inline">\(\lambda\)</span>) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of <span class="math inline">\(\lambda\)</span>).</p>
-<p>The key feature of count data is that it is integers (i.e.&nbsp;whole numbers) only and they are stricly positive - you can’t get negative counts. Pretty much all aggregated administrative data about crime in its raw form will be count data. This might be counts of recorded crime, counts of people released from prison and so on. These data might be re-expressed as <em>rates</em> per 1,000 population, but before this they are counts.</p>
+<p>The coefficients from Poisson models (which range from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>) are converted to be predicted counts that are non-negative integers via the <span class="math inline">\(\log\)</span> link function.</p>
+<p><strong>Graph of log here?</strong></p>
 </section>
-<section id="why-not-just-lm" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="why-not-just-lm"><span class="header-section-number">3.5</span> why not just lm?</h2>
+<section id="why-not-just-lm" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="why-not-just-lm"><span class="header-section-number">3.4</span> why not just lm?</h2>
 <ul>
-<li><p>two tribes</p>
-<ul>
-<li>if all you care about is the average difference then you can just use ‘Simple Mean Difference’</li>
-<li>you might be an economist</li>
-<li>there are lots of other interesting quesitons we might care about (e.g.&nbsp;modelling dispersion?)</li>
-</ul></li>
+<li>You can get negative predictions</li>
+<li>LM assumes constant variance - we probably want more variance for larger counts</li>
 </ul>
-<section id="specific-problems-with-glms" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="specific-problems-with-glms"><span class="header-section-number">3.5.1</span> Specific problems with GLMs</h3>
+<section id="specific-problems-with-glms" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="specific-problems-with-glms"><span class="header-section-number">3.4.1</span> Specific problems with GLMs</h3>
+<section id="over-dispersion" class="level4" data-number="3.4.1.1">
+<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="over-dispersion"><span class="header-section-number">3.4.1.1</span> over-dispersion</h4>
 <ul>
-<li><p>classic problem - over-dispersion</p></li>
 <li><p>poisson assumes mean and variance are the same (only one term in the model)</p></li>
 <li><p>so what? mostly under-estimates the standard error</p></li>
 <li><p>p-values are too optimistic</p></li>
 <li><p>you need to think about why your data are over-dispersed</p></li>
-<li><p>take from Hilbe (distinct zeros? ZIP; generic solution; NB?)</p></li>
+<li><p>if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)</p></li>
+<li><p>Francis et al.&nbsp;use this approach to modelling counts of victimization</p></li>
+<li><p>You can also use negative binomial</p></li>
+</ul>
+</section>
+<section id="zero-inflation" class="level4" data-number="3.4.1.2">
+<h4 data-number="3.4.1.2" class="anchored" data-anchor-id="zero-inflation"><span class="header-section-number">3.4.1.2</span> zero-inflation</h4>
+<p>take from Hilbe (distinct zeros? ZIP; generic solution; NB?)</p>
+<ul>
 <li><p>ZIP can have different predictors for zeros than count part</p></li>
 <li><p>you can also have different predictors for dispersion and rate parameter in NB if you want</p></li>
-<li><p>if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)</p></li>
 </ul>
 </section>
 </section>
-<section id="a-note-on-bespoke-models" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="a-note-on-bespoke-models"><span class="header-section-number">3.6</span> A note on bespoke models</h2>
-<p>I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.</p>
 </section>
-<section id="assumptions-and-p-values" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="assumptions-and-p-values"><span class="header-section-number">3.7</span> Assumptions and p-values</h2>
+<section id="assumptions-and-p-values" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="assumptions-and-p-values"><span class="header-section-number">3.5</span> Assumptions and p-values</h2>
 <p>https://bristoluniversitypressdigital.com/edcollchap/book/9781529232073/ch014.xml</p>
 <p>Focus on effect size measures instead?</p>
 <p>Think about populations hard (https://benmatthewsed.github.io/what_to_do_odds_ratios/what_to_do_odds_ratios.html#/title-slide)</p>
-<section id="an-example-of-thinking-about-populations-and-generalization" class="level3" data-number="3.7.1">
-<h3 data-number="3.7.1" class="anchored" data-anchor-id="an-example-of-thinking-about-populations-and-generalization"><span class="header-section-number">3.7.1</span> An example of thinking about populations and generalization</h3>
+<section id="an-example-of-thinking-about-populations-and-generalization" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="an-example-of-thinking-about-populations-and-generalization"><span class="header-section-number">3.5.1</span> An example of thinking about populations and generalization</h3>
 <p>This question came from the Policing the Pandemic in Scotland project with excellent colleagues Dr Vicky Gorton and Prof Susan McVie</p>
 <p>We linked data on all (well, most) fines received for breaching the Covid regulations in Scotland between 27 March 2020 to 31 May 2021 with information on recipients’ health (service use) and (some) social circumstances (I’m not going to go into detail about this)</p>
 <p>We also have the same information on a comparison group of matched controls (matched by age, sex, Local Authority and SIMD decile)</p>
@@ -780,8 +794,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./selection-measurement.html" class="pagination-link" aria-label="Selection effects, bias and so on">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./simulation.html" class="pagination-link" aria-label="Simulation">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

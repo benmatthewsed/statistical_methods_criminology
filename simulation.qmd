@@ -1,5 +1,7 @@
 # Simulation
 
+\_\_There's nothing special about simulation here we can also do this with delta method or whatever? I should say this?\_\_s
+
 Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al. (2000).
 
 For example, [@hunterEquityJusticeCrime2016] use the results of a fitted regression model to calculate a measure they call 'Victimization Divide'. This measure is a way to describe how victimization inequality has changed over time - a very important thing for criminologists to care about.
@@ -47,7 +49,6 @@ dat <-
   mutate(vict = as.integer(n * prev))
 
 ```
-
 
 We can fit a simple regression model to the data in each year to calculate the ratio of the odds of being a victim for men and women. Model 1 shows a statistically significant difference for men (compared to women) in 2015, with men having 11% greater odds of being a victim of crime. In contrast, Model 2 finds that men had a 5% greater odds of being a victim of crime than women in 2020; however, this difference does not meet the 95% threshold for statistical significance.
 
@@ -131,6 +132,58 @@ sim_dat %>%
 ```
 
 The beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.
+
+## Add clarify example here
+
+In the example above we performed the simulation from each models' variance-covariance matrix ourselves. Whilst it's good to know how this works, in practice there are R packages which can do this for us. One good option is [clarify](https://cran.r-project.org/web/packages/clarify/index.html).
+
+Here we reproduce our results using clarify. Instead of fitting a model to each year as above, clarify expects us to give it a single model object, so we re-express the two separate models (one for each year) as a single model, now including year as an interaction term with sex.
+
+```{r}
+# using clarify -----------------------------------------------------------
+
+library(clarify)
+
+
+mod1 <- glm(cbind(vict, n - vict) ~ fct_rev(sex) * year,
+                 family = "binomial",
+                 data = dat)
+
+s <- sim(mod1,
+         n = n_sims)
+
+
+sim_fun2 <- function(coefs) {
+  men_2015 <- unname(coefs["fct_rev(sex)men"])
+  men_interact <- unname(coefs["fct_rev(sex)men:year2020"])
+  
+  men_2020 <- men_2015 + men_interact
+  
+  or_2015 <- exp(men_2015)
+  or_2020 <- exp(men_2020)
+  
+  victim_divide(or_2015, or_2020)
+  
+}
+
+
+est2 <- sim_apply(s, 
+                  FUN = sim_fun2)
+
+tibble(x = as.vector(est2)) |> 
+  reframe(vds = quantile(x, c(0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.975, 0.99)),
+          vals = c(0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.975, 0.99))
+
+```
+
+Here we can see that the results are basically the same.
+
+Why clarify:
+
+-   get someone else to do the coding
+-   more efficient
+-   examples/tutorials online
+-   link to marginal_effects?s
 
 ## Limits to simulation approaches
 

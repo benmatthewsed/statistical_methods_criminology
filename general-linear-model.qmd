@@ -1,11 +1,25 @@
 # The general linear model
 
+
+
+
 ## Large worlds and small worlds
 
 Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. This is fine if all we want to do is provide summaries of the the numbers in our spreadsheets. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. We often need to bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview two ways in which our understanding of the 'large world' might influence how we interpret our results from the 'small world': measurement error and selection effects.
 
+### Big picture: two tribes of modellers?
+
+    -   Economists versus epidemiologists
+
+
 
 ## Intro to GLM
+
+Things we don't cover:
+- Won't include: mixed/multilevel/hierarchical/etc
+- Additive models (GAMs)
+- 'bespoke' models
+
 
 
 Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&t=1215s
@@ -38,7 +52,10 @@ $$
 
 > an example here?
 
-## Logistic regression
+One key feature of a GLM is that you can get predictions for your outcome by adding up the coefficients for each element of your systematic component, and then applying the appropriate transformation through the link function.
+
+
+### Logistic regression
 
 For logistic regression we have:
 
@@ -51,7 +68,17 @@ $$ for logistic regression, $n$ = 1, and we are just interested in modelling $p_
 
 These kinds of models are very common in the social sciences, including in criminology. We might want to model whether someone is a victim of crime or not, or whether the person has been convicted of a crime in a given year, or whether they are confident in the police or not... and so on and so on. The nice thing about this model formulation is that the ${logit}$ link function makes sure that all the probabilities the model estimates are between 0 and 1. Strictly speaking we don't need to do this (see the linear probability model), but it's nice to avoid results that obviously don't make sense, like negative probabilities and such.
 
+
+
+
 ## Count data
+
+Count data are counts of things. That's it! This means that they non-negative whole numbers. Count data are common in criminology when it comes to modelling crime - e.g. the number of crimes reported to the police, or the number of victimization incidents experienced by victims. 
+
+Whilst we may see crime data be re-expressed as *rates* per 1,000 population, before this they are counts.
+
+
+
 
 The foundational model for count data is the Poisson model:
 
@@ -64,19 +91,20 @@ $$
 
 Now there is only one parameter (lambda; $\lambda$) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of $\lambda$).
 
-The key feature of count data is that it is integers (i.e. whole numbers) only and they are stricly positive - you can't get negative counts. Pretty much all aggregated administrative data about crime in its raw form will be count data. This might be counts of recorded crime, counts of people released from prison and so on. These data might be re-expressed as *rates* per 1,000 population, but before this they are counts.
+The coefficients from Poisson models (which range from $-\infty$ to $\infty$) are converted to be predicted counts that are non-negative integers via the $\log$ link function. 
+
+__Graph of log here?__
+
+
 
 ## why not just lm?
 
--   two tribes
-
-    -   if all you care about is the average difference then you can just use 'Simple Mean Difference'
-    -   you might be an economist
-    -   there are lots of other interesting quesitons we might care about (e.g. modelling dispersion?)
+- You can get negative predictions
+- LM assumes constant variance - we probably want more variance for larger counts
 
 ### Specific problems with GLMs
 
--   classic problem - over-dispersion
+#### over-dispersion
 
 -   poisson assumes mean and variance are the same (only one term in the model)
 
@@ -86,17 +114,24 @@ The key feature of count data is that it is integers (i.e. whole numbers) only a
 
 -   you need to think about why your data are over-dispersed
 
--   take from Hilbe (distinct zeros? ZIP; generic solution; NB?)
+-   if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)
+
+- Francis et al. use this approach to modelling counts of victimization
+
+- You can also use negative binomial
+
+
+#### zero-inflation
+
+take from Hilbe (distinct zeros? ZIP; generic solution; NB?)
 
 -   ZIP can have different predictors for zeros than count part
 
 -   you can also have different predictors for dispersion and rate parameter in NB if you want
 
--   if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)
 
-## A note on bespoke models
 
-I am extremely partial to bespoke models. If you have the time I would recommend reading and watching all the Statistical Rethinking lectures - this gives an introduction into building your own models tailored to your specific data and problems. But that will take weeks and weeks and we are only here until five.
+
 
 ## Assumptions and p-values
 
