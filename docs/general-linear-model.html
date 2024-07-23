@@ -182,19 +182,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part two: Presenting results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part one: Measurement error, selection and confounding</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ethics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -213,10 +219,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#large-worlds-and-small-worlds" id="toc-large-worlds-and-small-worlds" class="nav-link active" data-scroll-target="#large-worlds-and-small-worlds"><span class="header-section-number">3.1</span> Large worlds and small worlds</a>
-  <ul class="collapse">
-  <li><a href="#big-picture-two-tribes-of-modellers" id="toc-big-picture-two-tribes-of-modellers" class="nav-link" data-scroll-target="#big-picture-two-tribes-of-modellers"><span class="header-section-number">3.1.1</span> Big picture: two tribes of modellers?</a></li>
-  </ul></li>
+  <li><a href="#large-worlds-and-small-worlds" id="toc-large-worlds-and-small-worlds" class="nav-link active" data-scroll-target="#large-worlds-and-small-worlds"><span class="header-section-number">3.1</span> Large worlds and small worlds</a></li>
   <li><a href="#intro-to-glm" id="toc-intro-to-glm" class="nav-link" data-scroll-target="#intro-to-glm"><span class="header-section-number">3.2</span> Intro to GLM</a>
   <ul class="collapse">
   <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">3.2.1</span> Logistic regression</a></li>
@@ -254,21 +257,20 @@ window.Quarto = {
 
 <section id="large-worlds-and-small-worlds" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="large-worlds-and-small-worlds"><span class="header-section-number">3.1</span> Large worlds and small worlds</h2>
-<p>Richard McElreath <span class="citation" data-cites="mcelreathStatisticalRethinkingBayesian2020">(<a href="references.html#ref-mcelreathStatisticalRethinkingBayesian2020" role="doc-biblioref">McElreath 2020</a>)</span> talks about the ‘small world’ of the model and the ‘large world’ that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. This is fine if all we want to do is provide summaries of the the numbers in our spreadsheets. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. We often need to bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we’ll overview two ways in which our understanding of the ‘large world’ might influence how we interpret our results from the ‘small world’: measurement error and selection effects.</p>
-<section id="big-picture-two-tribes-of-modellers" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="big-picture-two-tribes-of-modellers"><span class="header-section-number">3.1.1</span> Big picture: two tribes of modellers?</h3>
-<pre><code>-   Economists versus epidemiologists</code></pre>
-</section>
+<p>Richard McElreath <span class="citation" data-cites="mcelreathStatisticalRethinkingBayesian2020">(<a href="references.html#ref-mcelreathStatisticalRethinkingBayesian2020" role="doc-biblioref">McElreath 2020</a>)</span> talks about the ‘small world’ of the model and the ‘large world’ that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. <a href="https://kwarc.info/teaching/TDM/Borges.pdf">To some extent, this is good!</a></p>
+<p>And all we want to do is provide summaries of the the numbers in our spreadsheets we have no problem. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us.</p>
+<p>Later on we’ll consider how we can bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we’ll overview the most common way in which criminologists understand the ‘small world’ of their spreadsheets: the general linear model.</p>
 </section>
 <section id="intro-to-glm" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="intro-to-glm"><span class="header-section-number">3.2</span> Intro to GLM</h2>
-<p>Things we don’t cover: - Won’t include: mixed/multilevel/hierarchical/etc - Additive models (GAMs) - ‘bespoke’ models</p>
+<p>If you are taking this course I assume that you have some familiarity with linear models of some description. It is standard in quantitative methods training for social scientists to discuss the linear model, so I’ll only provide a brief refresher here before moving on to discuss models that are more typical in criminology.</p>
+<p>I should say that general linear models are complicated things, and it would be possible to spend months and months studying nothing but general linear models and their various extensions. Some specific flavours of model that I don’t cover, but which may be useful for your own work include: - Won’t include: mixed/multilevel/hierarchical/etc (see e.g.&nbsp;https://www.cmm.bris.ac.uk/lemma/) - Additive models (GAMs) (which are less common in criminology, but are very useful; https://noamross.github.io/gams-in-r-course/) - ‘bespoke’ models (very infrequently used in criminology to my knowledge, https://betanalpha.github.io/assets/case_studies/generative_modeling.html, but see e.g.&nbsp;https://josepinasanchez.uk/wp-content/uploads/2018/09/bsc-presentation.pdf)</p>
 <p>Recommended watching: https://www.youtube.com/watch?v=qbxNf4iqJPo&amp;t=1215s</p>
 <p>Introduction to LM</p>
 <ul>
 <li>Stochastic (or random) component</li>
 <li>Systematic component</li>
-<li>Link function</li>
+<li>Link function that converts between the parameter estimates and the form of the outcome (we’ll say more about this later)</li>
 </ul>
 <p>(I adapted this notation from Solomon Kurz https://bookdown.org/content/4857/god-spiked-the-integers.html#poisson-regression)</p>
 <p><span class="math display">\[
@@ -313,7 +315,7 @@ y_i \sim &amp; {Poisson} (\lambda) \\
 \end{align*}
 \]</span></p>
 <p>Now there is only one parameter (lambda; <span class="math inline">\(\lambda\)</span>) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of <span class="math inline">\(\lambda\)</span>).</p>
-<p>The coefficients from Poisson models (which range from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>) are converted to be predicted counts that are non-negative integers via the <span class="math inline">\(\log\)</span> link function.</p>
+<p>The coefficients from Poisson models (which range from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>) are converted to be predicted counts that are non-negative integers via the <span class="math inline">\(\log\)</span> link function. This lets us have coefficients which are unbounded, but then convert these to non-negative integers as our count outcome demands.</p>
 <p><strong>Graph of log here?</strong></p>
 </section>
 <section id="why-not-just-lm" class="level2" data-number="3.4">
@@ -327,14 +329,21 @@ y_i \sim &amp; {Poisson} (\lambda) \\
 <section id="over-dispersion" class="level4" data-number="3.4.1.1">
 <h4 data-number="3.4.1.1" class="anchored" data-anchor-id="over-dispersion"><span class="header-section-number">3.4.1.1</span> over-dispersion</h4>
 <ul>
-<li><p>poisson assumes mean and variance are the same (only one term in the model)</p></li>
-<li><p>so what? mostly under-estimates the standard error</p></li>
+<li><p>poisson assumes mean and variance are the same (in that there is only one term in the model, <span class="math inline">\(\lambda\)</span>, which describes both the average and the variability around the average)</p></li>
+<li><p>so what? when in your data the variance exceeds the mean, you will get the wrong standard errors</p></li>
+<li><p>this breaks basically all your inferences!</p></li>
 <li><p>p-values are too optimistic</p></li>
-<li><p>you need to think about why your data are over-dispersed</p></li>
-<li><p>if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors)</p></li>
-<li><p>Francis et al.&nbsp;use this approach to modelling counts of victimization</p></li>
-<li><p>You can also use negative binomial</p></li>
+<li><p>Example of gun violence in Oakland: https://cao-94612.s3.amazonaws.com/documents/Oakland-Ceasefire-Evaluation-Final-Report-May-2019.pdf</p></li>
 </ul>
+<section id="what-do-to-about-over-dispersion" class="level5" data-number="3.4.1.1.1">
+<h5 data-number="3.4.1.1.1" class="anchored" data-anchor-id="what-do-to-about-over-dispersion"><span class="header-section-number">3.4.1.1.1</span> What do to? about over-dispersion</h5>
+<p>If all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors). Francis et al.&nbsp;use this approach to modelling counts of victimization. In my experience it’s also faster than the standard alternative…</p>
+<p>… which is negative binomial binomial regression.</p>
+<p>The negative binomial is a flavour of statistical model <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for count data which has an extra “dispersion” parameter, which allows for over-dispersion. The poisson model can’t do this, because it has only one parameter (<span class="math inline">\(\lambda\)</span>) so the model has nowhere to ‘put’ any information about overdispersion.</p>
+<p>At this point the details get a bit involved, but interested readers can see more in:</p>
+<p><span class="citation" data-cites="hilbeModelingCountData2014">Hilbe (<a href="references.html#ref-hilbeModelingCountData2014" role="doc-biblioref">2014</a>)</span> for an accessible introduction and <span class="citation" data-cites="hilbeNegativeBinomialRegression2011">Hilbe (<a href="references.html#ref-hilbeNegativeBinomialRegression2011" role="doc-biblioref">2011</a>)</span> for a deep-dive</p>
+<p><span class="citation" data-cites="verhoefQuasiPoissonVsNegative2007">Ver Hoef and Boveng (<a href="references.html#ref-verhoefQuasiPoissonVsNegative2007" role="doc-biblioref">2007</a>)</span> give a blow-by-blow account of the differences between the two models in how they handle over-dispersion. But I would suggest that these distinctions depend on the kind of research question you are interested in. If all you care about is the mean for the two groups then you (might not care about over-dispersion at all)[https://www.statalist.org/forums/forum/general-stata-discussion/general/1570223-non-count-outcomes-and-use-of-poisson-regression?p=1570448#post1570448]. If you really care about modelling the extra dispersion in your negative binomial distribution (this isn’t very common but hey you might want to) then you can’t do this with a poisson model and you need something like negative binomial (see https://stats.stackexchange.com/a/568052)</p>
+</section>
 </section>
 <section id="zero-inflation" class="level4" data-number="3.4.1.2">
 <h4 data-number="3.4.1.2" class="anchored" data-anchor-id="zero-inflation"><span class="header-section-number">3.4.1.2</span> zero-inflation</h4>
@@ -354,10 +363,25 @@ y_i \sim &amp; {Poisson} (\lambda) \\
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-hilbeNegativeBinomialRegression2011" class="csl-entry" role="listitem">
+Hilbe, Joseph M. 2011. <em>Negative <span>Binomial Regression</span></em>. 2nd ed. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511973420">https://doi.org/10.1017/CBO9780511973420</a>.
+</div>
+<div id="ref-hilbeModelingCountData2014" class="csl-entry" role="listitem">
+———. 2014. <em>Modeling <span>Count Data</span></em>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9781139236065">https://doi.org/10.1017/CBO9781139236065</a>.
+</div>
 <div id="ref-mcelreathStatisticalRethinkingBayesian2020" class="csl-entry" role="listitem">
 McElreath, Richard. 2020. <em>Statistical <span>Rethinking</span>: <span>A Bayesian Course</span> with <span>Examples</span> in <span>R</span> and <span>STAN</span></em>. CRC Press.
 </div>
+<div id="ref-verhoefQuasiPoissonVsNegative2007" class="csl-entry" role="listitem">
+Ver Hoef, Jay M., and Peter L. Boveng. 2007. <span>“Quasi-<span>Poisson</span> Vs. Negative Binomial Regression: How Should We Model Overdispersed Count Data?”</span> <em>Ecology</em> 88 (11): 2766–72. <a href="https://doi.org/10.1890/07-0043.1">https://doi.org/10.1890/07-0043.1</a>.
 </div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>okay, strictly speaking there are different varieties of negative binomial model. So… flavours? <span class="citation" data-cites="hilbeModelingCountData2014">(<a href="references.html#ref-hilbeModelingCountData2014" role="doc-biblioref">Hilbe 2014</a>)</span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -777,8 +801,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./simulation.html" class="pagination-link" aria-label="Simulation">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./simulation.html" class="pagination-link" aria-label="The data don't speak for themselves, part two: Presenting results">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part two: Presenting results</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

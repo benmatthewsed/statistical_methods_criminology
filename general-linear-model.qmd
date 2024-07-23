@@ -5,20 +5,22 @@
 
 ## Large worlds and small worlds
 
-Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. This is fine if all we want to do is provide summaries of the the numbers in our spreadsheets. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. We often need to bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview two ways in which our understanding of the 'large world' might influence how we interpret our results from the 'small world': measurement error and selection effects.
+Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. [To some extent, this is good!](https://kwarc.info/teaching/TDM/Borges.pdf) 
 
-### Big picture: two tribes of modellers?
+And all we want to do is provide summaries of the the numbers in our spreadsheets we have no problem. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. 
 
-    -   Economists versus epidemiologists
+Later on we'll consider how we can bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview the most common way in which criminologists understand the 'small world' of their spreadsheets: the general linear model.
 
 
 
 ## Intro to GLM
 
-Things we don't cover:
-- Won't include: mixed/multilevel/hierarchical/etc
-- Additive models (GAMs)
-- 'bespoke' models
+If you are taking this course I assume that you have some familiarity with linear models of some description. It is standard in quantitative methods training for social scientists to discuss the linear model, so I'll only provide a brief refresher here before moving on to discuss models that are more typical in criminology.
+
+I should say that general linear models are complicated things, and it would be possible to spend months and months studying nothing but general linear models and their various extensions. Some specific flavours of model that I don't cover, but which may be useful for your own work include:
+- Won't include: mixed/multilevel/hierarchical/etc (see e.g. https://www.cmm.bris.ac.uk/lemma/)
+- Additive models (GAMs) (which are less common in criminology, but are very useful; https://noamross.github.io/gams-in-r-course/)
+- 'bespoke' models (very infrequently used in criminology to my knowledge, https://betanalpha.github.io/assets/case_studies/generative_modeling.html, but see e.g. https://josepinasanchez.uk/wp-content/uploads/2018/09/bsc-presentation.pdf)
 
 
 
@@ -28,7 +30,7 @@ Introduction to LM
 
 -   Stochastic (or random) component
 -   Systematic component
--   Link function
+-   Link function that converts between the parameter estimates and the form of the outcome (we'll say more about this later)
 
 (I adapted this notation from Solomon Kurz https://bookdown.org/content/4857/god-spiked-the-integers.html#poisson-regression)
 
@@ -91,9 +93,11 @@ $$
 
 Now there is only one parameter (lambda; $\lambda$) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of $\lambda$).
 
-The coefficients from Poisson models (which range from $-\infty$ to $\infty$) are converted to be predicted counts that are non-negative integers via the $\log$ link function. 
+The coefficients from Poisson models (which range from $-\infty$ to $\infty$) are converted to be predicted counts that are non-negative integers via the $\log$ link function. This lets us have coefficients which are unbounded, but then convert these to non-negative integers as our count outcome demands.
 
 __Graph of log here?__
+
+
 
 
 
@@ -106,19 +110,35 @@ __Graph of log here?__
 
 #### over-dispersion
 
--   poisson assumes mean and variance are the same (only one term in the model)
+-   poisson assumes mean and variance are the same (in that there is only one term in the model, $\lambda$, which describes both the average and the variability around the average)
 
--   so what? mostly under-estimates the standard error
+-   so what? when in your data the variance exceeds the mean, you will get the wrong standard errors
+
+- this breaks basically all your inferences!
 
 -   p-values are too optimistic
 
--   you need to think about why your data are over-dispersed
 
--   if all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors)
+- Example of gun violence in Oakland: https://cao-94612.s3.amazonaws.com/documents/Oakland-Ceasefire-Evaluation-Final-Report-May-2019.pdf
 
-- Francis et al. use this approach to modelling counts of victimization
+##### What do to? about over-dispersion
 
-- You can also use negative binomial
+If all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with 'empirical' SEs - similar to using robust standard errors). Francis et al. use this approach to modelling counts of victimization. In my experience it's also faster than the standard alternative...
+
+... which is negative binomial binomial regression. 
+
+The negative binomial is a flavour of statistical model ^[okay, strictly speaking there are different varieties of negative binomial model. So... flavours? [@hilbeModelingCountData2014]] for count data which has an extra "dispersion" parameter, which allows for over-dispersion. The poisson model can't do this, because it has only one parameter ($\lambda$) so the model has nowhere to 'put' any information about overdispersion.
+
+At this point the details get a bit involved, but interested readers can see more in: 
+
+@hilbeModelingCountData2014 for an accessible introduction
+and @hilbeNegativeBinomialRegression2011 for a deep-dive
+
+@verhoefQuasiPoissonVsNegative2007 give a blow-by-blow account of the differences between the two models in how they handle over-dispersion. But I would suggest that these distinctions depend on the kind of research question you are interested in. If all you care about is the mean for the two groups then you (might not care about over-dispersion at all)[https://www.statalist.org/forums/forum/general-stata-discussion/general/1570223-non-count-outcomes-and-use-of-poisson-regression?p=1570448#post1570448]. If you really care about modelling the extra dispersion in your negative binomial distribution (this isn't very common but hey you might want to) then you can't do this with a poisson model and you need something like negative binomial (see https://stats.stackexchange.com/a/568052)
+
+
+
+
 
 
 #### zero-inflation

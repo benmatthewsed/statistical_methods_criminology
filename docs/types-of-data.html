@@ -153,19 +153,25 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./simulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Simulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part two: Presenting results</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./selection-measurement.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Selection effects, bias and so on</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The data don’t speak for themselves, part one: Measurement error, selection and confounding</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ethics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Ethics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -270,12 +276,17 @@ div.csl-indent {
 <p><span class="citation" data-cites="verlaan2024use">(<a href="references.html#ref-verlaan2024use" role="doc-biblioref">Verlaan and Langton 2024</a>)</span> outline two possible approaches to conceptualizing police recorded crime data: a population or superpopulation approach.</p>
 <p>In the population approach the data you observe for a particular time and place (e.g.&nbsp;Scotland in 2023) are all the data you could ever observe - you don’t need to fit statistical models to generalize from the data you observe to a wider population because <em>there is no wider population</em>. [^2] You have the data you have, and that’s that.</p>
 <p>[^2:] You might want to fit models for other reasons though.</p>
-<p>In the superpopulation approach you are interesting in thinking about other ways the data you have may have arisen. Verlan and Langton (2024) give examples where you may think that data on crimes recorded by police in cities in Texas from 2023 were data drawn from the population of cities in the whole USA, or the whole of the USA, or the whole planet. Alternatively, data from cities in Texas from 2023 may be seen as a sample from cities in Texas from 2023 and 2024, or 2023-2030 and so on. Gelman (2011) takes this approach using an example from political science - you may have data on all seats in a lesislature but want to predict what will happen to those same seats in future elections under “hypothetical alternative conditions”. Applying the same logic, statistical models could be used with police recorded crime data to ask ‘counterfactual’ questions about what crime rates in Dallas may have been if the poverty rate fell by 5%.</p>
+<p>In the superpopulation approach you are interesting in thinking about other ways the data you have may have arisen. Verlan and Langton (2024) give examples where you may think that data on crimes recorded by police in cities in Texas from 2023 were data drawn from the population of cities in the whole USA, or the whole of the USA, or the whole planet. Alternatively, data from cities in Texas from 2023 may be seen as a sample from cities in Texas from 2023 and 2024, or 2023-2030 and so on. Gelman (2011) takes this approach using an example from political science - you may have data on all seats in a legislature but want to predict what will happen to those same seats in future elections under “hypothetical alternative conditions”. Applying the same logic, statistical models could be used with police recorded crime data to ask ‘counterfactual’ questions about what crime rates in Dallas may have been if the poverty rate fell by 5%.</p>
 <p>Verlan and Langton list some possible problems using inferential statistcs/statistical models using administrative data.</p>
 <ol type="1">
 <li>It wrongly leads people to assume that their results are generalizable. This is often not done explicitly but implicitly (for example suggesting that results may apply in other jurisdictions)</li>
 <li>It can lead people to undervalue actual observed differences in their data. For example, researchers may deny that an association between two variables exists in their dataset if it is not statistically significant</li>
 </ol>
+<p>However, there are arguments for want to express uncertainty in estimates derived from administrative data.</p>
+<p><span class="citation" data-cites="d.redelingsWhyConfidenceIntervals2012">D. Redelings et al. (<a href="references.html#ref-d.redelingsWhyConfidenceIntervals2012" role="doc-biblioref">2012</a>)</span> argue that confidence intervals should be reported even when describing statistics from the full population, especially if the results are to be used to make predictions or inform policy. Importantly, even if <em>you</em> are not be interested in prediction or policy-making, you can’t control how others will use your results. Confidence intervals can therefore provide useful information for others.</p>
+<p><span class="citation" data-cites="spiegelhalterFunnelPlotsComparing2005">Spiegelhalter (<a href="references.html#ref-spiegelhalterFunnelPlotsComparing2005" role="doc-biblioref">2005</a>)</span> makes a similar point when advocated for ‘funnel plots’ to show compare institutional performance. These graphical methods put observed rates in the context of how much variation in rates of e.g.&nbsp;reconviction between Local Authorities given the population size and number of people convicted <a href="https://www.gov.scot/publications/reconviction-rates-scotland-2018-19-offender-cohort/pages/7/">see here</a>. Here there is information on the whole population of people convicted and re-convicted within a given Local Authority, but analysts still want to account for the “variability of different sized populations” and in doing so “highlight whether there are differences that may be attributed to some other special cause”.</p>
+<p><span class="citation" data-cites="gelmanWhatStandardError2023">Gelman (<a href="references.html#ref-gelmanWhatStandardError2023" role="doc-biblioref">2023</a>)</span> argues that the ‘correct’ standard error for a given analysis depends on what the researcher’s goal is. As we’ve seen, it also depends on the generative story for the data.</p>
+<p>[ take from slides about volatility]</p>
 </section>
 </section>
 </section>
@@ -328,6 +339,7 @@ div.csl-indent {
 <section id="whats-the-population-of-interest" class="level4" data-number="2.4.3.2">
 <h4 data-number="2.4.3.2" class="anchored" data-anchor-id="whats-the-population-of-interest"><span class="header-section-number">2.4.3.2</span> What’s the population of interest?</h4>
 <p>Again, weights will only help adjust the data you see towards the target population in the survey design frame. Weighting cannot adjust for populations who are excluded from the survey by design.</p>
+<p>There are not, as far as I know, standard recommendations for analytical ‘fixes’ for this problem. It may be that a researcher’s best option is to be clear about the limitations of their study and inferences that can be drawn about the whole population from their study.</p>
 </section>
 </section>
 </section>
@@ -365,8 +377,14 @@ Aplin, Rachael. 2019. <span>“The <span>Grey Figure</span> of <span>Crime</span
 <div id="ref-carr-hillMissingMillionsMeasuring2013" class="csl-entry" role="listitem">
 Carr-Hill, Roy. 2013. <span>“Missing <span>Millions</span> and <span>Measuring Development Progress</span>.”</span> <em>World Development</em> 46 (June): 30–44. <a href="https://doi.org/10.1016/j.worlddev.2012.12.017">https://doi.org/10.1016/j.worlddev.2012.12.017</a>.
 </div>
+<div id="ref-d.redelingsWhyConfidenceIntervals2012" class="csl-entry" role="listitem">
+D. Redelings, Matthew, Frank Sorvillo, Lisa V. Smith, and Sander Greenland. 2012. <span>“Why <span>Confidence Intervals Should</span> Be <span>Used</span> in <span>Reporting Studies</span> of <span>Complete Populations</span>”</span> 5 (1). <a href="https://doi.org/10.2174/1874944501205010052">https://doi.org/10.2174/1874944501205010052</a>.
+</div>
 <div id="ref-fohringPuttingFaceDark2014" class="csl-entry" role="listitem">
 Fohring, Stephanie. 2014. <span>“Putting a Face on the Dark Figure: <span>Describing</span> Victims Who Don’t Report Crime.”</span> <em>Temida</em> 17 (4): 3–18.
+</div>
+<div id="ref-gelmanWhatStandardError2023" class="csl-entry" role="listitem">
+Gelman, Andrew. 2023. <span>“What Is a Standard Error?”</span> <em>Journal of Econometrics</em> 237 (1): 105516. <a href="https://doi.org/10.1016/j.jeconom.2023.105516">https://doi.org/10.1016/j.jeconom.2023.105516</a>.
 </div>
 <div id="ref-hopeEffectThirdParty2023" class="csl-entry" role="listitem">
 Hope, Tim. 2023. <span>“The <span>Effect</span> of <span>‘<span>Third Party</span>’</span> <span>Pressure</span> on <span>Police Crime Recording Practice</span>.”</span> <em>CrimRxiv</em>.
@@ -385,6 +403,9 @@ Scottish Women’s Aid. 2021. <span>“Response to the Consultation on the <span
 </div>
 <div id="ref-simesPolicingPunishmentPlace2023" class="csl-entry" role="listitem">
 Simes, Jessica T., Brenden Beck, and John M. Eason. 2023. <span>“Policing, <span>Punishment</span>, and <span>Place</span>: <span>Spatial-Contextual Analyses</span> of the <span>Criminal Legal System</span>.”</span> <em>Annual Review of Sociology</em> 49 (1): 221–40. <a href="https://doi.org/10.1146/annurev-soc-031021-035328">https://doi.org/10.1146/annurev-soc-031021-035328</a>.
+</div>
+<div id="ref-spiegelhalterFunnelPlotsComparing2005" class="csl-entry" role="listitem">
+Spiegelhalter, David J. 2005. <span>“Funnel Plots for Comparing Institutional Performance.”</span> <em>Statistics in Medicine</em> 24 (8): 1185–1202. <a href="https://doi.org/10.1002/sim.1970">https://doi.org/10.1002/sim.1970</a>.
 </div>
 <div id="ref-verlaan2024use" class="csl-entry" role="listitem">
 Verlaan, Tim, and Samuel Langton. 2024. <span>“On the Use of Inferential Statistics on Administrative Police Data.”</span> In <em>The Crime Data Handbook</em>, 197–210. Bristol University Press.
