@@ -143,13 +143,7 @@ There are not, as far as I know, standard recommendations for analytical 'fixes'
 
 ## Other forms of crime data
 
-### CVI data?
 
-https://www.scotland.police.uk/about-us/covid-19-police-scotland-response/enforcement-and-response-data/
-
-"In response to the introduction of The Health Protection (Coronavirus) (Restrictions) (Scotland) Regulations 2020 and Coronavirus Act 2020, Police Scotland developed a ‘Coronavirus Interventions’ (CVI) recording system. This system allowed Police Scotland to begin gathering data in relation to the public co-operation levels with the new legislation. This system relies on Police Officers manually updating the system with the co-operation level when they encounter an individual in contravention of the new legislation. Due to the manual input required to form this data set, the contents of this slide are indicative only. Actual figures will differ from those recorded on Crime Systems (please see further slide), may be subject to change, and cannot be considered Official Police Statistics. They do provide an indication of the public co-operation levels across Scotland."
-
-"Notes on the CVI System The second data source was the Coronavirus Intervention (CVI) system, introduced by Police Scotland on 6 April 2020 in response to the introduction of the Coronavirus Act 2020 and associated Health Protection Regulations in Scotland.52 Data from the CVI were published throughout the pandemic on a weekly basis by Police Scotland until 17 November 2021. The main purpose of this system was to gather data on levels of public co-operation with the new Regulations, based on police officer interventions. The CVI system relies on manual updates from police officers about any interventions they have had with members of the public in respect of the legislation. It is not compulsory and, as a result, does not provide a comprehensive estimate of the total number of policing encounters. Nevertheless, it measures all policing-related activity (not just use of enforcement) and so provides a useful indicator of the relative use of different types of police activity in the context of the ‘Four Es strategy’, which was widely adopted by police forces across the UK in the context of the pandemic.53 To our knowledge, the CVI System is the only database of its kind to be used to measure the overall use of extended policing powers across the UK police forces from the start of the pandemic. Therefore, it provides an extremely useful source of complementary information to the FPN data. Comparison between FPN tickets and the CVI system Figure 22 shows a comparison of the number of tickets issued and the number recorded on the CVI as a seven-day rolling average between 27 March 2020 and 31 May 2021. The dark line shows the average number of FPNs issued, and the light line shows the average number recorded on Police Scotland’s CVI system. Both trend lines show four ‘phases’ of policing activity in relation to FPNs which are broadly reflective of the tightening and easing of restrictions in Scotland. The total number of FPN tickets actually issued (n = 20,410) was 20.9% higher than the number recorded on Police Scotland’s Coronavirus Intervention (CVI) system over the same period (n = 16,876)" https://www.law.ed.ac.uk/sites/default/files/2022-08/FPN%204th%20report%20-%20FINAL.pdf
 
 ## Triangulation: a solution?
 
@@ -162,6 +156,9 @@ Buil-GIl says it's best practice
 
 # Practical
 
-- What's the story of your crime data?
-- Read [Paper One]
-  - What is the 'story' of these data?
+- Describe SOI
+- Give examples from my thesis of being inconsistent
+
+- Do I need significance testing here?
+
+- What's the story of *your* crime data?

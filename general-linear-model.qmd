@@ -5,13 +5,13 @@
 
 ## Large worlds and small worlds
 
-Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. [To some extent, this is good!](https://kwarc.info/teaching/TDM/Borges.pdf) 
+Richard McElreath [@mcelreathStatisticalRethinkingBayesian2020] talks about the 'small world' of the model and the 'large world' that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world - all models are wrong, but some are useful and all that. [To some extent, this is good!](https://kwarc.info/teaching/TDM/Borges.pdf) 
 
 And all we want to do is provide summaries of the the numbers in our spreadsheets we have no problem. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us. 
 
-Later on we'll consider how we can bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview the most common way in which criminologists understand the 'small world' of their spreadsheets: the general linear model.
+Later on we'll consider how we can bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we'll overview the most common[^3] way in which criminologists understand the 'small world' of their spreadsheets: the general linear model.
 
-
+[^3:] Probably?
 
 ## Intro to GLM
 
@@ -93,7 +93,7 @@ $$
 
 Now there is only one parameter (lambda; $\lambda$) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of $\lambda$).
 
-The coefficients from Poisson models (which range from $-\infty$ to $\infty$) are converted to be predicted counts that are non-negative integers via the $\log$ link function. This lets us have coefficients which are unbounded, but then convert these to non-negative integers as our count outcome demands.
+The coefficients from Poisson models (which range from $-\infty$ to $\infty$) are converted to be predicted counts that are non-negative integers via the $\log$ link function. This lets us have coefficients which can take any value (-2! 0.5!), but then convert these to counts as our count outcome demands.
 
 __Graph of log here?__
 
@@ -101,10 +101,61 @@ __Graph of log here?__
 
 
 
-## why not just lm?
+## why not just use a linear model?
 
-- You can get negative predictions
-- LM assumes constant variance - we probably want more variance for larger counts
+If you really want to you can just use a linear model for count data. This will still give you an accurate model of the mean outcome. However, there are two main problems with this approach.
+
+First, if you have small counts (say, if you were modelling homicides in Scotland) the uncertainty in the mean estimate may give you a confidence interval below zero:
+
+```{r}
+library(dplyr)
+
+set.seed(12346)
+
+n_draws <- 1e3
+
+dat <- 
+data.frame(
+  y = rpois(n = n_draws,
+            lambda = 0.001) # draw from poisson distribution with mean 0.001
+)
+
+dat |> 
+  count(y)
+
+lm(y ~ 1, data = dat) |> # fit intercept-only model with normal outcome
+  broom::tidy() |> 
+  mutate(conf_low = estimate - 1.96 * std.error)
+
+
+glm(y ~ 1, # fit intercept only model with poisson outcome
+    family = "poisson",
+    data = dat) |> 
+  broom::tidy() |> 
+  mutate(conf_low = estimate - 1.96 * std.error,
+         exp_est = exp(estimate),
+         exp_conf_low = exp(conf_low))
+
+```
+
+Here the confidence intervals are not properly expressing what we know to be true about our data (that it has to be positive). 
+
+
+Second, the standard linear model assumes constant variance. But in practice we probably want more variance for larger counts. 
+
+See figure at https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html
+
+
+### Interpreting coefficients from Poisson models
+
+Per UCLA OARC: "for a one unit change in the predictor variable, the difference in the logs of expected counts is expected to change by the respective regression coefficient, given the other predictor variables in the model are held constant."
+
+The most straightforward way to interpret coefficients from Poisson models is to exponentiate the coefficient value. This converts the beta coefficient into an Incident Rate Ratio (https://stats.oarc.ucla.edu/stata/output/poisson-regression/)
+
+"The exp(Intercept) is the baseline rate, and all other estimates would be relative to it." (https://stats.stackexchange.com/a/11097)
+
+Mostly though I would recommend using your model to come up with sensible estimates of counts of the thing you are interested in - we'll come to this in Chapter Four.
+
 
 ### Specific problems with GLMs
 
@@ -112,7 +163,7 @@ __Graph of log here?__
 
 -   poisson assumes mean and variance are the same (in that there is only one term in the model, $\lambda$, which describes both the average and the variability around the average)
 
--   so what? when in your data the variance exceeds the mean, you will get the wrong standard errors
+- This is quite a brittle assumption though, and there's no reason that real-life data has to obey it. So what? If your data are over-dispersed (the conditional variance exceeds the conditional mean), you will get standard errors that are too small.
 
 - this breaks basically all your inferences!
 

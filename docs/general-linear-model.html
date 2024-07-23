@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -225,9 +259,10 @@ window.Quarto = {
   <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">3.2.1</span> Logistic regression</a></li>
   </ul></li>
   <li><a href="#count-data" id="toc-count-data" class="nav-link" data-scroll-target="#count-data"><span class="header-section-number">3.3</span> Count data</a></li>
-  <li><a href="#why-not-just-lm" id="toc-why-not-just-lm" class="nav-link" data-scroll-target="#why-not-just-lm"><span class="header-section-number">3.4</span> why not just lm?</a>
+  <li><a href="#why-not-just-use-a-linear-model" id="toc-why-not-just-use-a-linear-model" class="nav-link" data-scroll-target="#why-not-just-use-a-linear-model"><span class="header-section-number">3.4</span> why not just use a linear model?</a>
   <ul class="collapse">
-  <li><a href="#specific-problems-with-glms" id="toc-specific-problems-with-glms" class="nav-link" data-scroll-target="#specific-problems-with-glms"><span class="header-section-number">3.4.1</span> Specific problems with GLMs</a></li>
+  <li><a href="#interpreting-coefficients-from-poisson-models" id="toc-interpreting-coefficients-from-poisson-models" class="nav-link" data-scroll-target="#interpreting-coefficients-from-poisson-models"><span class="header-section-number">3.4.1</span> Interpreting coefficients from Poisson models</a></li>
+  <li><a href="#specific-problems-with-glms" id="toc-specific-problems-with-glms" class="nav-link" data-scroll-target="#specific-problems-with-glms"><span class="header-section-number">3.4.2</span> Specific problems with GLMs</a></li>
   </ul></li>
   <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="header-section-number">4</span> Practical</a></li>
   </ul>
@@ -257,9 +292,10 @@ window.Quarto = {
 
 <section id="large-worlds-and-small-worlds" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="large-worlds-and-small-worlds"><span class="header-section-number">3.1</span> Large worlds and small worlds</h2>
-<p>Richard McElreath <span class="citation" data-cites="mcelreathStatisticalRethinkingBayesian2020">(<a href="references.html#ref-mcelreathStatisticalRethinkingBayesian2020" role="doc-biblioref">McElreath 2020</a>)</span> talks about the ‘small world’ of the model and the ‘large world’ that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world. <a href="https://kwarc.info/teaching/TDM/Borges.pdf">To some extent, this is good!</a></p>
+<p>Richard McElreath <span class="citation" data-cites="mcelreathStatisticalRethinkingBayesian2020">(<a href="references.html#ref-mcelreathStatisticalRethinkingBayesian2020" role="doc-biblioref">McElreath 2020</a>)</span> talks about the ‘small world’ of the model and the ‘large world’ that we actually live in. Our spreadsheets and coefficients can only summarize the small world for us, and omit some of the complexity of the large world - all models are wrong, but some are useful and all that. <a href="https://kwarc.info/teaching/TDM/Borges.pdf">To some extent, this is good!</a></p>
 <p>And all we want to do is provide summaries of the the numbers in our spreadsheets we have no problem. But as soon as we want to understand the large world we can run in to problems if all we focus on are the rows and columns in front of us.</p>
-<p>Later on we’ll consider how we can bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we’ll overview the most common way in which criminologists understand the ‘small world’ of their spreadsheets: the general linear model.</p>
+<p>Later on we’ll consider how we can bring our understanding of the large world - for example, how an incident becomes a crime - to bear during statistical modelling. In this session we’ll overview the most common[^3] way in which criminologists understand the ‘small world’ of their spreadsheets: the general linear model.</p>
+<p>[^3:] Probably?</p>
 </section>
 <section id="intro-to-glm" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="intro-to-glm"><span class="header-section-number">3.2</span> Intro to GLM</h2>
@@ -315,28 +351,92 @@ y_i \sim &amp; {Poisson} (\lambda) \\
 \end{align*}
 \]</span></p>
 <p>Now there is only one parameter (lambda; <span class="math inline">\(\lambda\)</span>) that we are modelling, unlike with linear regression. This means that in Poisson models the mean and the variance are assumed to be the same (or put another way, that they are both direct functions of <span class="math inline">\(\lambda\)</span>).</p>
-<p>The coefficients from Poisson models (which range from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>) are converted to be predicted counts that are non-negative integers via the <span class="math inline">\(\log\)</span> link function. This lets us have coefficients which are unbounded, but then convert these to non-negative integers as our count outcome demands.</p>
+<p>The coefficients from Poisson models (which range from <span class="math inline">\(-\infty\)</span> to <span class="math inline">\(\infty\)</span>) are converted to be predicted counts that are non-negative integers via the <span class="math inline">\(\log\)</span> link function. This lets us have coefficients which can take any value (-2! 0.5!), but then convert these to counts as our count outcome demands.</p>
 <p><strong>Graph of log here?</strong></p>
 </section>
-<section id="why-not-just-lm" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="why-not-just-lm"><span class="header-section-number">3.4</span> why not just lm?</h2>
-<ul>
-<li>You can get negative predictions</li>
-<li>LM assumes constant variance - we probably want more variance for larger counts</li>
-</ul>
-<section id="specific-problems-with-glms" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="specific-problems-with-glms"><span class="header-section-number">3.4.1</span> Specific problems with GLMs</h3>
-<section id="over-dispersion" class="level4" data-number="3.4.1.1">
-<h4 data-number="3.4.1.1" class="anchored" data-anchor-id="over-dispersion"><span class="header-section-number">3.4.1.1</span> over-dispersion</h4>
+<section id="why-not-just-use-a-linear-model" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="why-not-just-use-a-linear-model"><span class="header-section-number">3.4</span> why not just use a linear model?</h2>
+<p>If you really want to you can just use a linear model for count data. This will still give you an accurate model of the mean outcome. However, there are two main problems with this approach.</p>
+<p>First, if you have small counts (say, if you were modelling homicides in Scotland) the uncertainty in the mean estimate may give you a confidence interval below zero:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12346</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n_draws <span class="ot">&lt;-</span> <span class="fl">1e3</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rpois</span>(<span class="at">n =</span> n_draws,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">lambda =</span> <span class="fl">0.001</span>) <span class="co"># draw from poisson distribution with mean 0.001</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">|&gt;</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  y   n
+1 0 997
+2 1   3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> dat) <span class="sc">|&gt;</span> <span class="co"># fit intercept-only model with normal outcome</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">conf_low =</span> estimate <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 6
+  term        estimate std.error statistic p.value  conf_low
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)    0.003   0.00173      1.73  0.0833 -0.000391</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># fit intercept only model with poisson outcome</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="st">"poisson"</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> dat) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">conf_low =</span> estimate <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">exp_est =</span> <span class="fu">exp</span>(estimate),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">exp_conf_low =</span> <span class="fu">exp</span>(conf_low))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  term       estimate std.error statistic  p.value conf_low exp_est exp_conf_low
+  &lt;chr&gt;         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;        &lt;dbl&gt;
+1 (Intercep…    -5.81     0.577     -10.1 8.16e-24    -6.94 0.00300     0.000968</code></pre>
+</div>
+</div>
+<p>Here the confidence intervals are not properly expressing what we know to be true about our data (that it has to be positive).</p>
+<p>Second, the standard linear model assumes constant variance. But in practice we probably want more variance for larger counts.</p>
+<p>See figure at https://bookdown.org/roback/bookdown-BeyondMLR/ch-poissonreg.html</p>
+<section id="interpreting-coefficients-from-poisson-models" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="interpreting-coefficients-from-poisson-models"><span class="header-section-number">3.4.1</span> Interpreting coefficients from Poisson models</h3>
+<p>Per UCLA OARC: “for a one unit change in the predictor variable, the difference in the logs of expected counts is expected to change by the respective regression coefficient, given the other predictor variables in the model are held constant.”</p>
+<p>The most straightforward way to interpret coefficients from Poisson models is to exponentiate the coefficient value. This converts the beta coefficient into an Incident Rate Ratio (https://stats.oarc.ucla.edu/stata/output/poisson-regression/)</p>
+<p>“The exp(Intercept) is the baseline rate, and all other estimates would be relative to it.” (https://stats.stackexchange.com/a/11097)</p>
+<p>Mostly though I would recommend using your model to come up with sensible estimates of counts of the thing you are interested in - we’ll come to this in Chapter Four.</p>
+</section>
+<section id="specific-problems-with-glms" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="specific-problems-with-glms"><span class="header-section-number">3.4.2</span> Specific problems with GLMs</h3>
+<section id="over-dispersion" class="level4" data-number="3.4.2.1">
+<h4 data-number="3.4.2.1" class="anchored" data-anchor-id="over-dispersion"><span class="header-section-number">3.4.2.1</span> over-dispersion</h4>
 <ul>
 <li><p>poisson assumes mean and variance are the same (in that there is only one term in the model, <span class="math inline">\(\lambda\)</span>, which describes both the average and the variability around the average)</p></li>
-<li><p>so what? when in your data the variance exceeds the mean, you will get the wrong standard errors</p></li>
+<li><p>This is quite a brittle assumption though, and there’s no reason that real-life data has to obey it. So what? If your data are over-dispersed (the conditional variance exceeds the conditional mean), you will get standard errors that are too small.</p></li>
 <li><p>this breaks basically all your inferences!</p></li>
 <li><p>p-values are too optimistic</p></li>
 <li><p>Example of gun violence in Oakland: https://cao-94612.s3.amazonaws.com/documents/Oakland-Ceasefire-Evaluation-Final-Report-May-2019.pdf</p></li>
 </ul>
-<section id="what-do-to-about-over-dispersion" class="level5" data-number="3.4.1.1.1">
-<h5 data-number="3.4.1.1.1" class="anchored" data-anchor-id="what-do-to-about-over-dispersion"><span class="header-section-number">3.4.1.1.1</span> What do to? about over-dispersion</h5>
+<section id="what-do-to-about-over-dispersion" class="level5" data-number="3.4.2.1.1">
+<h5 data-number="3.4.2.1.1" class="anchored" data-anchor-id="what-do-to-about-over-dispersion"><span class="header-section-number">3.4.2.1.1</span> What do to? about over-dispersion</h5>
 <p>If all you care about is your standard errors you can use quasi-poisson (same point estimates as poisson but with ‘empirical’ SEs - similar to using robust standard errors). Francis et al.&nbsp;use this approach to modelling counts of victimization. In my experience it’s also faster than the standard alternative…</p>
 <p>… which is negative binomial binomial regression.</p>
 <p>The negative binomial is a flavour of statistical model <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for count data which has an extra “dispersion” parameter, which allows for over-dispersion. The poisson model can’t do this, because it has only one parameter (<span class="math inline">\(\lambda\)</span>) so the model has nowhere to ‘put’ any information about overdispersion.</p>
@@ -345,8 +445,8 @@ y_i \sim &amp; {Poisson} (\lambda) \\
 <p><span class="citation" data-cites="verhoefQuasiPoissonVsNegative2007">Ver Hoef and Boveng (<a href="references.html#ref-verhoefQuasiPoissonVsNegative2007" role="doc-biblioref">2007</a>)</span> give a blow-by-blow account of the differences between the two models in how they handle over-dispersion. But I would suggest that these distinctions depend on the kind of research question you are interested in. If all you care about is the mean for the two groups then you (might not care about over-dispersion at all)[https://www.statalist.org/forums/forum/general-stata-discussion/general/1570223-non-count-outcomes-and-use-of-poisson-regression?p=1570448#post1570448]. If you really care about modelling the extra dispersion in your negative binomial distribution (this isn’t very common but hey you might want to) then you can’t do this with a poisson model and you need something like negative binomial (see https://stats.stackexchange.com/a/568052)</p>
 </section>
 </section>
-<section id="zero-inflation" class="level4" data-number="3.4.1.2">
-<h4 data-number="3.4.1.2" class="anchored" data-anchor-id="zero-inflation"><span class="header-section-number">3.4.1.2</span> zero-inflation</h4>
+<section id="zero-inflation" class="level4" data-number="3.4.2.2">
+<h4 data-number="3.4.2.2" class="anchored" data-anchor-id="zero-inflation"><span class="header-section-number">3.4.2.2</span> zero-inflation</h4>
 <p>take from Hilbe (distinct zeros? ZIP; generic solution; NB?)</p>
 <ul>
 <li><p>ZIP can have different predictors for zeros than count part</p></li>
