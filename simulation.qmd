@@ -2,33 +2,16 @@
 
 \_\_There's nothing special about simulation here we can also do this with delta method or whatever? I should say this?\_\_s
 
-In Part One we talked about reasons we might be skeptical about our model coefficients. In this part we are also moving beyond a focus on regression coefficients, but this time we are going to translate coefficients into more interesting and informative quantities.
+In Part One we talked about reasons we might be skeptical about our model coefficients, and looked at some methods which adjust coefficients to account for possible biases in the data. In this part we are also moving beyond a narrow focus on regression coefficients, but this time we are going to translate coefficients into more interesting and informative quantities. This is a great way to make results more informative and accessible [@kingMakingMostStatistical2000].
+
+In simple statistical models it is possible to read off a coefficient directly as the quenatities that we are interested in. In more complex models, such as generalized linear models, we often want to convert the coefficients to express results in a more accessible way. For example, with logistic regression it is common to convert log-odds to odds ratios when interperting results. In poisson regression the model coefficients are also commonly expressed as rate ratios. 
+
+These are valuable techniques, but do not scale well to more complicated models, where individual coefficients need to be interpreted in the context of other parts of the model  (McElreath). Fortunately there are techniques we can use to re-express model estimates in more meaningful quantities. A primary challenge in converting combinations of regression coefficients into more meaningful values is how to also express the uncertainty in these coefficients. In this chapter we will focus on a simulation approach to this task which can be applied to any generalized linear model.
 
 
 
-## The tide machine
-
-
-
-
-
-## What's your estimand?
-
-@lundbergWhatYourEstimand2021a state that all analyst should be able to describe what their 'estimand' is. The estimand is the "target quantity" of your analysis. Lundberg and colleagues suggest an estimand as two compnents: a 'unit specific quantity' and a 'target population'. 
-
-These target quantities can be observed outcomes (was a particular person a victim of crime), potential outcomes (would a person have been a victim of crime if they lived in a high-deprivation area?), or differences in potential outcomes (the effect of area deprivation on a person's victim status). The target population describes over what units we are aggregating our 'unit specific quantities' - this may be the whole of Scotland, or a particular city, or a group of people with particular characteristics. Lunberg and colleagues describe a paper by "Harding and colleagues (2018) [who] estimate the effect of prison on labor market outcomes by leveraging random variation in judges’ propensities to sentence people convicted of felonies to probation instead of prison. The target population is offenders who would have been sentenced to probation rather than prison if they had faced a more lenient judge (Harding et al. 2018:67). This is a subpopulation that is conceptually interesting: individuals whose sentences might plausibly change if judges were encouraged to be more lenient in sentencing."
-
-Crucially the link between the theoretical estimand and the empirical estimand that we actually try to learn from our dataset based on "assumptions about the relationship between the data we observe and the data we do not."
 
 ### Quantities of interest
-
-
-
-
-
-Sometimes when we fit a statistical model we just want to read off a coefficient in the model and that is our key result. However, sometimes we want to calculate some other quantity from our model and focus on that instead. For general applications of this approach see Gelman and Pardoe (2007) and King et al. (2000).
-
-#### A simple example: difference in probabilities?
 
 
 #### A complicated example: victimization divides
@@ -53,15 +36,14 @@ this is analogous to exploring the percentage change in victimization inequality
 
 To calculate the ratio of victimization rates in years 1 and 2, Hunter and Tseloni fit a regression model (specifically a negative binomial model) and then use the coefficients from this model as inputs into the Victimization Divide formula. Based on this they conclude _ADD SUMMARY OF THEIR FINDINGS_
 
-However, Hunter and Tseloni's data come from the Crime Survey for England and Wales. As such we should also be interested in the uncertainty in these coefficients. In that case it's not quite so clear how to incorporate this uncertainty into the calculation of the VD. The process described by King et al. (2000) and implemented in the R package clarify (https://github.com/iqss/clarify) provides one solution.
+However, Hunter and Tseloni's data come from the Crime Survey for England and Wales. As such we should also be interested in the uncertainty in these coefficients. In that case it's not quite so clear how to incorporate this uncertainty into the calculation of the VD. The simulation process described by King et al. (2000) and implemented in the R package clarify (https://github.com/iqss/clarify) provides one solution.
 
-One way to do this is to use the regression model to simulate a bunch of coefficients values and then calculate the VD for each one.
+In simple terms this technique uses the regression model to simulate a bunch of coefficients values from the regression model's variance-covariance matrix and and then calculate the VD for each one these simulated coefficient values. Simulating draws from the variance-covariance matrix gives a set of draws which together reflect the uncertainty in each of the regression coefficients (as expressed in their standard errors) and the correlation between these coefficients (as expressed in the covariance between the coefficients).
 
 Matthews and McVie (2024; see also Matthews 2024) demonstrate this process. The table below shows the prevalence of victimization (for all crime types) for men and women as reported in the Crime Survey for England and Wales for 2015 and 2020 (Office for National Statistics, n.d.). We can see that the prevalence of victimization was higher for men than women in both years, and that it increased for men (by 3.0 percentage points) and women (by 3.6 percentage points) between 2015 and 2020.
 
 ```{r}
-# set seed and load packages
-set.seed(nchar("vict divide") ^ 4)
+# load packages
 
 library(MASS)
 library(tidyverse)
@@ -83,7 +65,7 @@ dat <-
 
 ```
 
-We can fit a simple regression model to the data in each year to calculate the ratio of the odds of being a victim for men and women. Model 1 shows a statistically significant difference for men (compared to women) in 2015, with men having 11% greater odds of being a victim of crime. In contrast, Model 2 finds that men had a 5% greater odds of being a victim of crime than women in 2020; however, this difference does not meet the 95% threshold for statistical significance.
+We can fit a simple regression model to the data in each year to calculate the log-odds of being a victim for men and women. In this example I fit a separate model for 2015 and 2020. Model 1 shows a statistically significant difference for men (compared to women) in 2015, with men having 11% greater odds of being a victim of crime. In contrast, Model 2 finds that men had a 5% greater odds of being a victim of crime than women in 2020 - however this difference does not meet the 95% threshold for statistical significance.
 
 ```{r}
 
@@ -118,10 +100,66 @@ base_y2 = results_2020$est[[2]])
 
 ```
 
-However, this does not factor the uncertainty in these odds ratios into our results. To investigate this we can simulate 1,000 sets of coefficients from the models' results. Using 10,000 simulations from the models’ results, we get 95% intervals for the VD of -0.95 and 0.22. Whilst our most of our simulations do indicate that victimization inequality has declined, this would not be considered 'statistically significant' at the usual 95% threshold.
+However, this estimate of the VD is based only on the point estimates of the coefficients from the two models, and so it does not factor the uncertainty in these odds ratios into our results. As such we don't have a good sense of the uncertainty in this description of how victimization inequality as changed. To investigate this we can simulate 10,000 sets of coefficients from the two models' results and then calculate the VD for each one. 
+
+The code below runs this simulation. 
+
+#### Interlude: simulating random variables in R
+
 
 ```{r}
 
+var1 <- 
+rnorm(
+  n = 1000,
+  mean = 0,
+  sd = 1
+)
+
+var2 <- 
+rnorm(
+  n = 1000,
+  mean = 1,
+  sd = 1
+)
+
+
+tibble(
+  var1 = var1,
+  var2 = var2
+) |> 
+  ggplot(aes(x = var1, y = var2)) +
+  geom_point()
+
+
+```
+
+We can see that these variables are uncorrelated. If we use `mvrnorm` the resulting draws can be correlated.
+
+
+```{r}
+
+MASS::mvrnorm(
+  n = 1000,
+  mu = c(0, 0), # mu instead of mean
+  Sigma = matrix(c(1, 0.9, 0.9, 1), nrow = 2, ncol = 2) # Sigma instead of sd
+) |> 
+  as.data.frame() |> 
+  ggplot(aes(x = V1, y = V2)) +
+  geom_point()
+  
+
+
+```
+
+### Back to our simulation
+
+It uses the `mvrnorm` function from the `{MASS}` library to simulate from a multivariate normal distribution, with the means of this distribution being the model coefficient point estimates, and the model's variance-covariance matrix describing the covariance between the simulated draws.
+
+```{r}
+
+# set seed
+set.seed(nchar("vict divide") ^ 4)
 
 n_sims <- 1e5
 
@@ -164,16 +202,18 @@ sim_dat %>%
 
 ```
 
+Using 10,000 simulations from the models’ results, we get 95% intervals for the VD of -0.95 and 0.22. Whilst our most of our simulations do indicate that victimization inequality has declined, this would not be considered 'statistically significant' at the usual 95% threshold.
+
 The beauty of this simulation approach described by King et al (2000) is that it generalizes to any DQI, such as VD, and to any regression model specification. Say that instead of the VD were interested in the absolute difference in predicted victimization after controlling for other factors (like a marginal effect). Or maybe we have fitted a count model and we want to know the number of people reporting 2 or more victimization incidents - we can calculate this from our simulations whilst incorporating (some) uncertainty into our estimates.
 
-Matthews and McVie (forthcoming) illustrate that there are many (many!) ways to empirically describe victimization inequality. Using these simulation methods means you can use a statistical model to describe any of these measures, and factor in the unceratinty implied by the model. This means that you have more scope to map your theoretical estimand onto your empirical results.
+Matthews and McVie (forthcoming) illustrate that there are many (many!) ways to empirically describe victimization inequality. Using these simulation methods means you can use a statistical model to describe any of these measures, and factor in the uncertainty implied by the model. This means that you have more scope to map your theoretical estimand onto your empirical results.
 
 
-## Add clarify example here
+## Using the clarify package
 
 In the example above we performed the simulation from each models' variance-covariance matrix ourselves. Whilst it's good to know how this works, in practice there are R packages which can do this for us. One good option is [clarify](https://cran.r-project.org/web/packages/clarify/index.html).
 
-Here we reproduce our results using clarify. Instead of fitting a model to each year as above, clarify expects us to give it a single model object, so we re-express the two separate models (one for each year) as a single model, now including year as an interaction term with sex.
+Here we reproduce our results using clarify. Instead of fitting a model to each year as above, clarify expects us to give it a single model object, so we re-express the two separate models (one for each year) as a single model, now including year as an interaction term with sex. The code below is a bit involved, but 
 
 ```{r}
 # using clarify -----------------------------------------------------------
@@ -189,7 +229,7 @@ s <- sim(mod1,
          n = n_sims)
 
 
-sim_fun2 <- function(coefs) {
+sim_victim_divide <- function(coefs) {
   men_2015 <- unname(coefs["fct_rev(sex)men"])
   men_interact <- unname(coefs["fct_rev(sex)men:year2020"])
   
@@ -204,7 +244,7 @@ sim_fun2 <- function(coefs) {
 
 
 est2 <- sim_apply(s, 
-                  FUN = sim_fun2)
+                  FUN = sim_victim_divide)
 
 tibble(x = as.vector(est2)) |> 
   reframe(vds = quantile(x, c(0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.975, 0.99)),
@@ -212,14 +252,23 @@ tibble(x = as.vector(est2)) |>
 
 ```
 
-Here we can see that the results are basically the same.
+Here we can see that the results are basically the same as our own simulation. Importantly there is inherent uncertainty in simulation results, so it's crucial to set the seed for the random number generator so you get the same results every time. You also need to run enough simulation draws to get a good estimate of the uncertainty. The default for clarify is 1000 draws. More simulations are always better, but will take longer - so there is a pragmatic aspect to how much time and computer resource you have to run simulations. 
 
-Why clarify:
+We have conducted an initial simulation ourselves to understand how the process works, but in general I would recommend using a package like clarify if you conduct this kind of simulation. It's likely that professionally developed and maintained software will be less error-prone and more efficient than writing your own!
 
--   get someone else to do the coding
--   more efficient
--   examples/tutorials online
--   link to marginal_effects?s
+
+
+#### A simple example: difference in probabilities?
+
+In the example above we focused on calculating a new quantity of interest from the coefficients of a fitted regression model.
+
+This drew on a specific (possibly quite niche) criminological example. This example is closely related to the general approach of calculating 'marginal effects'. These techniques use the fact that with any general linear model we can get a predicted value of our outcome by plugging the coefficients into the regression equation to express effects of independent variables on the scale of the outcome. this could be a difference in the probability of being a victim of crime between men and women, or the difference in the estimated number of victimization incidents, or, well, anything you like really! Marginal effects are a very powerful technique by which we can understand model results and cover a variety of specific methods to calculate quantities we might be interested in form a fitted model (see https://marginaleffects.com/). 
+
+The fundamentals of all these methods are the same, but the details differ. I really recommend working through the guides at marginaleffects.com to get a sense of what is possible. Here we will work through a simple example. This is a very simple set-up to the clarify example we used, although with marginaleffects the focus is more on calculating predictions from the model (whereas in our example we converted coefficient values rather than predictions), and clarify focuses on simulation to express model uncertainty.
+
+
+[^8:] The 'marginal' terminology is very confusing.
+
 
 
 
